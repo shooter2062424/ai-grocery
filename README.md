@@ -9,21 +9,29 @@ shooter2062424 的 **Claude Code plugin marketplace** —— 收錄各類給 Cla
 ```
 claude_marketplace/
 ├─ .claude-plugin/
-│  └─ marketplace.json          # marketplace 清單(列出所有 plugin)
+│  └─ marketplace.json              # marketplace 清單(列出所有 plugin)
 └─ plugins/
-   └─ knowledge-tools/          # 知識/學習類工具
-      ├─ .claude-plugin/
-      │  └─ plugin.json         # plugin manifest
-      └─ skills/
-         └─ rapid-learning/
-            └─ SKILL.md         # NotebookLM 三提問快速學習法
+   ├─ knowledge-tools/              # 知識/學習類工具
+   │  ├─ .claude-plugin/plugin.json
+   │  └─ skills/rapid-learning/SKILL.md
+   └─ investing-like-pro/           # 投資類工具
+      ├─ .claude-plugin/plugin.json
+      └─ skills/gooaye/
+         ├─ SKILL.md                # 模擬股癌挑股
+         ├─ scripts/build_memory.py # 從逐字稿建立標的記憶(可重跑)
+         └─ references/             # 標的記憶(AI 參考,自動更新)
+            ├─ recent-stance.md         # 近期看法質化摘要
+            ├─ recency-ranking.md       # 近期加權排名 + 升溫/退燒
+            ├─ ranking.json / mention-timeline.json
+            └─ methodology.md
 ```
 
 ## 目前收錄的 plugin
 
 | Plugin | 內容 |
 |---|---|
-| **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法:抽取核心心智模型 → 畫出領域爭議 → 用理解型問題自我檢驗)。 |
+| **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
+| **investing-like-pro** | 投資類工具。目前含 `gooaye` skill(以股癌視角分析/挑股,內建從全集逐字稿萃取的「標的記憶」,每週自動更新)。**教育用途,非投資建議。** |
 
 ## 安裝方式
 
@@ -35,6 +43,7 @@ claude_marketplace/
 
 # 2. 安裝想要的 plugin
 /plugin install knowledge-tools@claude_marketplace
+/plugin install investing-like-pro@claude_marketplace
 ```
 
 之後若新增其他 plugin,使用者再各別 `/plugin install <plugin>@claude_marketplace` 即可。

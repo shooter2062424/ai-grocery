@@ -1,0 +1,15 @@
+{
+  "name": "investing-like-pro",
+  "description": "投資類工具集:用知名投資人/分析師的視角與記憶來分析股票。目前含 gooaye(模擬股癌挑股,內建逐字稿萃取的標的記憶)。教育用途,非投資建議。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424"
+  },
+  "keywords": [
+    "investing",
+    "stocks",
+    "taiwan-stock",
+    "gooaye",
+    "股癌"
+  ]
+}
