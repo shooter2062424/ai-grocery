@@ -1,0 +1,17 @@
+{
+  "name": "claude_marketplace",
+  "owner": {
+    "name": "shooter2062424"
+  },
+  "metadata": {
+    "description": "shooter2062424 的 Claude Code plugin marketplace — 收錄各類給 Claude 用的 skills / hooks / commands / agents。",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "knowledge-tools",
+      "source": "./plugins/knowledge-tools",
+      "description": "知識與學習類工具集。目前含 rapid-learning(NotebookLM 三提問快速學習法)skill。"
+    }
+  ]
+}
