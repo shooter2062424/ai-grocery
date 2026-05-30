@@ -1,7 +1,7 @@
 {
   "name": "investing-like-pro",
-  "description": "投資/交易類工具集。含 gooaye(模擬股癌挑股,內建逐字稿萃取的標的記憶)與 ctbc-securities-api(用 Python 操作中國信託證券交易 API:登入/下單/查詢/回報)。教育用途,非投資建議;交易涉及真錢,務必先測試環境。",
-  "version": "0.2.0",
+  "description": "投資類工具集:用知名投資人/分析師的視角與記憶來分析股票。目前含 gooaye(模擬股癌挑股,內建逐字稿萃取的標的記憶)。教育用途,非投資建議。",
+  "version": "0.1.0",
   "author": {
     "name": "shooter2062424"
   },
@@ -10,10 +10,6 @@
     "stocks",
     "taiwan-stock",
     "gooaye",
-    "股癌",
-    "trading-api",
-    "ctbc",
-    "中國信託",
-    "pywin32"
+    "股癌"
   ]
 }

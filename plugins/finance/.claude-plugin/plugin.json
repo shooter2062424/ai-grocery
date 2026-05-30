@@ -1,0 +1,17 @@
+{
+  "name": "finance",
+  "description": "金融/交易類工具集。目前含 ctbc-securities-api(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報)。涉及真實下單與真錢,務必先用測試環境;非投資建議。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424"
+  },
+  "keywords": [
+    "finance",
+    "trading-api",
+    "taiwan-stock",
+    "ctbc",
+    "中國信託",
+    "pywin32",
+    "broker-api"
+  ]
+}

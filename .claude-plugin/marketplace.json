@@ -16,7 +16,12 @@
     {
       "name": "investing-like-pro",
       "source": "./plugins/investing-like-pro",
-      "description": "投資/交易類工具集。含 gooaye(以股癌視角分析/挑股,內建逐字稿萃取的標的記憶)與 ctbc-securities-api(Python 操作中國信託證券交易 API)。教育用途,非投資建議。"
+      "description": "投資類工具集。目前含 gooaye(以股癌視角分析/挑股,內建從全集逐字稿萃取的標的記憶)。教育用途,非投資建議。"
+    },
+    {
+      "name": "finance",
+      "source": "./plugins/finance",
+      "description": "金融/交易類工具集。目前含 ctbc-securities-api(用 Python 操作中國信託證券交易 API:登入/下單/查詢/回報)。涉及真實下單,務必先用測試環境;非投資建議。"
     },
     {
       "name": "web-design-tools",

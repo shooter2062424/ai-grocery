@@ -31,7 +31,8 @@ claude_marketplace/
 | Plugin | 內容 |
 |---|---|
 | **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
-| **investing-like-pro** | 投資/交易類工具。含 `gooaye`(以股癌視角分析/挑股,內建逐字稿萃取的「標的記憶」,每週自動更新)與 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**教育用途,非投資建議;交易涉及真錢,務必先用測試環境。** |
+| **investing-like-pro** | 投資類工具。含 `gooaye`(以股癌視角分析/挑股,內建逐字稿萃取的「標的記憶」,每週自動更新)。**教育用途,非投資建議。** |
+| **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
 
 ## 安裝方式
@@ -45,6 +46,7 @@ claude_marketplace/
 # 2. 安裝想要的 plugin
 /plugin install knowledge-tools@claude_marketplace
 /plugin install investing-like-pro@claude_marketplace
+/plugin install finance@claude_marketplace
 /plugin install web-design-tools@claude_marketplace
 ```
 
