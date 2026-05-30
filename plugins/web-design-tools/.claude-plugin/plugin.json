@@ -1,0 +1,17 @@
+{
+  "name": "web-design-tools",
+  "description": "前端/網頁設計類工具集。目前含 modern-web-design skill(用 Next.js+Tailwind+shadcn/ui 做出有質感的現代網站,涵蓋:突破 AI 預設風格、捲動逐幀動畫管線、Awwwards 設計參考擷取與重建、依受眾拆設計策略)。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424"
+  },
+  "keywords": [
+    "web-design",
+    "frontend",
+    "tailwind",
+    "shadcn",
+    "nextjs",
+    "scrolltrigger",
+    "animation"
+  ]
+}

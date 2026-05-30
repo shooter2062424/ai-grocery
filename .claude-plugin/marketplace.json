@@ -17,6 +17,11 @@
       "name": "investing-like-pro",
       "source": "./plugins/investing-like-pro",
       "description": "投資類工具集。目前含 gooaye(以股癌視角分析/挑股,內建從全集逐字稿萃取的標的記憶)。教育用途,非投資建議。"
+    },
+    {
+      "name": "web-design-tools",
+      "source": "./plugins/web-design-tools",
+      "description": "前端/網頁設計類工具集。目前含 modern-web-design(用 Next.js+Tailwind+shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫、設計參考擷取、依受眾拆設計策略)。"
     }
   ]
 }
