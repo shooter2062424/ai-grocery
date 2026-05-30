@@ -1,4 +1,4 @@
-# claude_marketplace
+# ai-grocery
 
 **Claude Code plugin marketplace** —— 收錄各類給 Claude 用的 skills / hooks / commands / agents,集中管理、方便安裝與分享。
 
@@ -7,7 +7,7 @@
 採 **multi-plugin marketplace**:一個 marketplace 底下可掛多個 plugin,各 plugin 依類別獨立,可分別安裝、各自演進。
 
 ```
-claude_marketplace/
+ai-grocery/
 ├─ .claude-plugin/
 │  └─ marketplace.json              # marketplace 清單(列出所有 plugin)
 └─ plugins/
@@ -44,20 +44,20 @@ claude_marketplace/
 
 ```
 # 1. 加入這個 marketplace(只需一次;後面是 GitHub repo 路徑)
-/plugin marketplace add shooter2062424/claude_marketplace
+/plugin marketplace add shooter2062424/ai-grocery
 
-# 2. 安裝想要的 plugin(@ 後面是 marketplace 名稱 bigdaddy-marketplace)
-/plugin install knowledge-tools@bigdaddy-marketplace
-/plugin install investing-like-pro@bigdaddy-marketplace
-/plugin install finance@bigdaddy-marketplace
-/plugin install web-design-tools@bigdaddy-marketplace
+# 2. 安裝想要的 plugin(@ 後面是 marketplace 名稱)
+/plugin install knowledge-tools@ai-grocery
+/plugin install investing-like-pro@ai-grocery
+/plugin install finance@ai-grocery
+/plugin install web-design-tools@ai-grocery
 ```
 
-> 註:`marketplace add` 後面用的是 **GitHub repo 路徑**(`shooter2062424/claude_marketplace`),
-> 而 `/plugin install <plugin>@...` 的 `@` 後面用的是 **marketplace 名稱**(`bigdaddy-marketplace`,
-> 定義在 `.claude-plugin/marketplace.json` 的 `name`)。兩者不同,別搞混。
+> 註:GitHub repo 名與 marketplace 名稱已統一為 `ai-grocery`(`marketplace add` 用 repo 路徑、
+> `/plugin install <plugin>@` 用 marketplace 名稱,兩者現在同名)。
+> ⚠️ marketplace 名稱 **不可含 "claude"**,否則會觸發 Claude Code「仿冒官方 marketplace」防衛而被擋。
 
-之後若新增其他 plugin,使用者再各別 `/plugin install <plugin>@bigdaddy-marketplace` 即可。
+之後若新增其他 plugin,使用者再各別 `/plugin install <plugin>@ai-grocery` 即可。
 
 ## 慣例
 
