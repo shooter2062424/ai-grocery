@@ -17,11 +17,14 @@ claude_marketplace/
    └─ investing-like-pro/           # 投資類工具
       ├─ .claude-plugin/plugin.json
       └─ skills/gooaye/
-         ├─ SKILL.md                # 模擬股癌挑股
-         ├─ scripts/build_memory.py # 從逐字稿建立標的記憶(可重跑)
-         └─ references/             # 標的記憶(AI 參考,自動更新)
-            ├─ recent-stance.md         # 近期看法質化摘要
-            ├─ recency-ranking.md       # 近期加權排名 + 升溫/退燒
+         ├─ SKILL.md                  # 用股癌投資思維框架評斷一支股票好不好
+         ├─ scripts/
+         │  ├─ fetch_indicators.py    # 撈他看重的指標(台股 FinMind / 美股 yfinance)
+         │  └─ build_memory.py        # 從逐字稿建立近期立場記憶(輔助層,可重跑)
+         └─ references/
+            ├─ investment-framework.md  # 【核心大腦】評斷準則:分型→七維度→紅旗→verdict
+            ├─ recent-stance.md         # 近期立場(輔助層)
+            ├─ recency-ranking.md       # 近期加權排名 + 升溫/退燒(輔助層)
             ├─ ranking.json / mention-timeline.json
             └─ methodology.md
 ```
@@ -31,7 +34,7 @@ claude_marketplace/
 | Plugin | 內容 |
 |---|---|
 | **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
-| **investing-like-pro** | 投資類工具。含 `gooaye`(以股癌視角分析/挑股,內建逐字稿萃取的「標的記憶」,每週自動更新)。**教育用途,非投資建議。** |
+| **investing-like-pro** | 投資類工具。含 `gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好:分型→估值→基本面→題材純度→護城河→預期差→循環紀律→風控,並動態撈他看重的指標;近期推薦只當輕度輔助)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
 

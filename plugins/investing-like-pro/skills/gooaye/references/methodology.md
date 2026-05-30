@@ -1,5 +1,18 @@
 # 記憶建立方法與更新流程(methodology)
 
+## 兩層架構(重要)
+
+本 skill 分兩層,**評斷股票以「框架層」為主、「記憶層」只是輔助**:
+
+1. **框架層(主):`investment-framework.md`** —— 從 EP1–最新集全部逐字稿萃取的「評斷準則」
+   (分型 + 七大維度的指標/決策規則/紅旗 + verdict 模板)。這是判斷一支股票好不好的大腦,變動慢。
+   搭配 `scripts/fetch_indicators.py` 動態撈他看重的指標。
+2. **記憶層(輔):`recent-stance.md` / `recency-ranking.md` / `ranking.json` / `mention-timeline.json`**
+   —— 由 `build_memory.py` 從逐字稿確定性統計「他最近常談什麼」。**只當輕度輔助**(框架算完後微調信心),
+   不可拿「他最近有沒有推薦」當股票好壞的判準。
+
+> 下面說明的是「記憶層」的建立與每週更新;框架層只在股癌明顯改變選股邏輯時才需要重萃。
+
 ## 資料來源
 - 非官方逐字稿庫 **whatmkreallysaid.com**(AI 聽寫,標註「僅供學習交流、不構成投資建議」,著作權屬原節目)。
 - 全部集數打包在 `https://whatmkreallysaid.com/transcripts.json.br`(brotli,~10MB);`pack_manifest.json` 提供 `episode_count` 與版本,用來判斷有沒有新集數。
