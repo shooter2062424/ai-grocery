@@ -1,6 +1,6 @@
 # claude_marketplace
 
-shooter2062424 的 **Claude Code plugin marketplace** —— 收錄各類給 Claude 用的 skills / hooks / commands / agents,集中管理、方便安裝與分享。
+**Claude Code plugin marketplace** —— 收錄各類給 Claude 用的 skills / hooks / commands / agents,集中管理、方便安裝與分享。
 
 ## 架構
 
