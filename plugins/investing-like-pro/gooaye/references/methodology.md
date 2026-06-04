@@ -2,7 +2,7 @@
 
 ## 兩層架構(重要)
 
-本 skill 分兩層,**評斷股票以「框架層」為主、「記憶層」只是輔助**:
+本 agent 分兩層,**評斷股票以「框架層」為主、「記憶層」只是輔助**:
 
 1. **框架層(主):`investment-framework.md`** —— 從 EP1–最新集全部逐字稿萃取的「評斷準則」
    (分型 + 七大維度的指標/決策規則/紅旗 + verdict 模板)。這是判斷一支股票好不好的大腦,變動慢。
@@ -39,7 +39,7 @@
 
 ## 手動重建
 ```bash
-cd plugins/investing-like-pro/skills/gooaye/scripts
+cd plugins/investing-like-pro/gooaye/scripts
 python build_memory.py            # 自動下載最新 pack 並重算
 # 或用本機既有 pack:
 python build_memory.py --pack /path/to/transcripts.json.br

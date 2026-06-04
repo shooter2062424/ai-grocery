@@ -1,6 +1,6 @@
 {
   "name": "investing-like-pro",
-  "description": "投資類工具集:用知名投資人/分析師的思維框架或學術方法來評斷股票。含 gooaye(用股癌數百集 podcast 萃取的投資思維框架評斷一支股票好不好,動態撈他看重的指標;近期推薦只當輕度輔助)、google-nexus(用 Google Nexus 五代理人時序預測框架 arXiv:2605.14389 做未來 N 日走勢預測+可解釋推理)。教育用途,非投資建議。",
+  "description": "投資類工具集:用知名投資人/分析師的思維框架或學術方法來評斷股票。含 gooaye agent(用股癌數百集 podcast 萃取的投資思維框架評斷一支股票好不好,動態撈他看重的指標;近期推薦只當輕度輔助)、google-nexus(用 Google Nexus 五代理人時序預測框架 arXiv:2605.14389 做未來 N 日走勢預測+可解釋推理)。教育用途,非投資建議。",
   "version": "0.3.0",
   "author": {
     "name": "shooter2062424"

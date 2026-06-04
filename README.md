@@ -16,8 +16,8 @@ ai-grocery/
    │  └─ skills/rapid-learning/SKILL.md
    └─ investing-like-pro/           # 投資類工具
       ├─ .claude-plugin/plugin.json
-      └─ skills/gooaye/
-         ├─ SKILL.md                  # 用股癌投資思維框架評斷一支股票好不好
+      ├─ agents/gooaye.md           # 用股癌投資思維框架評斷一支股票的 subagent
+      └─ gooaye/                    # agent 的資源(供 agent 用 ${CLAUDE_PLUGIN_ROOT} 取用)
          ├─ scripts/
          │  ├─ fetch_indicators.py    # 撈他看重的指標(台股 FinMind / 美股 yfinance)
          │  └─ build_memory.py        # 從逐字稿建立近期立場記憶(輔助層,可重跑)
@@ -34,7 +34,7 @@ ai-grocery/
 | Plugin | 內容 |
 |---|---|
 | **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
-| **investing-like-pro** | 投資類工具。含 `gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好:分型→估值→基本面→題材純度→護城河→預期差→循環紀律→風控,並動態撈他看重的指標;近期推薦只當輕度輔助)。**教育用途,非投資建議。** |
+| **investing-like-pro** | 投資類工具。含 `gooaye` **agent**(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好:分型→估值→基本面→題材純度→護城河→預期差→循環紀律→風控,並動態撈他看重的指標;近期推薦只當輕度輔助)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
 
