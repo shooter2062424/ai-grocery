@@ -16,7 +16,7 @@
     {
       "name": "investing-like-pro",
       "source": "./plugins/investing-like-pro",
-      "description": "投資類工具集。目前含 gooaye(用股癌數百集 podcast 萃取的投資思維框架評斷一支股票好不好,並動態撈他看重的指標;近期推薦只當輕度輔助)。教育用途,非投資建議。"
+      "description": "投資類工具集。含 gooaye(用股癌數百集 podcast 萃取的投資思維框架評斷一支股票好不好,並動態撈他看重的指標;近期推薦只當輕度輔助)、google-nexus(用 Google Nexus 五代理人時序預測框架做未來 N 日走勢預測+可解釋推理)。教育用途,非投資建議。"
     },
     {
       "name": "finance",
