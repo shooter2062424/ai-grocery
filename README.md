@@ -18,13 +18,17 @@ ai-grocery/
       ├─ .claude-plugin/plugin.json
       ├─ agents/                    # subagents(.md;委派時機寫在 frontmatter description)
       │  ├─ gooaye.md               # 用股癌投資思維框架評斷一支股票
-      │  └─ google-nexus.md         # 用 Google Nexus 五代理人框架做時序預測
+      │  ├─ google-nexus.md         # 用 Google Nexus 五代理人框架做時序預測
+      │  └─ valuation-bands.md      # 用 EPS×本益比歷史分位判 特價/便宜/合理/昂貴/瘋狂
       ├─ gooaye/                    # gooaye agent 的資源(用 ${CLAUDE_PLUGIN_ROOT} 取用)
       │  ├─ scripts/                #   fetch_indicators.py / build_memory.py
       │  └─ references/             #   investment-framework.md / recent-stance / ranking…
-      └─ google-nexus/             # google-nexus agent 的資源
-         ├─ scripts/fetch_series.py
-         └─ references/nexus-framework.md
+      ├─ google-nexus/             # google-nexus agent 的資源
+      │  ├─ scripts/fetch_series.py
+      │  └─ references/nexus-framework.md
+      └─ valuation-bands/          # valuation-bands agent 的資源
+         ├─ scripts/pe_bands.py     #   EPS×PE 歷史分位 → 五檔價 + 現價判定
+         └─ references/methodology.md
 ```
 
 ## 目前收錄的 plugin
@@ -32,7 +36,7 @@ ai-grocery/
 | Plugin | 內容 |
 |---|---|
 | **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
-| **investing-like-pro** | 投資類工具(皆為 **agents**)。含 `gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好:分型→估值→基本面→題材純度→護城河→預期差→循環紀律→風控,動態撈指標;近期推薦只當輕度輔助)與 `google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)。**教育用途,非投資建議。** |
+| **investing-like-pro** | 投資類工具(皆為 **agents**)。含 `gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)與 `valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
 
