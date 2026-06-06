@@ -6,21 +6,27 @@ pe_bands.py — 用「該股歷史本益比(PE)分位 × EPS」算出五檔價:�
 方法論(孫慶龍式「固定本益比情境分析」):
   1. 取該股「自己」過去 N 年的 PE 分布,算分位當五個倍數:
        特價=P10、便宜=P25、合理(中位)=P50、昂貴=P75、瘋狂=P90
-  2. 五檔價 = EPS × 各檔 PE。EPS 優先用使用者給的「預估(forward)EPS」;沒給就用 TTM EPS 當保守代理(會標明)。
+  2. 五檔價 = EPS × 各檔 PE。EPS 來源【預設鎖定高盛 (Goldman Sachs)】:
+       由查到的高盛 forward EPS 以 --eps 帶入,並用 --source 標記來源券商(預設「高盛 (Goldman Sachs)」)。
+       若該股未被高盛覆蓋 / 查不到高盛數字,就退回 TTM EPS 當保守代理(會明確標註 fallback)。
   3. 看「現價 / 現在 PE」落在哪一檔 → 特價/便宜/合理/昂貴/瘋狂。
 
+⚠️ 為何不能「全自動抓高盛」:高盛 EPS 出自付費研究報告,無公開 API 可按券商拆分;
+   免費資料源(FinMind/yfinance)只有市場 consensus。因此本工具的設計是「來源預設鎖定高盛、
+   數字由人/AI 上網查得後帶入並標記」,而非自動爬取。
+
 資料來源:
-  - 台股(純數字代號):FinMind 開放 API(免 token;設環境變數 FINMIND_TOKEN 可拉高額度)。
-      TaiwanStockPER(歷史 PER/PBR/殖利率)、TaiwanStockPrice(收盤價)。
-  - 美股(英文代號):yfinance。用「近 N 年股價 / TTM EPS」近似歷史 PE 分布;trailing/forward EPS 取自 info。
+  - PE 分位:台股 FinMind TaiwanStockPER;美股 yfinance(近 N 年股價 / TTM EPS 近似)。PE 分位來自該股自身歷史,與券商無關。
+  - EPS:預設鎖定高盛預估(--eps 帶入);未帶入則 fallback 用 TTM / consensus 代理。
 
 用法:
-  python pe_bands.py 2330                 # 台股,用 TTM EPS 當代理
-  python pe_bands.py 2330 --eps 135       # 指定預估 EPS(例:孫慶龍估台積電 2029 EPS 135)
-  python pe_bands.py NVDA --years 5       # 美股
-  python pe_bands.py 2330 --json          # 機器可讀
+  python pe_bands.py 2454 --eps 406.5                 # 鎖定高盛:聯發科 2028 高盛 EPS 406.5
+  python pe_bands.py 2330 --eps 135 --source "高盛"   # 指定來源券商
+  python pe_bands.py 3481                             # 高盛未覆蓋 → 自動 fallback TTM 代理(會標註)
+  python pe_bands.py NVDA --years 5 --json            # 美股 + 機器可讀
 
-⚠️ 教育性工具,非投資建議。分位是「相對自己歷史」的便宜/貴,不代表絕對價值;EPS 預估含假設、可能有誤。
+⚠️ 教育性工具,非投資建議。分位是「相對自己歷史」的便宜/貴,不代表絕對價值;
+   高盛預估屬單一機構觀點、常為樂觀離群值,含假設、可能有誤。
 """
 import os, sys, json, argparse, datetime, urllib.request, urllib.parse
 
@@ -81,7 +87,7 @@ def classify(current_pe, bands):
     return "瘋狂"
 
 
-def build(per_series, current_pe, current_price, eps, eps_kind, years, market, extra):
+def build(per_series, current_pe, current_price, eps, eps_kind, years, market, extra, eps_source=None):
     pes = sorted(p for p in per_series if p and p > 0)
     if len(pes) < 20:
         raise RuntimeError(f"PE 樣本太少({len(pes)} 筆),無法可靠估分位")
@@ -94,7 +100,7 @@ def build(per_series, current_pe, current_price, eps, eps_kind, years, market, e
     verdict = classify(current_pe, bands)
     return {
         "market": market, "years": years,
-        "eps": eps, "eps_kind": eps_kind,
+        "eps": eps, "eps_kind": eps_kind, "eps_source": eps_source,
         "current_price": current_price, "current_pe": round(current_pe, 2) if current_pe else None,
         "pe_sample": len(pes),
         "pe_low": round(min(pes), 2), "pe_high": round(max(pes), 2),
@@ -102,7 +108,7 @@ def build(per_series, current_pe, current_price, eps, eps_kind, years, market, e
     }
 
 
-def fetch_tw(stock_id, eps_override, years):
+def fetch_tw(stock_id, eps_override, years, source):
     per = finmind("TaiwanStockPER", stock_id, years_ago(years))
     per = [r for r in per if r.get("PER")]
     if not per:
@@ -124,12 +130,17 @@ def fetch_tw(stock_id, eps_override, years):
     # TTM EPS = 現價 / 現在 PE(隱含),作為沒指定預估 EPS 時的代理
     ttm_eps = round(current_price / current_pe, 2) if (current_price and current_pe) else None
     eps = eps_override if eps_override else ttm_eps
-    eps_kind = "使用者預估(forward)" if eps_override else "TTM 代理(現價/現PE)"
+    if eps_override:
+        eps_kind = f"{source} 預估(forward)"
+        eps_source = source
+    else:
+        eps_kind = f"TTM 代理(現價/現PE)— ⚠️ 未取得 {source} 預估,已 fallback"
+        eps_source = None
     return build(series, current_pe, current_price, eps, eps_kind, years, "TW",
-                 {"implied_ttm_eps": ttm_eps})
+                 {"implied_ttm_eps": ttm_eps}, eps_source=eps_source)
 
 
-def fetch_us(ticker, eps_override, years):
+def fetch_us(ticker, eps_override, years, source):
     try:
         import yfinance as yf
     except ImportError:
@@ -146,28 +157,42 @@ def fetch_us(ticker, eps_override, years):
         series = [float(c) / eps_ttm for c in hist["Close"].tolist() if c and c > 0]
     current_pe = info.get("trailingPE") or (current_price / eps_ttm if (current_price and eps_ttm) else None)
     eps = eps_override if eps_override else (eps_fwd or eps_ttm)
-    eps_kind = ("使用者預估(forward)" if eps_override else
-                ("forwardEps" if eps_fwd else "trailingEps(TTM)"))
+    if eps_override:
+        eps_kind = f"{source} 預估(forward)"
+        eps_source = source
+    else:
+        eps_kind = ("forwardEps(consensus)— ⚠️ 未取得 %s 預估,已 fallback" % source
+                    if eps_fwd else "trailingEps(TTM)— ⚠️ 未取得 %s 預估,已 fallback" % source)
+        eps_source = None
     return build(series, current_pe, current_price, eps, eps_kind, years, "US",
                  {"trailing_eps": eps_ttm, "forward_eps": eps_fwd,
-                  "note": "美股 PE 分布以『股價/TTM EPS』近似,僅供參考"})
+                  "note": "美股 PE 分布以『股價/TTM EPS』近似,僅供參考"}, eps_source=eps_source)
 
 
 def main():
+    try:  # 避免 Windows cp950 終端無法輸出 emoji / 中文而崩潰
+        sys.stdout.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
     ap = argparse.ArgumentParser()
     ap.add_argument("stock", help="台股純數字代號(2330)或美股英文代號(NVDA)")
-    ap.add_argument("--eps", type=float, default=None, help="指定預估(forward)EPS;省略則用 TTM 代理")
+    ap.add_argument("--eps", type=float, default=None,
+                    help="預估(forward)EPS;預設鎖定高盛估值,由查得的高盛數字帶入;省略則 fallback TTM/consensus 代理")
+    ap.add_argument("--source", default="高盛 (Goldman Sachs)",
+                    help="估值(forward EPS)來源券商,預設鎖定高盛 (Goldman Sachs)")
     ap.add_argument("--years", type=int, default=5, help="歷史 PE 取樣年數(預設 5)")
     ap.add_argument("--json", action="store_true")
     args = ap.parse_args()
 
     s = args.stock.strip().upper()
-    out = fetch_tw(s, args.eps, args.years) if s.isdigit() else fetch_us(s, args.eps, args.years)
+    out = (fetch_tw(s, args.eps, args.years, args.source) if s.isdigit()
+           else fetch_us(s, args.eps, args.years, args.source))
 
     if args.json:
         print(json.dumps(out, ensure_ascii=False, indent=2)); return
 
     print(f"\n=== {s}({out['market']}) 本益比五檔價 ===")
+    print(f"估值來源(EPS):{out.get('eps_source') or '⚠️ 無指定券商數字,已 fallback 用 TTM/consensus 代理'}")
     print(f"EPS = {out['eps']}（{out['eps_kind']}）")
     print(f"歷史 PE 取樣:{out['pe_sample']} 筆 / 近 {out['years']} 年,範圍 {out['pe_low']}–{out['pe_high']}")
     print(f"現價 {out['current_price']}  現在 PE {out['current_pe']}")
