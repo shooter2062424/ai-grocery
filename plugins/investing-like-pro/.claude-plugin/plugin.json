@@ -1,7 +1,7 @@
 {
   "name": "investing-like-pro",
-  "description": "投資類工具集:用知名投資人/分析師的思維框架或學術方法來評斷股票(皆為 agents)。含 gooaye(股癌投資思維框架評斷一支股票好不好)、google-nexus(Google Nexus 五代理人時序預測框架 arXiv:2605.14389 做未來 N 日走勢預測)、valuation-bands(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。教育用途,非投資建議。",
-  "version": "0.4.0",
+  "description": "投資類工具集:用知名投資人/分析師的思維框架或學術方法來評斷股票與交易系統。Agents:gooaye(股癌投資思維框架評斷一支股票好不好)、google-nexus(Google Nexus 五代理人時序預測框架 arXiv:2605.14389 做未來 N 日走勢預測)、valuation-bands(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。Skills:trading-math(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,附 Python 計算腳本)。教育用途,非投資建議。",
+  "version": "0.5.0",
   "author": {
     "name": "shooter2062424"
   },
@@ -13,6 +13,10 @@
     "股癌",
     "nexus",
     "forecasting",
-    "time-series"
+    "time-series",
+    "trading",
+    "risk-management",
+    "expectancy",
+    "position-sizing"
   ]
 }
