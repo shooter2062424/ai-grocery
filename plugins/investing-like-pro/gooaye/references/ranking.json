@@ -1,9 +1,9 @@
 {
  "meta": {
-  "built_at_ep": 678,
-  "latest_date": "2026-07-11",
-  "latest_title": "觀音功利許願論與光通窄寬之辯",
-  "episode_count": 678,
+  "built_at_ep": 680,
+  "latest_date": "2026-07-18",
+  "latest_title": "筷子信仰與台積電心碎記",
+  "episode_count": 680,
   "decay": 0.97,
   "recent_window": 60,
   "note": "n=集數(遞增=時間遞增);count=該集逐字稿中提及次數(確定性比對)。"
@@ -12,13 +12,13 @@
   {
    "name": "台積電(2330/TSMC)",
    "type": "stock",
-   "total": 5603,
-   "episodes": 485,
+   "total": 5655,
+   "episodes": 487,
    "first_ep": 2,
-   "last_ep": 677,
-   "recent60": 734,
-   "prev60": 413,
-   "recency_score": 374.75,
+   "last_ep": 680,
+   "recent60": 777,
+   "prev60": 395,
+   "recency_score": 404.27,
    "trend": "rising"
   },
   {
@@ -28,22 +28,34 @@
    "episodes": 396,
    "first_ep": 6,
    "last_ep": 677,
-   "recent60": 174,
-   "prev60": 348,
-   "recency_score": 111.53,
+   "recent60": 168,
+   "prev60": 346,
+   "recency_score": 104.94,
    "trend": "fading"
   },
   {
    "name": "SpaceX / 馬斯克",
    "type": "stock",
-   "total": 1184,
-   "episodes": 301,
+   "total": 1201,
+   "episodes": 302,
    "first_ep": 13,
-   "last_ep": 677,
-   "recent60": 177,
-   "prev60": 77,
-   "recency_score": 83.35,
+   "last_ep": 680,
+   "recent60": 180,
+   "prev60": 91,
+   "recency_score": 95.42,
    "trend": "rising"
+  },
+  {
+   "name": "TSLA 特斯拉",
+   "type": "stock",
+   "total": 2790,
+   "episodes": 451,
+   "first_ep": 2,
+   "last_ep": 680,
+   "recent60": 106,
+   "prev60": 163,
+   "recency_score": 55.95,
+   "trend": "fading"
   },
   {
    "name": "AAPL 蘋果",
@@ -54,8 +66,20 @@
    "last_ep": 676,
    "recent60": 104,
    "prev60": 62,
-   "recency_score": 57.58,
+   "recency_score": 54.18,
    "trend": "rising"
+  },
+  {
+   "name": "INTC 英特爾",
+   "type": "stock",
+   "total": 674,
+   "episodes": 182,
+   "first_ep": 36,
+   "last_ep": 680,
+   "recent60": 92,
+   "prev60": 78,
+   "recency_score": 53.02,
+   "trend": "steady"
   },
   {
    "name": "META",
@@ -65,32 +89,8 @@
    "first_ep": 2,
    "last_ep": 678,
    "recent60": 72,
-   "prev60": 78,
-   "recency_score": 54.99,
-   "trend": "steady"
-  },
-  {
-   "name": "INTC 英特爾",
-   "type": "stock",
-   "total": 672,
-   "episodes": 181,
-   "first_ep": 36,
-   "last_ep": 675,
-   "recent60": 90,
-   "prev60": 79,
-   "recency_score": 54.22,
-   "trend": "steady"
-  },
-  {
-   "name": "TSLA 特斯拉",
-   "type": "stock",
-   "total": 2785,
-   "episodes": 449,
-   "first_ep": 2,
-   "last_ep": 677,
-   "recent60": 113,
-   "prev60": 153,
-   "recency_score": 54.18,
+   "prev60": 76,
+   "recency_score": 51.74,
    "trend": "steady"
   },
   {
@@ -100,9 +100,9 @@
    "episodes": 185,
    "first_ep": 42,
    "last_ep": 676,
-   "recent60": 72,
-   "prev60": 51,
-   "recency_score": 45.68,
+   "recent60": 69,
+   "prev60": 48,
+   "recency_score": 42.98,
    "trend": "rising"
   },
   {
@@ -112,33 +112,33 @@
    "episodes": 122,
    "first_ep": 59,
    "last_ep": 676,
-   "recent60": 63,
-   "prev60": 130,
-   "recency_score": 42.16,
+   "recent60": 59,
+   "prev60": 129,
+   "recency_score": 39.67,
    "trend": "fading"
   },
   {
    "name": "0050 元大台灣50",
    "type": "stock",
-   "total": 791,
-   "episodes": 265,
+   "total": 793,
+   "episodes": 266,
    "first_ep": 2,
-   "last_ep": 678,
-   "recent60": 60,
-   "prev60": 44,
-   "recency_score": 31.97,
+   "last_ep": 680,
+   "recent60": 62,
+   "prev60": 42,
+   "recency_score": 32.08,
    "trend": "rising"
   },
   {
    "name": "MU 美光",
    "type": "stock",
-   "total": 285,
-   "episodes": 103,
+   "total": 290,
+   "episodes": 105,
    "first_ep": 95,
-   "last_ep": 677,
-   "recent60": 48,
-   "prev60": 24,
-   "recency_score": 22.7,
+   "last_ep": 680,
+   "recent60": 51,
+   "prev60": 26,
+   "recency_score": 26.27,
    "trend": "rising"
   },
   {
@@ -149,8 +149,8 @@
    "first_ep": 36,
    "last_ep": 668,
    "recent60": 35,
-   "prev60": 62,
-   "recency_score": 21.85,
+   "prev60": 57,
+   "recency_score": 20.56,
    "trend": "fading"
   },
   {
@@ -161,8 +161,8 @@
    "first_ep": 4,
    "last_ep": 677,
    "recent60": 36,
-   "prev60": 37,
-   "recency_score": 21.06,
+   "prev60": 30,
+   "recency_score": 19.81,
    "trend": "steady"
   },
   {
@@ -174,7 +174,7 @@
    "last_ep": 677,
    "recent60": 35,
    "prev60": 34,
-   "recency_score": 19.0,
+   "recency_score": 17.88,
    "trend": "steady"
   },
   {
@@ -185,8 +185,8 @@
    "first_ep": 43,
    "last_ep": 672,
    "recent60": 24,
-   "prev60": 33,
-   "recency_score": 17.82,
+   "prev60": 31,
+   "recency_score": 16.77,
    "trend": "steady"
   },
   {
@@ -196,9 +196,9 @@
    "episodes": 195,
    "first_ep": 6,
    "last_ep": 671,
-   "recent60": 36,
-   "prev60": 55,
-   "recency_score": 16.87,
+   "recent60": 31,
+   "prev60": 57,
+   "recency_score": 15.87,
    "trend": "fading"
   },
   {
@@ -209,8 +209,8 @@
    "first_ep": 13,
    "last_ep": 675,
    "recent60": 29,
-   "prev60": 32,
-   "recency_score": 14.44,
+   "prev60": 28,
+   "recency_score": 13.59,
    "trend": "steady"
   },
   {
@@ -222,7 +222,7 @@
    "last_ep": 671,
    "recent60": 16,
    "prev60": 37,
-   "recency_score": 11.88,
+   "recency_score": 11.18,
    "trend": "fading"
   },
   {
@@ -234,7 +234,7 @@
    "last_ep": 666,
    "recent60": 26,
    "prev60": 14,
-   "recency_score": 8.57,
+   "recency_score": 8.06,
    "trend": "rising"
   },
   {
@@ -246,7 +246,7 @@
    "last_ep": 657,
    "recent60": 16,
    "prev60": 16,
-   "recency_score": 7.76,
+   "recency_score": 7.3,
    "trend": "steady"
   },
   {
@@ -258,7 +258,7 @@
    "last_ep": 672,
    "recent60": 15,
    "prev60": 10,
-   "recency_score": 7.21,
+   "recency_score": 6.78,
    "trend": "rising"
   },
   {
@@ -269,9 +269,9 @@
    "first_ep": 31,
    "last_ep": 668,
    "recent60": 11,
-   "prev60": 17,
-   "recency_score": 6.0,
-   "trend": "fading"
+   "prev60": 10,
+   "recency_score": 5.64,
+   "trend": "steady"
   },
   {
    "name": "世芯(3661)",
@@ -281,9 +281,21 @@
    "first_ep": 130,
    "last_ep": 675,
    "recent60": 7,
-   "prev60": 13,
-   "recency_score": 5.6,
-   "trend": "fading"
+   "prev60": 9,
+   "recency_score": 5.27,
+   "trend": "steady"
+  },
+  {
+   "name": "華新科(2492)",
+   "type": "stock",
+   "total": 26,
+   "episodes": 20,
+   "first_ep": 62,
+   "last_ep": 679,
+   "recent60": 6,
+   "prev60": 3,
+   "recency_score": 4.55,
+   "trend": "rising"
   },
   {
    "name": "廣達(2382)",
@@ -294,7 +306,7 @@
    "last_ep": 671,
    "recent60": 7,
    "prev60": 16,
-   "recency_score": 4.6,
+   "recency_score": 4.33,
    "trend": "fading"
   },
   {
@@ -306,7 +318,7 @@
    "last_ep": 666,
    "recent60": 4,
    "prev60": 36,
-   "recency_score": 4.4,
+   "recency_score": 4.14,
    "trend": "fading"
   },
   {
@@ -318,7 +330,7 @@
    "last_ep": 670,
    "recent60": 8,
    "prev60": 25,
-   "recency_score": 4.1,
+   "recency_score": 3.85,
    "trend": "fading"
   },
   {
@@ -330,7 +342,7 @@
    "last_ep": 675,
    "recent60": 8,
    "prev60": 4,
-   "recency_score": 3.81,
+   "recency_score": 3.58,
    "trend": "rising"
   },
   {
@@ -342,7 +354,7 @@
    "last_ep": 651,
    "recent60": 8,
    "prev60": 4,
-   "recency_score": 3.77,
+   "recency_score": 3.55,
    "trend": "rising"
   },
   {
@@ -354,7 +366,7 @@
    "last_ep": 645,
    "recent60": 5,
    "prev60": 14,
-   "recency_score": 3.08,
+   "recency_score": 2.89,
    "trend": "fading"
   },
   {
@@ -366,7 +378,7 @@
    "last_ep": 670,
    "recent60": 3,
    "prev60": 3,
-   "recency_score": 2.87,
+   "recency_score": 2.7,
    "trend": "steady"
   },
   {
@@ -378,7 +390,7 @@
    "last_ep": 632,
    "recent60": 9,
    "prev60": 8,
-   "recency_score": 2.84,
+   "recency_score": 2.67,
    "trend": "steady"
   },
   {
@@ -389,21 +401,9 @@
    "first_ep": 103,
    "last_ep": 650,
    "recent60": 8,
-   "prev60": 4,
-   "recency_score": 2.78,
+   "prev60": 3,
+   "recency_score": 2.61,
    "trend": "rising"
-  },
-  {
-   "name": "華新科(2492)",
-   "type": "stock",
-   "total": 24,
-   "episodes": 19,
-   "first_ep": 62,
-   "last_ep": 677,
-   "recent60": 4,
-   "prev60": 4,
-   "recency_score": 2.78,
-   "trend": "steady"
   },
   {
    "name": "創意(3443)",
@@ -414,7 +414,7 @@
    "last_ep": 659,
    "recent60": 3,
    "prev60": 1,
-   "recency_score": 1.83,
+   "recency_score": 1.73,
    "trend": "rising"
   },
   {
@@ -426,7 +426,7 @@
    "last_ep": 660,
    "recent60": 3,
    "prev60": 6,
-   "recency_score": 1.79,
+   "recency_score": 1.68,
    "trend": "fading"
   },
   {
@@ -438,7 +438,7 @@
    "last_ep": 676,
    "recent60": 1,
    "prev60": 5,
-   "recency_score": 1.35,
+   "recency_score": 1.27,
    "trend": "fading"
   },
   {
@@ -450,7 +450,7 @@
    "last_ep": 625,
    "recent60": 3,
    "prev60": 8,
-   "recency_score": 1.34,
+   "recency_score": 1.26,
    "trend": "fading"
   },
   {
@@ -460,10 +460,10 @@
    "episodes": 22,
    "first_ep": 4,
    "last_ep": 675,
-   "recent60": 2,
-   "prev60": 1,
-   "recency_score": 1.25,
-   "trend": "rising"
+   "recent60": 1,
+   "prev60": 2,
+   "recency_score": 1.18,
+   "trend": "fading"
   },
   {
    "name": "華城(1519)",
@@ -474,7 +474,7 @@
    "last_ep": 670,
    "recent60": 2,
    "prev60": 2,
-   "recency_score": 1.23,
+   "recency_score": 1.16,
    "trend": "steady"
   },
   {
@@ -484,10 +484,10 @@
    "episodes": 31,
    "first_ep": 4,
    "last_ep": 639,
-   "recent60": 3,
-   "prev60": 2,
-   "recency_score": 0.83,
-   "trend": "rising"
+   "recent60": 2,
+   "prev60": 3,
+   "recency_score": 0.78,
+   "trend": "fading"
   },
   {
    "name": "富邦金(2881)",
@@ -498,7 +498,7 @@
    "last_ep": 671,
    "recent60": 1,
    "prev60": 0,
-   "recency_score": 0.81,
+   "recency_score": 0.76,
    "trend": "rising"
   },
   {
@@ -509,8 +509,8 @@
    "first_ep": 4,
    "last_ep": 637,
    "recent60": 3,
-   "prev60": 2,
-   "recency_score": 0.75,
+   "prev60": 1,
+   "recency_score": 0.7,
    "trend": "rising"
   },
   {
@@ -522,7 +522,7 @@
    "last_ep": 641,
    "recent60": 2,
    "prev60": 2,
-   "recency_score": 0.69,
+   "recency_score": 0.65,
    "trend": "steady"
   },
   {
@@ -534,20 +534,8 @@
    "last_ep": 621,
    "recent60": 2,
    "prev60": 2,
-   "recency_score": 0.59,
+   "recency_score": 0.56,
    "trend": "steady"
-  },
-  {
-   "name": "威剛(3260)",
-   "type": "stock",
-   "total": 6,
-   "episodes": 4,
-   "first_ep": 59,
-   "last_ep": 645,
-   "recent60": 2,
-   "prev60": 0,
-   "recency_score": 0.57,
-   "trend": "rising"
   },
   {
    "name": "金像電(2368)",
@@ -558,8 +546,20 @@
    "last_ep": 614,
    "recent60": 0,
    "prev60": 4,
-   "recency_score": 0.56,
+   "recency_score": 0.53,
    "trend": "fading"
+  },
+  {
+   "name": "威剛(3260)",
+   "type": "stock",
+   "total": 6,
+   "episodes": 4,
+   "first_ep": 59,
+   "last_ep": 645,
+   "recent60": 2,
+   "prev60": 0,
+   "recency_score": 0.53,
+   "trend": "rising"
   },
   {
    "name": "信驊(5274)",
@@ -570,7 +570,7 @@
    "last_ep": 655,
    "recent60": 1,
    "prev60": 0,
-   "recency_score": 0.54,
+   "recency_score": 0.51,
    "trend": "rising"
   },
   {
@@ -582,7 +582,7 @@
    "last_ep": 644,
    "recent60": 1,
    "prev60": 1,
-   "recency_score": 0.45,
+   "recency_score": 0.43,
    "trend": "steady"
   },
   {
@@ -594,7 +594,7 @@
    "last_ep": 583,
    "recent60": 0,
    "prev60": 9,
-   "recency_score": 0.44,
+   "recency_score": 0.41,
    "trend": "fading"
   },
   {
@@ -606,7 +606,7 @@
    "last_ep": 612,
    "recent60": 0,
    "prev60": 3,
-   "recency_score": 0.35,
+   "recency_score": 0.33,
    "trend": "fading"
   },
   {
@@ -618,7 +618,7 @@
    "last_ep": 591,
    "recent60": 0,
    "prev60": 5,
-   "recency_score": 0.32,
+   "recency_score": 0.3,
    "trend": "fading"
   },
   {
@@ -630,7 +630,7 @@
    "last_ep": 598,
    "recent60": 0,
    "prev60": 3,
-   "recency_score": 0.22,
+   "recency_score": 0.2,
    "trend": "fading"
   },
   {
@@ -642,7 +642,7 @@
    "last_ep": 596,
    "recent60": 0,
    "prev60": 3,
-   "recency_score": 0.21,
+   "recency_score": 0.19,
    "trend": "fading"
   },
   {
@@ -654,7 +654,7 @@
    "last_ep": 570,
    "recent60": 0,
    "prev60": 2,
-   "recency_score": 0.14,
+   "recency_score": 0.13,
    "trend": "fading"
   },
   {
@@ -666,7 +666,7 @@
    "last_ep": 608,
    "recent60": 0,
    "prev60": 1,
-   "recency_score": 0.14,
+   "recency_score": 0.13,
    "trend": "fading"
   },
   {
@@ -678,7 +678,7 @@
    "last_ep": 588,
    "recent60": 0,
    "prev60": 2,
-   "recency_score": 0.13,
+   "recency_score": 0.12,
    "trend": "fading"
   },
   {
@@ -713,9 +713,9 @@
    "first_ep": 559,
    "last_ep": 559,
    "recent60": 0,
-   "prev60": 1,
+   "prev60": 0,
    "recency_score": 0.03,
-   "trend": "fading"
+   "trend": "steady"
   },
   {
    "name": "玉晶光(3406)",
@@ -818,49 +818,49 @@
   {
    "name": "AI",
    "type": "theme",
-   "total": 4696,
-   "episodes": 391,
+   "total": 4731,
+   "episodes": 393,
    "first_ep": 41,
-   "last_ep": 678,
-   "recent60": 903,
-   "prev60": 637,
-   "recency_score": 492.45,
+   "last_ep": 680,
+   "recent60": 922,
+   "prev60": 643,
+   "recency_score": 497.51,
    "trend": "rising"
   },
   {
    "name": "記憶體循環",
    "type": "theme",
-   "total": 1454,
-   "episodes": 232,
+   "total": 1463,
+   "episodes": 234,
    "first_ep": 48,
-   "last_ep": 678,
-   "recent60": 419,
-   "prev60": 365,
-   "recency_score": 198.92,
+   "last_ep": 680,
+   "recent60": 421,
+   "prev60": 372,
+   "recency_score": 196.11,
    "trend": "steady"
   },
   {
    "name": "被動元件",
    "type": "theme",
-   "total": 541,
-   "episodes": 110,
+   "total": 549,
+   "episodes": 112,
    "first_ep": 42,
-   "last_ep": 678,
-   "recent60": 308,
-   "prev60": 67,
-   "recency_score": 191.22,
+   "last_ep": 680,
+   "recent60": 316,
+   "prev60": 56,
+   "recency_score": 187.74,
    "trend": "rising"
   },
   {
    "name": "衛星 / 低軌衛星 / 衛星算力",
    "type": "theme",
-   "total": 388,
-   "episodes": 92,
+   "total": 390,
+   "episodes": 94,
    "first_ep": 32,
-   "last_ep": 675,
-   "recent60": 164,
-   "prev60": 11,
-   "recency_score": 59.81,
+   "last_ep": 680,
+   "recent60": 130,
+   "prev60": 47,
+   "recency_score": 58.25,
    "trend": "rising"
   },
   {
@@ -871,20 +871,20 @@
    "first_ep": 34,
    "last_ep": 676,
    "recent60": 85,
-   "prev60": 97,
-   "recency_score": 51.31,
+   "prev60": 92,
+   "recency_score": 48.28,
    "trend": "steady"
   },
   {
    "name": "ETF / 被動投資",
    "type": "theme",
-   "total": 3137,
-   "episodes": 495,
+   "total": 3140,
+   "episodes": 497,
    "first_ep": 1,
-   "last_ep": 678,
-   "recent60": 69,
-   "prev60": 60,
-   "recency_score": 41.39,
+   "last_ep": 680,
+   "recent60": 68,
+   "prev60": 57,
+   "recency_score": 41.88,
    "trend": "steady"
   },
   {
@@ -894,9 +894,9 @@
    "episodes": 142,
    "first_ep": 36,
    "last_ep": 674,
-   "recent60": 71,
-   "prev60": 81,
-   "recency_score": 37.58,
+   "recent60": 70,
+   "prev60": 69,
+   "recency_score": 35.36,
    "trend": "steady"
   },
   {
@@ -906,10 +906,10 @@
    "episodes": 160,
    "first_ep": 6,
    "last_ep": 668,
-   "recent60": 71,
-   "prev60": 98,
-   "recency_score": 37.2,
-   "trend": "steady"
+   "recent60": 69,
+   "prev60": 100,
+   "recency_score": 35.0,
+   "trend": "fading"
   },
   {
    "name": "HBM 高頻寬記憶體",
@@ -918,10 +918,22 @@
    "episodes": 102,
    "first_ep": 319,
    "last_ep": 677,
-   "recent60": 62,
+   "recent60": 61,
    "prev60": 45,
-   "recency_score": 26.73,
+   "recency_score": 25.15,
    "trend": "rising"
+  },
+  {
+   "name": "CoWoS / 先進封裝",
+   "type": "theme",
+   "total": 349,
+   "episodes": 105,
+   "first_ep": 158,
+   "last_ep": 680,
+   "recent60": 30,
+   "prev60": 79,
+   "recency_score": 21.97,
+   "trend": "fading"
   },
   {
    "name": "矽光子 / CPO",
@@ -930,22 +942,10 @@
    "episodes": 38,
    "first_ep": 354,
    "last_ep": 669,
-   "recent60": 48,
-   "prev60": 19,
-   "recency_score": 22.74,
+   "recent60": 44,
+   "prev60": 22,
+   "recency_score": 21.4,
    "trend": "rising"
-  },
-  {
-   "name": "CoWoS / 先進封裝",
-   "type": "theme",
-   "total": 346,
-   "episodes": 103,
-   "first_ep": 158,
-   "last_ep": 675,
-   "recent60": 36,
-   "prev60": 70,
-   "recency_score": 20.2,
-   "trend": "fading"
   },
   {
    "name": "電動車",
@@ -954,10 +954,22 @@
    "episodes": 224,
    "first_ep": 1,
    "last_ep": 674,
-   "recent60": 21,
-   "prev60": 29,
-   "recency_score": 12.05,
-   "trend": "steady"
+   "recent60": 20,
+   "prev60": 30,
+   "recency_score": 11.34,
+   "trend": "fading"
+  },
+  {
+   "name": "加密貨幣 / 比特幣",
+   "type": "theme",
+   "total": 703,
+   "episodes": 132,
+   "first_ep": 2,
+   "last_ep": 680,
+   "recent60": 15,
+   "prev60": 34,
+   "recency_score": 11.12,
+   "trend": "fading"
   },
   {
    "name": "資料中心",
@@ -968,20 +980,8 @@
    "last_ep": 674,
    "recent60": 22,
    "prev60": 25,
-   "recency_score": 11.79,
+   "recency_score": 11.09,
    "trend": "steady"
-  },
-  {
-   "name": "加密貨幣 / 比特幣",
-   "type": "theme",
-   "total": 701,
-   "episodes": 130,
-   "first_ep": 2,
-   "last_ep": 677,
-   "recent60": 13,
-   "prev60": 53,
-   "recency_score": 9.72,
-   "trend": "fading"
   },
   {
    "name": "重電 / 電網",
@@ -992,7 +992,7 @@
    "last_ep": 674,
    "recent60": 23,
    "prev60": 10,
-   "recency_score": 8.14,
+   "recency_score": 7.66,
    "trend": "rising"
   },
   {
@@ -1002,9 +1002,9 @@
    "episodes": 66,
    "first_ep": 36,
    "last_ep": 652,
-   "recent60": 10,
-   "prev60": 35,
-   "recency_score": 5.43,
+   "recent60": 6,
+   "prev60": 39,
+   "recency_score": 5.1,
    "trend": "fading"
   },
   {
@@ -1014,9 +1014,9 @@
    "episodes": 17,
    "first_ep": 42,
    "last_ep": 646,
-   "recent60": 14,
-   "prev60": 11,
-   "recency_score": 5.31,
+   "recent60": 13,
+   "prev60": 12,
+   "recency_score": 4.99,
    "trend": "steady"
   }
  ]
