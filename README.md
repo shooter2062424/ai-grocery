@@ -57,25 +57,35 @@ ai-grocery/
 
 ## 安裝方式
 
-在 Claude Code 中:
+在終端機執行(`claude plugin` CLI):
 
-```
+```bash
 # 1. 加入這個 marketplace(只需一次;後面是 GitHub repo 路徑)
-/plugin marketplace add shooter2062424/ai-grocery
+claude plugin marketplace add shooter2062424/ai-grocery
 
 # 2. 安裝想要的 plugin(@ 後面是 marketplace 名稱)
-/plugin install agent-essentials@ai-grocery
-/plugin install knowledge-tools@ai-grocery
-/plugin install investing-like-pro@ai-grocery
-/plugin install finance@ai-grocery
-/plugin install web-design-tools@ai-grocery
+claude plugin install agent-essentials@ai-grocery
+claude plugin install knowledge-tools@ai-grocery
+claude plugin install investing-like-pro@ai-grocery
+claude plugin install finance@ai-grocery
+claude plugin install web-design-tools@ai-grocery
+
+# 3. 確認裝好了
+claude plugin list
+```
+
+已經加過 marketplace 的話,新增的 plugin 要先更新清單才看得到:
+
+```bash
+claude plugin marketplace update ai-grocery
 ```
 
 > 註:GitHub repo 名與 marketplace 名稱已統一為 `ai-grocery`(`marketplace add` 用 repo 路徑、
-> `/plugin install <plugin>@` 用 marketplace 名稱,兩者現在同名)。
+> `plugin install <plugin>@` 用 marketplace 名稱,兩者現在同名)。
 > ⚠️ marketplace 名稱 **不可含 "claude"**,否則會觸發 Claude Code「仿冒官方 marketplace」防衛而被擋。
+> 在 Claude Code session 內也可以用對應的 `/plugin marketplace add …` / `/plugin install …` 斜線指令。
 
-之後若新增其他 plugin,使用者再各別 `/plugin install <plugin>@ai-grocery` 即可。
+之後若新增其他 plugin,使用者再各別 `claude plugin install <plugin>@ai-grocery` 即可。
 
 ### agent-essentials 的相依
 
@@ -83,10 +93,21 @@ Claude Code 的 plugin 目前沒有正式的 dependency 欄位,所以這裡用�
 外部相依(`caveman`、`mattpocock-skills`、`taste-skill`、`open-kimi-ppt`)一律**宣告在本 marketplace 的 `plugins` 陣列**,
 指向各自的 GitHub repo;安裝 agent-essentials 後執行一次 `/agent-essentials:setup`,就會把四個一起裝好。
 
+```bash
+claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用 marketplace update ai-grocery
+claude plugin install agent-essentials@ai-grocery
 ```
-/plugin install agent-essentials@ai-grocery
-/agent-essentials:setup
+
+再進 Claude Code session 執行一次 `/agent-essentials:setup`,它等同於幫你跑:
+
+```bash
+claude plugin install caveman@ai-grocery
+claude plugin install mattpocock-skills@ai-grocery
+claude plugin install taste-skill@ai-grocery
+claude plugin install open-kimi-ppt@ai-grocery
 ```
+
+`caveman` 靠 SessionStart hook 生效,裝完要重開一個 session。
 
 不是 plugin 形式(只有一個 SKILL.md、或只能用 `npx skills add` / `git clone` 安裝)的來源,
 則直接 vendored 進 `plugins/agent-essentials/skills/` 並在該 plugin 的 README 標註來源與授權。

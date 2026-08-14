@@ -31,10 +31,21 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 
 ## 安裝
 
+在終端機:
+
+```bash
+claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用:claude plugin marketplace update ai-grocery
+claude plugin install agent-essentials@ai-grocery
+claude plugin list                                        # 確認裝好了
 ```
-/plugin marketplace add shooter2062424/ai-grocery
-/plugin install agent-essentials@ai-grocery
-/agent-essentials:setup
+
+再進 Claude Code session 執行一次 `/agent-essentials:setup` 補齊相依,它等同於:
+
+```bash
+claude plugin install caveman@ai-grocery
+claude plugin install mattpocock-skills@ai-grocery
+claude plugin install taste-skill@ai-grocery
+claude plugin install open-kimi-ppt@ai-grocery
 ```
 
 `caveman` 靠 SessionStart hook 生效,安裝後要重開一個 session。
