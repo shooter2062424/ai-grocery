@@ -9,6 +9,12 @@
   "homepage": "https://github.com/shooter2062424/ai-grocery",
   "repository": "https://github.com/shooter2062424/ai-grocery",
   "license": "MIT",
+  "dependencies": [
+    "caveman",
+    "mattpocock-skills",
+    "taste-skill",
+    "open-kimi-ppt"
+  ],
   "keywords": [
     "output-styles",
     "eli5",

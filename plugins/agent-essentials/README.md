@@ -16,9 +16,10 @@ Claude Code 預設會做事,但輸出往往是一整面的 markdown 流水帳。
 
 output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,skill 是單次觸發**。想全程講白話就切風格;偶爾一句「這段 ELI5 一下」就靠 skill。
 
-## 相依 plugin(marketplace 宣告,分開安裝)
+## 相依 plugin(自動一起安裝)
 
-以下四個是獨立維護的外部 plugin,已宣告在 `ai-grocery` marketplace 裡,所以 marketplace 加過一次就能直接裝:
+以下四個是獨立維護的外部 plugin,已寫在本 plugin `plugin.json` 的 `dependencies` 裡,
+安裝 agent-essentials 時 Claude Code 會自動把它們一起裝好、一起啟用:
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
@@ -27,7 +28,7 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 | `taste-skill` | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
 | `open-kimi-ppt` | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | 以 PPTD 格式做簡報:建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
 
-裝完 agent-essentials 後,執行 `/agent-essentials:setup` 會一次把這四個裝齊並驗證。
+四個都以裸字串宣告(跟著上游最新版走),且都在同一個 marketplace,所以不需要 git tag 或跨 marketplace 允許清單。
 
 ## 安裝
 
@@ -35,20 +36,13 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 
 ```bash
 claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用:claude plugin marketplace update ai-grocery
-claude plugin install agent-essentials@ai-grocery
-claude plugin list                                        # 確認裝好了
-```
-
-再進 Claude Code session 執行一次 `/agent-essentials:setup` 補齊相依,它等同於:
-
-```bash
-claude plugin install caveman@ai-grocery
-claude plugin install mattpocock-skills@ai-grocery
-claude plugin install taste-skill@ai-grocery
-claude plugin install open-kimi-ppt@ai-grocery
+claude plugin install agent-essentials@ai-grocery         # 四個相依會一起裝進來
+claude plugin list                                        # 確認五個都在
 ```
 
 `caveman` 靠 SessionStart hook 生效,安裝後要重開一個 session。
+
+相依若沒被拉進來(marketplace 沒加、被停用、解析失敗),在 session 內跑 `/agent-essentials:setup` 排查修復。
 
 ## 用法速查
 

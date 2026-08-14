@@ -45,7 +45,7 @@ ai-grocery/
 
 | Plugin | 內容 |
 |---|---|
-| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`。另以 marketplace 宣告四個相依 plugin(下方四列),裝完跑一次 setup 就全齊。 |
+| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告四個相依 plugin(下方四列),**安裝時自動一起裝**。 |
 | ↳ **caveman** | agent-essentials 相依,來源 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)。穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變(靠 SessionStart hook,裝完要重開 session)。 |
 | ↳ **mattpocock-skills** | agent-essentials 相依,來源 [mattpocock/skills](https://github.com/mattpocock/skills)。工程工作流 skills:grilling、TDD、code review、domain modeling、writing-for-agents 等。 |
 | ↳ **taste-skill** | agent-essentials 相依,來源 [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)。前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
@@ -89,25 +89,30 @@ claude plugin marketplace update ai-grocery
 
 ### agent-essentials 的相依
 
-Claude Code 的 plugin 目前沒有正式的 dependency 欄位,所以這裡用兩層做法:
-外部相依(`caveman`、`mattpocock-skills`、`taste-skill`、`open-kimi-ppt`)一律**宣告在本 marketplace 的 `plugins` 陣列**,
-指向各自的 GitHub repo;安裝 agent-essentials 後執行一次 `/agent-essentials:setup`,就會把四個一起裝好。
+`agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告四個相依,
+安裝時 Claude Code 會自動把它們一起裝好、一起啟用。
+
+```json
+// plugins/agent-essentials/.claude-plugin/plugin.json
+"dependencies": ["caveman", "mattpocock-skills", "taste-skill", "open-kimi-ppt"]
+```
+
+所以使用者只要一行:
 
 ```bash
-claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用 marketplace update ai-grocery
 claude plugin install agent-essentials@ai-grocery
 ```
 
-再進 Claude Code session 執行一次 `/agent-essentials:setup`,它等同於幫你跑:
+兩個前提都已經滿足,不用額外設定:
 
-```bash
-claude plugin install caveman@ai-grocery
-claude plugin install mattpocock-skills@ai-grocery
-claude plugin install taste-skill@ai-grocery
-claude plugin install open-kimi-ppt@ai-grocery
-```
+- **同 marketplace**:`dependencies` 的名字預設在宣告者所屬的 marketplace 解析,而這四個都已列在本 marketplace 的
+  `plugins` 陣列(各自 `source` 指向原 GitHub repo),所以不需要 `allowCrossMarketplaceDependenciesOn`。
+- **不綁版本**:四個都用裸字串宣告(跟著上游最新版走),因此不需要上游打 `{name}--v{version}` git tag。
+  哪天要把某個相依鎖在測過的版本,再改成 `{ "name": "caveman", "version": "~1.2.0" }`,那時上游才必須有對應 tag。
 
-`caveman` 靠 SessionStart hook 生效,裝完要重開一個 session。
+裝完 `caveman` 靠 SessionStart hook 生效,要**重開一個 session**。
+若相依沒被拉進來(marketplace 沒加、被停用、解析失敗),在 session 內跑 `/agent-essentials:setup` 排查修復。
+相關指令:`claude plugin list --json` 看 `errors` 欄位、`claude plugin prune` 清掉已無人需要的自動安裝相依。
 
 不是 plugin 形式(只有一個 SKILL.md、或只能用 `npx skills add` / `git clone` 安裝)的來源,
 則直接 vendored 進 `plugins/agent-essentials/skills/` 並在該 plugin 的 README 標註來源與授權。
