@@ -9,6 +9,43 @@
   },
   "plugins": [
     {
+      "name": "agent-essentials",
+      "source": "./plugins/agent-essentials",
+      "description": "用 AI Agent 就一定要裝的那一包。內含 eli5 output-style(把回答講成指定對象聽得懂的話)、eli5/humanizer-zh-tw/html-artifacts 三個 skill,並以 marketplace 依賴帶入 caveman、mattpocock-skills、taste-skill、open-kimi-ppt。裝完跑 /agent-essentials:setup 一次補齊。"
+    },
+    {
+      "name": "caveman",
+      "source": {
+        "source": "github",
+        "repo": "JuliusBrussee/caveman"
+      },
+      "description": "agent-essentials 相依。穴居人講話模式:實測砍掉約 65% 輸出 token,但保留完整技術準確度。"
+    },
+    {
+      "name": "mattpocock-skills",
+      "source": {
+        "source": "github",
+        "repo": "mattpocock/skills"
+      },
+      "description": "agent-essentials 相依。Matt Pocock 的工程工作流 skills:grilling、TDD、code review、domain modeling、writing-for-agents 等。"
+    },
+    {
+      "name": "taste-skill",
+      "source": {
+        "source": "github",
+        "repo": "Leonxlnx/taste-skill"
+      },
+      "description": "agent-essentials 相依。前端設計美感 skills:brutalist、minimalist、soft、redesign、stitch 等風格與 image-to-code。"
+    },
+    {
+      "name": "open-kimi-ppt",
+      "source": {
+        "source": "github",
+        "repo": "shooter2062424/open-kimi-ppt-skill"
+      },
+      "description": "agent-essentials 相依。以 PPTD 格式做簡報的建立/編輯/仿製/匯出,產出可編輯專案資料夾與內嵌字型的 .pptx。"
+    },
+    {
       "name": "knowledge-tools",
       "source": "./plugins/knowledge-tools",
       "description": "知識與學習類工具集。目前含 rapid-learning(NotebookLM 三提問快速學習法)skill。"

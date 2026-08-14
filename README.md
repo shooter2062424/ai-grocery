@@ -11,6 +11,14 @@ ai-grocery/
 ├─ .claude-plugin/
 │  └─ marketplace.json              # marketplace 清單(列出所有 plugin)
 └─ plugins/
+   ├─ agent-essentials/             # 「用 AI Agent 一定要裝的那一包」:輸出風格 + 文件/簡報產出
+   │  ├─ .claude-plugin/plugin.json
+   │  ├─ output-styles/eli5.md      # 整個 session 講白話(解釋給指定對象聽)
+   │  ├─ commands/setup.md          # /agent-essentials:setup 一次補齊相依 plugin
+   │  └─ skills/
+   │     ├─ eli5/                   # 單次觸發版的 ELI5 解釋
+   │     ├─ humanizer-zh-tw/        # 去除文字的 AI 生成痕跡(繁中)
+   │     └─ html-artifacts/         # 該用版面說清楚的內容 → 單檔 HTML
    ├─ knowledge-tools/              # 知識/學習類工具
    │  ├─ .claude-plugin/plugin.json
    │  └─ skills/rapid-learning/SKILL.md
@@ -37,6 +45,11 @@ ai-grocery/
 
 | Plugin | 內容 |
 |---|---|
+| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`。另以 marketplace 宣告四個相依 plugin(下方四列),裝完跑一次 setup 就全齊。 |
+| ↳ **caveman** | agent-essentials 相依,來源 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)。穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變(靠 SessionStart hook,裝完要重開 session)。 |
+| ↳ **mattpocock-skills** | agent-essentials 相依,來源 [mattpocock/skills](https://github.com/mattpocock/skills)。工程工作流 skills:grilling、TDD、code review、domain modeling、writing-for-agents 等。 |
+| ↳ **taste-skill** | agent-essentials 相依,來源 [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)。前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
+| ↳ **open-kimi-ppt** | agent-essentials 相依,來源 [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill)。以 PPTD 格式做簡報的建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
 | **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
@@ -51,6 +64,7 @@ ai-grocery/
 /plugin marketplace add shooter2062424/ai-grocery
 
 # 2. 安裝想要的 plugin(@ 後面是 marketplace 名稱)
+/plugin install agent-essentials@ai-grocery
 /plugin install knowledge-tools@ai-grocery
 /plugin install investing-like-pro@ai-grocery
 /plugin install finance@ai-grocery
@@ -62,6 +76,20 @@ ai-grocery/
 > ⚠️ marketplace 名稱 **不可含 "claude"**,否則會觸發 Claude Code「仿冒官方 marketplace」防衛而被擋。
 
 之後若新增其他 plugin,使用者再各別 `/plugin install <plugin>@ai-grocery` 即可。
+
+### agent-essentials 的相依
+
+Claude Code 的 plugin 目前沒有正式的 dependency 欄位,所以這裡用兩層做法:
+外部相依(`caveman`、`mattpocock-skills`、`taste-skill`、`open-kimi-ppt`)一律**宣告在本 marketplace 的 `plugins` 陣列**,
+指向各自的 GitHub repo;安裝 agent-essentials 後執行一次 `/agent-essentials:setup`,就會把四個一起裝好。
+
+```
+/plugin install agent-essentials@ai-grocery
+/agent-essentials:setup
+```
+
+不是 plugin 形式(只有一個 SKILL.md、或只能用 `npx skills add` / `git clone` 安裝)的來源,
+則直接 vendored 進 `plugins/agent-essentials/skills/` 並在該 plugin 的 README 標註來源與授權。
 
 ## 慣例
 
