@@ -87,6 +87,37 @@ claude plugin marketplace update ai-grocery
 
 之後若新增其他 plugin,使用者再各別 `claude plugin install <plugin>@ai-grocery` 即可。
 
+## 更新
+
+分兩層:**marketplace 清單**(有哪些 plugin、指到哪個 repo)和**已安裝的 plugin 本身**。
+
+```bash
+# 1. 更新所有 marketplace 的清單(不指名就是全部)
+claude plugin marketplace update
+
+# 2. 更新單一 plugin
+claude plugin update agent-essentials
+
+# 3. 更新全部已安裝的 plugin(claude plugin update 一次只吃一個名字,所以用迴圈)
+#    PowerShell:
+claude plugin list --json | ConvertFrom-Json | ForEach-Object { $_.id.Split('@')[0] } | Select-Object -Unique | ForEach-Object { claude plugin update $_ }
+#    bash:
+claude plugin list --json | jq -r '.[].id | split("@")[0]' | sort -u | xargs -n1 claude plugin update
+```
+
+更新完要**重開 session** 才會套用。
+
+其他有用的:
+
+```bash
+claude plugin list --json     # 有問題的 plugin 會多一個 errors 欄位(乾淨的沒有)
+claude plugin prune           # 清掉已經沒有任何 plugin 需要的自動安裝相依
+claude plugin details <name>  # 看某個 plugin 帶進來哪些元件、吃多少 token
+```
+
+> 非 Anthropic 的 marketplace **預設不自動更新**。想讓 ai-grocery 自動跟上,
+> 在 session 內開 `/plugin` 介面把該 marketplace 的 auto-update 打開,之後新版(含 bundle 新增的相依)會自己裝進來。
+
 ### agent-essentials 的相依
 
 `agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告四個相依,

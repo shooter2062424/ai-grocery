@@ -44,6 +44,25 @@ claude plugin list                                        # 確認五個都在
 
 相依若沒被拉進來(marketplace 沒加、被停用、解析失敗),在 session 內跑 `/agent-essentials:setup` 排查修復。
 
+## 更新
+
+```bash
+claude plugin marketplace update            # 先更新 marketplace 清單(不指名 = 全部)
+claude plugin update agent-essentials       # 再更新本 plugin
+
+# 連相依一起更新(claude plugin update 一次只吃一個名字,所以用迴圈)
+# PowerShell:
+claude plugin list --json | ConvertFrom-Json | ForEach-Object { $_.id.Split('@')[0] } | Select-Object -Unique | ForEach-Object { claude plugin update $_ }
+# bash:
+claude plugin list --json | jq -r '.[].id | split("@")[0]' | sort -u | xargs -n1 claude plugin update
+```
+
+更新完要重開 session 才會套用。非 Anthropic 的 marketplace 預設不自動更新,
+想讓它自己跟上就在 `/plugin` 介面把 ai-grocery 的 auto-update 打開。
+
+注意:vendored 的 `eli5` / `humanizer-zh-tw` / `html-artifacts` 是隨本 plugin 一起更新的,
+上游 repo 有新版時要手動重抓再 commit,`claude plugin update` 不會幫你同步上游。
+
 ## 用法速查
 
 ```
