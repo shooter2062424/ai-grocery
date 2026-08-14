@@ -58,7 +58,10 @@ claude plugin list --json | jq -r '.[].id | split("@")[0]' | sort -u | xargs -n1
 ```
 
 更新完要重開 session 才會套用。非 Anthropic 的 marketplace 預設不自動更新,
-想讓它自己跟上就在 `/plugin` 介面把 ai-grocery 的 auto-update 打開。
+想讓它自己跟上就在 `/plugin` 介面把 ai-grocery 的 auto-update 打開(auto-update 會更新所有已安裝 plugin,含自動安裝的相依)。
+
+⚠️ 只跑 `claude plugin update agent-essentials` **不保證**把 caveman 等既有相依也升級 ——
+官方文件只保證更新 bundle 本身、以及補裝新版 bundle 新增的相依。要確保相依也更新就用上面的迴圈,或開 auto-update。
 
 注意:vendored 的 `eli5` / `humanizer-zh-tw` / `html-artifacts` 是隨本 plugin 一起更新的,
 上游 repo 有新版時要手動重抓再 commit,`claude plugin update` 不會幫你同步上游。

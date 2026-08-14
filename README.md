@@ -107,6 +107,11 @@ claude plugin list --json | jq -r '.[].id | split("@")[0]' | sort -u | xargs -n1
 
 更新完要**重開 session** 才會套用。
 
+> ⚠️ `claude plugin update agent-essentials` **不等於連相依一起更新**。
+> 官方文件保證的是:更新 bundle 本身,以及 bundle 新版若「多宣告了一個相依」,`/reload-plugins` 後會把那個**新增的**相依裝進來。
+> 至於既有相依(caveman 等)會不會順帶升到最新,文件沒有明說,所以別依賴它 —— 用上面第 3 點的迴圈逐一更新,
+> 或直接開 auto-update(auto-update 會更新**所有**已安裝 plugin,自動安裝的相依也算在內)。
+
 其他有用的:
 
 ```bash
