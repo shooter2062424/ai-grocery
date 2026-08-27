@@ -1,9 +1,9 @@
 {
  "meta": {
-  "built_at_ep": 690,
-  "latest_date": "2026-08-22",
-  "latest_title": "黑皮諾平替記與Google的COT轉向",
-  "episode_count": 690,
+  "built_at_ep": 691,
+  "latest_date": "2026-08-26",
+  "latest_title": "北海道敲門驚魂與人人一個Jarvis",
+  "episode_count": 691,
   "decay": 0.97,
   "recent_window": 60,
   "note": "n=集數(遞增=時間遞增);count=該集逐字稿中提及次數(確定性比對)。"
@@ -16,21 +16,21 @@
    "episodes": 494,
    "first_ep": 2,
    "last_ep": 690,
-   "recent60": 677,
-   "prev60": 508,
-   "recency_score": 342.15,
-   "trend": "rising"
+   "recent60": 661,
+   "prev60": 524,
+   "recency_score": 331.89,
+   "trend": "steady"
   },
   {
    "name": "GOOGL 谷歌",
    "type": "stock",
-   "total": 1626,
-   "episodes": 403,
+   "total": 1629,
+   "episodes": 404,
    "first_ep": 6,
-   "last_ep": 690,
-   "recent60": 226,
-   "prev60": 344,
-   "recency_score": 150.08,
+   "last_ep": 691,
+   "recent60": 229,
+   "prev60": 334,
+   "recency_score": 148.58,
    "trend": "fading"
   },
   {
@@ -40,10 +40,10 @@
    "episodes": 306,
    "first_ep": 13,
    "last_ep": 689,
-   "recent60": 147,
-   "prev60": 105,
-   "recency_score": 80.34,
-   "trend": "rising"
+   "recent60": 139,
+   "prev60": 111,
+   "recency_score": 77.93,
+   "trend": "steady"
   },
   {
    "name": "AAPL 蘋果",
@@ -54,7 +54,7 @@
    "last_ep": 690,
    "recent60": 110,
    "prev60": 36,
-   "recency_score": 50.9,
+   "recency_score": 49.37,
    "trend": "rising"
   },
   {
@@ -64,9 +64,9 @@
    "episodes": 454,
    "first_ep": 2,
    "last_ep": 689,
-   "recent60": 107,
-   "prev60": 140,
-   "recency_score": 50.88,
+   "recent60": 106,
+   "prev60": 139,
+   "recency_score": 49.36,
    "trend": "steady"
   },
   {
@@ -78,7 +78,7 @@
    "last_ep": 690,
    "recent60": 75,
    "prev60": 117,
-   "recency_score": 50.39,
+   "recency_score": 48.88,
    "trend": "fading"
   },
   {
@@ -88,9 +88,9 @@
    "episodes": 417,
    "first_ep": 2,
    "last_ep": 687,
-   "recent60": 80,
-   "prev60": 58,
-   "recency_score": 47.57,
+   "recent60": 79,
+   "prev60": 56,
+   "recency_score": 46.15,
    "trend": "rising"
   },
   {
@@ -102,7 +102,7 @@
    "last_ep": 690,
    "recent60": 100,
    "prev60": 78,
-   "recency_score": 45.47,
+   "recency_score": 44.1,
    "trend": "steady"
   },
   {
@@ -114,7 +114,7 @@
    "last_ep": 690,
    "recent60": 68,
    "prev60": 47,
-   "recency_score": 43.26,
+   "recency_score": 41.97,
    "trend": "rising"
   },
   {
@@ -126,7 +126,7 @@
    "last_ep": 690,
    "recent60": 64,
    "prev60": 55,
-   "recency_score": 34.53,
+   "recency_score": 33.49,
    "trend": "steady"
   },
   {
@@ -137,8 +137,8 @@
    "first_ep": 2,
    "last_ep": 687,
    "recent60": 59,
-   "prev60": 54,
-   "recency_score": 33.76,
+   "prev60": 51,
+   "recency_score": 32.75,
    "trend": "steady"
   },
   {
@@ -150,7 +150,7 @@
    "last_ep": 690,
    "recent60": 54,
    "prev60": 32,
-   "recency_score": 28.68,
+   "recency_score": 27.82,
    "trend": "rising"
   },
   {
@@ -162,7 +162,7 @@
    "last_ep": 686,
    "recent60": 44,
    "prev60": 31,
-   "recency_score": 21.65,
+   "recency_score": 21.0,
    "trend": "rising"
   },
   {
@@ -174,8 +174,20 @@
    "last_ep": 685,
    "recent60": 38,
    "prev60": 20,
-   "recency_score": 18.09,
+   "recency_score": 17.55,
    "trend": "rising"
+  },
+  {
+   "name": "NVDA 輝達",
+   "type": "stock",
+   "total": 1181,
+   "episodes": 238,
+   "first_ep": 43,
+   "last_ep": 691,
+   "recent60": 27,
+   "prev60": 29,
+   "recency_score": 16.59,
+   "trend": "steady"
   },
   {
    "name": "國巨(2327)",
@@ -186,19 +198,7 @@
    "last_ep": 681,
    "recent60": 34,
    "prev60": 28,
-   "recency_score": 16.89,
-   "trend": "steady"
-  },
-  {
-   "name": "NVDA 輝達",
-   "type": "stock",
-   "total": 1180,
-   "episodes": 237,
-   "first_ep": 43,
-   "last_ep": 689,
-   "recent60": 26,
-   "prev60": 29,
-   "recency_score": 16.08,
+   "recency_score": 16.39,
    "trend": "steady"
   },
   {
@@ -208,9 +208,9 @@
    "episodes": 198,
    "first_ep": 6,
    "last_ep": 690,
-   "recent60": 34,
-   "prev60": 49,
-   "recency_score": 15.11,
+   "recent60": 28,
+   "prev60": 55,
+   "recency_score": 14.65,
    "trend": "fading"
   },
   {
@@ -222,7 +222,7 @@
    "last_ep": 683,
    "recent60": 15,
    "prev60": 36,
-   "recency_score": 9.05,
+   "recency_score": 8.78,
    "trend": "fading"
   },
   {
@@ -234,7 +234,7 @@
    "last_ep": 687,
    "recent60": 12,
    "prev60": 26,
-   "recency_score": 7.27,
+   "recency_score": 7.05,
    "trend": "fading"
   },
   {
@@ -246,7 +246,7 @@
    "last_ep": 690,
    "recent60": 10,
    "prev60": 9,
-   "recency_score": 6.89,
+   "recency_score": 6.68,
    "trend": "steady"
   },
   {
@@ -258,7 +258,7 @@
    "last_ep": 686,
    "recent60": 9,
    "prev60": 32,
-   "recency_score": 6.83,
+   "recency_score": 6.62,
    "trend": "fading"
   },
   {
@@ -268,10 +268,10 @@
    "episodes": 30,
    "first_ep": 48,
    "last_ep": 657,
-   "recent60": 16,
-   "prev60": 16,
-   "recency_score": 5.39,
-   "trend": "steady"
+   "recent60": 13,
+   "prev60": 19,
+   "recency_score": 5.22,
+   "trend": "fading"
   },
   {
    "name": "聯電(2303)",
@@ -282,7 +282,7 @@
    "last_ep": 672,
    "recent60": 12,
    "prev60": 13,
-   "recency_score": 5.0,
+   "recency_score": 4.85,
    "trend": "steady"
   },
   {
@@ -294,7 +294,7 @@
    "last_ep": 668,
    "recent60": 5,
    "prev60": 16,
-   "recency_score": 4.16,
+   "recency_score": 4.04,
    "trend": "fading"
   },
   {
@@ -306,7 +306,7 @@
    "last_ep": 679,
    "recent60": 6,
    "prev60": 2,
-   "recency_score": 3.36,
+   "recency_score": 3.26,
    "trend": "rising"
   },
   {
@@ -318,7 +318,7 @@
    "last_ep": 671,
    "recent60": 5,
    "prev60": 14,
-   "recency_score": 3.19,
+   "recency_score": 3.1,
    "trend": "fading"
   },
   {
@@ -330,7 +330,7 @@
    "last_ep": 666,
    "recent60": 1,
    "prev60": 37,
-   "recency_score": 3.05,
+   "recency_score": 2.96,
    "trend": "fading"
   },
   {
@@ -342,7 +342,19 @@
    "last_ep": 687,
    "recent60": 7,
    "prev60": 4,
-   "recency_score": 2.84,
+   "recency_score": 2.76,
+   "trend": "rising"
+  },
+  {
+   "name": "光寶(2301)",
+   "type": "stock",
+   "total": 27,
+   "episodes": 15,
+   "first_ep": 48,
+   "last_ep": 686,
+   "recent60": 3,
+   "prev60": 2,
+   "recency_score": 2.69,
    "trend": "rising"
   },
   {
@@ -354,20 +366,8 @@
    "last_ep": 683,
    "recent60": 8,
    "prev60": 10,
-   "recency_score": 2.78,
+   "recency_score": 2.69,
    "trend": "steady"
-  },
-  {
-   "name": "光寶(2301)",
-   "type": "stock",
-   "total": 27,
-   "episodes": 15,
-   "first_ep": 48,
-   "last_ep": 686,
-   "recent60": 3,
-   "prev60": 2,
-   "recency_score": 2.77,
-   "trend": "rising"
   },
   {
    "name": "祥碩(5269)",
@@ -378,7 +378,7 @@
    "last_ep": 675,
    "recent60": 4,
    "prev60": 8,
-   "recency_score": 2.64,
+   "recency_score": 2.56,
    "trend": "fading"
   },
   {
@@ -390,7 +390,7 @@
    "last_ep": 651,
    "recent60": 8,
    "prev60": 4,
-   "recency_score": 2.62,
+   "recency_score": 2.54,
    "trend": "rising"
   },
   {
@@ -402,7 +402,7 @@
    "last_ep": 687,
    "recent60": 3,
    "prev60": 7,
-   "recency_score": 2.15,
+   "recency_score": 2.09,
    "trend": "fading"
   },
   {
@@ -414,7 +414,7 @@
    "last_ep": 645,
    "recent60": 4,
    "prev60": 15,
-   "recency_score": 2.13,
+   "recency_score": 2.07,
    "trend": "fading"
   },
   {
@@ -426,7 +426,7 @@
    "last_ep": 670,
    "recent60": 3,
    "prev60": 2,
-   "recency_score": 1.99,
+   "recency_score": 1.93,
    "trend": "rising"
   },
   {
@@ -438,7 +438,7 @@
    "last_ep": 659,
    "recent60": 3,
    "prev60": 1,
-   "recency_score": 1.27,
+   "recency_score": 1.23,
    "trend": "rising"
   },
   {
@@ -450,7 +450,7 @@
    "last_ep": 676,
    "recent60": 1,
    "prev60": 5,
-   "recency_score": 0.94,
+   "recency_score": 0.91,
    "trend": "fading"
   },
   {
@@ -462,7 +462,7 @@
    "last_ep": 625,
    "recent60": 0,
    "prev60": 10,
-   "recency_score": 0.93,
+   "recency_score": 0.9,
    "trend": "fading"
   },
   {
@@ -474,7 +474,7 @@
    "last_ep": 675,
    "recent60": 1,
    "prev60": 2,
-   "recency_score": 0.87,
+   "recency_score": 0.84,
    "trend": "fading"
   },
   {
@@ -486,7 +486,7 @@
    "last_ep": 670,
    "recent60": 2,
    "prev60": 1,
-   "recency_score": 0.85,
+   "recency_score": 0.83,
    "trend": "rising"
   },
   {
@@ -498,7 +498,7 @@
    "last_ep": 639,
    "recent60": 2,
    "prev60": 3,
-   "recency_score": 0.58,
+   "recency_score": 0.56,
    "trend": "fading"
   },
   {
@@ -510,7 +510,7 @@
    "last_ep": 671,
    "recent60": 1,
    "prev60": 0,
-   "recency_score": 0.56,
+   "recency_score": 0.54,
    "trend": "rising"
   },
   {
@@ -522,7 +522,7 @@
    "last_ep": 637,
    "recent60": 1,
    "prev60": 2,
-   "recency_score": 0.52,
+   "recency_score": 0.5,
    "trend": "fading"
   },
   {
@@ -534,7 +534,7 @@
    "last_ep": 641,
    "recent60": 1,
    "prev60": 3,
-   "recency_score": 0.48,
+   "recency_score": 0.47,
    "trend": "fading"
   },
   {
@@ -546,7 +546,7 @@
    "last_ep": 621,
    "recent60": 0,
    "prev60": 4,
-   "recency_score": 0.41,
+   "recency_score": 0.4,
    "trend": "fading"
   },
   {
@@ -558,7 +558,7 @@
    "last_ep": 614,
    "recent60": 0,
    "prev60": 4,
-   "recency_score": 0.39,
+   "recency_score": 0.38,
    "trend": "fading"
   },
   {
@@ -570,7 +570,7 @@
    "last_ep": 645,
    "recent60": 1,
    "prev60": 1,
-   "recency_score": 0.39,
+   "recency_score": 0.38,
    "trend": "steady"
   },
   {
@@ -582,7 +582,7 @@
    "last_ep": 655,
    "recent60": 1,
    "prev60": 0,
-   "recency_score": 0.38,
+   "recency_score": 0.37,
    "trend": "rising"
   },
   {
@@ -594,7 +594,7 @@
    "last_ep": 644,
    "recent60": 1,
    "prev60": 1,
-   "recency_score": 0.32,
+   "recency_score": 0.31,
    "trend": "steady"
   },
   {
@@ -618,7 +618,7 @@
    "last_ep": 612,
    "recent60": 0,
    "prev60": 3,
-   "recency_score": 0.24,
+   "recency_score": 0.23,
    "trend": "fading"
   },
   {
@@ -642,7 +642,7 @@
    "last_ep": 598,
    "recent60": 0,
    "prev60": 3,
-   "recency_score": 0.15,
+   "recency_score": 0.14,
    "trend": "fading"
   },
   {
@@ -654,7 +654,7 @@
    "last_ep": 570,
    "recent60": 0,
    "prev60": 0,
-   "recency_score": 0.1,
+   "recency_score": 0.09,
    "trend": "steady"
   },
   {
@@ -818,25 +818,25 @@
   {
    "name": "AI",
    "type": "theme",
-   "total": 4889,
-   "episodes": 403,
+   "total": 4973,
+   "episodes": 404,
    "first_ep": 41,
-   "last_ep": 690,
-   "recent60": 993,
-   "prev60": 566,
-   "recency_score": 502.51,
+   "last_ep": 691,
+   "recent60": 1069,
+   "prev60": 552,
+   "recency_score": 571.44,
    "trend": "rising"
   },
   {
    "name": "記憶體循環",
    "type": "theme",
-   "total": 1499,
-   "episodes": 240,
+   "total": 1500,
+   "episodes": 241,
    "first_ep": 48,
-   "last_ep": 689,
-   "recent60": 303,
-   "prev60": 522,
-   "recency_score": 175.25,
+   "last_ep": 691,
+   "recent60": 299,
+   "prev60": 527,
+   "recency_score": 170.99,
    "trend": "fading"
   },
   {
@@ -846,9 +846,9 @@
    "episodes": 117,
    "first_ep": 42,
    "last_ep": 688,
-   "recent60": 293,
-   "prev60": 78,
-   "recency_score": 146.9,
+   "recent60": 291,
+   "prev60": 80,
+   "recency_score": 142.5,
    "trend": "rising"
   },
   {
@@ -858,10 +858,10 @@
    "episodes": 95,
    "first_ep": 32,
    "last_ep": 689,
-   "recent60": 116,
-   "prev60": 57,
-   "recency_score": 43.92,
-   "trend": "rising"
+   "recent60": 93,
+   "prev60": 80,
+   "recency_score": 42.6,
+   "trend": "steady"
   },
   {
    "name": "散熱 / 液冷",
@@ -870,9 +870,9 @@
    "episodes": 164,
    "first_ep": 6,
    "last_ep": 688,
-   "recent60": 82,
-   "prev60": 100,
-   "recency_score": 42.98,
+   "recent60": 81,
+   "prev60": 98,
+   "recency_score": 41.69,
    "trend": "steady"
   },
   {
@@ -883,8 +883,8 @@
    "first_ep": 34,
    "last_ep": 682,
    "recent60": 86,
-   "prev60": 83,
-   "recency_score": 36.39,
+   "prev60": 82,
+   "recency_score": 35.29,
    "trend": "steady"
   },
   {
@@ -894,9 +894,9 @@
    "episodes": 500,
    "first_ep": 1,
    "last_ep": 690,
-   "recent60": 67,
-   "prev60": 49,
-   "recency_score": 35.17,
+   "recent60": 66,
+   "prev60": 50,
+   "recency_score": 34.11,
    "trend": "rising"
   },
   {
@@ -908,7 +908,7 @@
    "last_ep": 690,
    "recent60": 52,
    "prev60": 66,
-   "recency_score": 31.07,
+   "recency_score": 30.14,
    "trend": "steady"
   },
   {
@@ -920,19 +920,19 @@
    "last_ep": 688,
    "recent60": 68,
    "prev60": 60,
-   "recency_score": 30.25,
+   "recency_score": 29.35,
    "trend": "steady"
   },
   {
    "name": "資料中心",
    "type": "theme",
-   "total": 299,
-   "episodes": 127,
+   "total": 300,
+   "episodes": 128,
    "first_ep": 67,
-   "last_ep": 689,
+   "last_ep": 691,
    "recent60": 33,
-   "prev60": 26,
-   "recency_score": 23.1,
+   "prev60": 27,
+   "recency_score": 23.4,
    "trend": "steady"
   },
   {
@@ -944,7 +944,7 @@
    "last_ep": 686,
    "recent60": 42,
    "prev60": 18,
-   "recency_score": 16.66,
+   "recency_score": 16.16,
    "trend": "rising"
   },
   {
@@ -954,9 +954,9 @@
    "episodes": 105,
    "first_ep": 158,
    "last_ep": 680,
-   "recent60": 26,
-   "prev60": 78,
-   "recency_score": 16.2,
+   "recent60": 25,
+   "prev60": 79,
+   "recency_score": 15.72,
    "trend": "fading"
   },
   {
@@ -968,7 +968,7 @@
    "last_ep": 688,
    "recent60": 26,
    "prev60": 3,
-   "recency_score": 9.33,
+   "recency_score": 9.05,
    "trend": "rising"
   },
   {
@@ -978,9 +978,9 @@
    "episodes": 224,
    "first_ep": 1,
    "last_ep": 674,
-   "recent60": 18,
-   "prev60": 21,
-   "recency_score": 8.36,
+   "recent60": 17,
+   "prev60": 22,
+   "recency_score": 8.11,
    "trend": "steady"
   },
   {
@@ -992,7 +992,7 @@
    "last_ep": 680,
    "recent60": 14,
    "prev60": 15,
-   "recency_score": 8.2,
+   "recency_score": 7.95,
    "trend": "steady"
   },
   {
@@ -1004,7 +1004,7 @@
    "last_ep": 682,
    "recent60": 6,
    "prev60": 40,
-   "recency_score": 4.55,
+   "recency_score": 4.41,
    "trend": "fading"
   },
   {
@@ -1016,7 +1016,7 @@
    "last_ep": 646,
    "recent60": 12,
    "prev60": 10,
-   "recency_score": 3.68,
+   "recency_score": 3.57,
    "trend": "steady"
   }
  ]
