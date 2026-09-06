@@ -8,6 +8,7 @@
 
 ```
 ai-grocery/
+├─ CLAUDE.md                        # 給 Claude 的維護指南(怎麼把別人的 repo 整合進來)
 ├─ .claude-plugin/
 │  └─ marketplace.json              # marketplace 清單(列出所有 plugin)
 └─ plugins/
@@ -54,6 +55,31 @@ ai-grocery/
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
+| **career-tools** | 職涯類工具。目前含 `interview-personality` skill(面試的個人特質 / cultural fit 題:用 Trait → Behaviour → Evidence 三層公式,把 hardworking / team player 這種跟所有人都一樣的形容詞,換成讓面試官看得見「跟你工作是什麼體驗」的具體畫面;從事件回推特質,並針對職位重排順序)。 |
+
+## 收錄的別人精華
+
+這個 repo 有一部分是**站在別人肩膀上**:社群裡寫得很好的 plugin / skill,收進來讓它們能跟自製的東西一起被一行指令裝好。
+收錄方式分兩種 —— **外部參照**(對方本身就是 plugin,只在 `marketplace.json` 指向原 repo,程式碼永遠是上游最新版)、
+**vendored 收錄**(對方只有一份 SKILL.md 沒有 plugin 形式,複製進來並在此標註來源)。
+
+### 外部參照(自動跟上游最新版)
+
+| 來源 | 原作者 | 收進來當什麼 | 精華在哪 |
+|---|---|---|---|
+| [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | JuliusBrussee | `caveman` plugin,`agent-essentials` 相依 | 穴居人講話模式。砍掉冠詞、贅字、客套與鋪陳,只留技術內容,實測省約 65% 輸出 token 而準確度不變。分 lite / full / ultra 與文言文變體,靠 SessionStart hook 全程生效。 |
+| [mattpocock/skills](https://github.com/mattpocock/skills) | Matt Pocock | `mattpocock-skills` plugin,`agent-essentials` 相依 | 一整套工程工作流:`grilling`(逼問你的計畫直到站得住腳)、`tdd`(red-green-refactor)、`code-review`(標準面 + 規格面雙軸審查)、`domain-modeling`、`writing-for-agents`(怎麼寫 CLAUDE.md 跟 skill)、`diagnosing-bugs`。 |
+| [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx | `taste-skill` plugin,`agent-essentials` 相依 | 前端美感的解毒劑。把「一看就是 AI 做的」那種預設風格擋掉,提供 brutalist / minimalist / high-end / redesign / stitch 等明確設計方向,外加 image-to-code 與圖像生成的設計參考流程。 |
+| [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | shooter2062424 | `open-kimi-ppt` plugin,`agent-essentials` 相依 | 用 PPTD 格式做簡報的建立 / 編輯 / 仿製 / 匯出,產出的是**可編輯的專案資料夾**加上內嵌字型的 `.pptx`,不是一次性的死檔。 |
+
+外部參照的好處:上游更新,你這邊 `claude plugin update` 就跟上,不用等這個 repo 同步。
+
+### Vendored 收錄(複製進來,已標註來源)
+
+目前 `plugins/*/skills/` 底下的 skill 若來自外部,一律在**該 plugin 的 README** 的「收錄來源」表格標註原作者、原 repo 與授權條款。
+上游授權不明或禁止再散布的,不 vendored,只在文件放連結。
+
+> 所有外部內容的著作權屬於各自作者,依其原授權條款使用。這裡只做整合與中文化說明。
 
 ## 安裝方式
 
@@ -69,6 +95,7 @@ claude plugin install knowledge-tools@ai-grocery
 claude plugin install investing-like-pro@ai-grocery
 claude plugin install finance@ai-grocery
 claude plugin install web-design-tools@ai-grocery
+claude plugin install career-tools@ai-grocery
 
 # 3. 確認裝好了
 claude plugin list
@@ -157,3 +184,11 @@ claude plugin install agent-essentials@ai-grocery
 
 - **新的「給 Claude 用」的 skill / hook / command / agent** 一律放進這個 repo(依類別歸到對應 plugin,沒有對應類別就新增一個 plugin 並更新 `marketplace.json`)。
 - 知識整理類的 **report** 則放到 Knowledge(knowledgedb)倉庫,不放這裡。
+
+## 給 Claude 的維護指南
+
+要新增 / 整合 plugin 或 skill 的完整流程(判斷外部參照還是 vendored、類別怎麼歸、每次要一起更新哪些檔案、
+驗證與 commit 慣例)寫在根目錄的 [`CLAUDE.md`](./CLAUDE.md)。
+
+實務上使用者只要把別人的 repo 連結或安裝指令貼進 session,Claude Code 讀到 `CLAUDE.md` 就會照那份流程
+把東西整合進來,並同步更新 `marketplace.json`、兩層 README 與這一頁的「收錄的別人精華」。
