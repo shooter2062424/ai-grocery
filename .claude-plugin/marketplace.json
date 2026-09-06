@@ -64,6 +64,11 @@
       "name": "web-design-tools",
       "source": "./plugins/web-design-tools",
       "description": "前端/網頁設計類工具集。目前含 modern-web-design(用 Next.js+Tailwind+shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫、設計參考擷取、依受眾拆設計策略)。"
+    },
+    {
+      "name": "career-tools",
+      "source": "./plugins/career-tools",
+      "description": "職涯類工具集。目前含 interview-personality(面試的個人特質題:用 Trait → Behaviour → Evidence 三層公式,把 hardworking / team player 這類跟所有人都一樣的形容詞,換成讓面試官看得見「跟你工作是什麼體驗」的具體畫面;從事件回推特質而非先挑形容詞,並針對職位重排順序)。"
     }
   ]
 }

@@ -1,0 +1,15 @@
+{
+  "name": "career-tools",
+  "description": "職涯類工具集:面試準備、履歷與職場溝通的 skills 集合。目前含 interview-personality(用 Trait → Behaviour → Evidence 把「同事會怎麼形容你」這類個人特質題,從通用形容詞變成讓面試官看得見的工作畫面)。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424"
+  },
+  "keywords": [
+    "career",
+    "interview",
+    "behavioral-interview",
+    "cultural-fit",
+    "storytelling"
+  ]
+}
