@@ -77,13 +77,20 @@ docs/research/                    # 研究/知識整理輸出（非 plugin 內�
 
 1. 選一個**類別 plugin** 放（見下方類別表）。沒有合適的類別就新建一個 plugin。
 2. 複製到 `plugins/<類別>/skills/<skill-name>/`，保留 `SKILL.md`、`scripts/`、`references/`、`assets/`。
-3. **改寫 `SKILL.md` 的 frontmatter `description` 成繁體中文**，並寫清楚「什麼情況該觸發」——
-   description 是 Claude 決定要不要載入這個 skill 的唯一依據，寫得含糊等於這個 skill 不會被用到。
-   正文可以保留原文，但術語/指令/程式碼不要翻譯。
+3. **不要改寫上游的 `SKILL.md` 內容。** 唯一允許的修改是在 frontmatter `description` 的**結尾附加**一段
+   繁中觸發詞，格式：`（繁中觸發詞：…、…、…。）`。
+   理由：`description` 是 Claude 決定要不要載入這個 skill 的唯一依據，上游的英文描述通常已經調校過，
+   整段翻掉會讓英文提問叫不動；只附加中文線索則兩邊都吃得到。正文與術語一律保持原文。
 4. skill 內部引用檔案一律用 `${CLAUDE_PLUGIN_ROOT}` 開頭的路徑，不要用相對路徑或絕對路徑。
 5. **一定要標註來源與授權**：在該 plugin 的 `README.md` 的「收錄來源」表格加一列，寫上
    原作者、原 repo 連結、授權條款。上游有 LICENSE 就把它一併複製到 skill 目錄下。
-6. 上游授權不明或明確禁止再散布 → **不要 vendored**，改成在 README 只放連結，並告訴使用者原因。
+6. **先看授權再決定要不要 vendored**：
+   - MIT / Apache-2.0 / BSD 之類的寬鬆授權 → 直接 vendored，附上 LICENSE。
+   - **非商業授權**（PolyForm Noncommercial 等）→ 可以 vendored，但必須在**該 plugin 的 README
+     與根目錄 README 兩處**用 `⚠️` 明確標出「僅限非商業用途」，並附上原 LICENSE 全文。
+   - 授權不明或明確禁止再散布 → **不要 vendored**，改成在 README 只放連結，並告訴使用者原因。
+7. **控制體積**：跑測試用的 `test/`、`package-lock.json`、純截圖的 `docs/assets/` 這類執行時用不到的東西不要收，
+   並在 plugin README 註明「哪些沒收、要看請去上游」。
 
 ### 第 2 步：類別歸屬
 
@@ -130,6 +137,8 @@ grep -L '^description:' plugins/*/skills/*/SKILL.md
 - [ ] 每個 vendored skill 都有來源與授權標註
 - [ ] 兩層 README 都更新了
 - [ ] 沒有把使用者的私人資料、API key、token 寫進任何檔案
+- [ ] 沒有把上游的 `.git/` 目錄複製進來
+- [ ] 非商業授權的內容已經在兩層 README 標出 `⚠️`
 
 ### 第 5 步：commit 與 push
 

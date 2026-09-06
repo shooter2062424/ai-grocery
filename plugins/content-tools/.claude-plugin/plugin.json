@@ -1,0 +1,20 @@
+{
+  "name": "content-tools",
+  "description": "內容創作寫作工具集:viral-hooks(開頭第一句)、storytelling(口說/故事型內容的留人結構)、dumbify(降低閱讀門檻)、anti-ai-writing(最後一道去 AI 味的濾網)。四個 skill 串成一條產線:鉤子 → 內文 → 好懂 → 去味。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424",
+    "url": "https://github.com/shooter2062424"
+  },
+  "homepage": "https://github.com/shooter2062424/ai-grocery",
+  "repository": "https://github.com/shooter2062424/ai-grocery",
+  "license": "MIT",
+  "keywords": [
+    "writing",
+    "content",
+    "hooks",
+    "storytelling",
+    "copywriting",
+    "anti-ai"
+  ]
+}

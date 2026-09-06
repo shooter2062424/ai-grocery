@@ -1,7 +1,7 @@
 {
   "name": "agent-essentials",
-  "description": "用 AI Agent 就一定要裝的那一包:輸出風格(ELI5 output-style、caveman、humanizer-zh-TW)加上文件/簡報產出能力(html-artifacts、open-kimi-ppt),外加 mattpocock 工作流與 taste 前端美感 skills。",
-  "version": "0.1.0",
+  "description": "用 AI Agent 就一定要裝的那一包:輸出風格(ELI5 output-style、caveman、humanizer-zh-TW)、文件/簡報產出(html-artifacts、open-kimi-ppt)、圖解與圖表(viz-tools 帶 archify / lieflat-charts / diagram-design)、內容寫作產線(content-tools 帶 viral-hooks / storytelling / dumbify / anti-ai-writing),外加 mattpocock 工程工作流與 taste 前端美感 skills。",
+  "version": "0.2.0",
   "author": {
     "name": "shooter2062424",
     "url": "https://github.com/shooter2062424"
@@ -13,7 +13,9 @@
     "caveman",
     "mattpocock-skills",
     "taste-skill",
-    "open-kimi-ppt"
+    "open-kimi-ppt",
+    "viz-tools",
+    "content-tools"
   ],
   "keywords": [
     "output-styles",
@@ -21,6 +23,9 @@
     "humanizer",
     "html-artifacts",
     "pptx",
-    "essentials"
+    "essentials",
+    "diagrams",
+    "charts",
+    "writing"
   ]
 }

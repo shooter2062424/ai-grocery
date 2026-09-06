@@ -18,8 +18,9 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 
 ## 相依 plugin(自動一起安裝)
 
-以下四個是獨立維護的外部 plugin,已寫在本 plugin `plugin.json` 的 `dependencies` 裡,
-安裝 agent-essentials 時 Claude Code 會自動把它們一起裝好、一起啟用:
+以下六個已寫在本 plugin `plugin.json` 的 `dependencies` 裡,
+安裝 agent-essentials 時 Claude Code 會自動把它們一起裝好、一起啟用。
+前四個是獨立維護的外部 plugin,後兩個是本 marketplace 的姊妹 plugin:
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
@@ -27,8 +28,12 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 | `mattpocock-skills` | [mattpocock/skills](https://github.com/mattpocock/skills) | 工程工作流:grilling、TDD、code review、domain modeling、writing-for-agents。 |
 | `taste-skill` | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
 | `open-kimi-ppt` | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | 以 PPTD 格式做簡報:建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
+| `viz-tools` | 本 marketplace([README](../viz-tools/README.md)) | 圖解與圖表:`archify`(架構/時序/資料流/狀態機圖 → 可探索單檔 HTML)、`lieflat-charts`(圖表與整頁報告),並再帶入外部的 `diagram-design`。 |
+| `content-tools` | 本 marketplace([README](../content-tools/README.md)) | 內容寫作產線:`viral-hooks`(開頭)→`storytelling`(內文)→`dumbify`(好懂)→`anti-ai-writing`(去 AI 味)。 |
 
-四個都以裸字串宣告(跟著上游最新版走),且都在同一個 marketplace,所以不需要 git tag 或跨 marketplace 允許清單。
+六個都以裸字串宣告(跟著上游最新版走),且都在同一個 marketplace,所以不需要 git tag 或跨 marketplace 允許清單。
+
+`viz-tools` 自己也宣告了一個相依 `diagram-design`([cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)),所以會一起被拉進來。
 
 ## 安裝
 
@@ -36,11 +41,13 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 
 ```bash
 claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用:claude plugin marketplace update ai-grocery
-claude plugin install agent-essentials@ai-grocery         # 四個相依會一起裝進來
-claude plugin list                                        # 確認五個都在
+claude plugin install agent-essentials@ai-grocery         # 相依會一起裝進來
+claude plugin list                                        # 確認全部都在
 ```
 
 `caveman` 靠 SessionStart hook 生效,安裝後要重開一個 session。
+
+⚠️ 相依鏈裡的 `lieflat-charts`(在 `viz-tools` 內)是 **PolyForm Noncommercial** 授權,只能非商業使用,細節見 [viz-tools README](../viz-tools/README.md)。
 
 相依若沒被拉進來(marketplace 沒加、被停用、解析失敗),在 session 內跑 `/agent-essentials:setup` 排查修復。
 

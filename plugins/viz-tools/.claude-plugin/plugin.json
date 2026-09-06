@@ -1,0 +1,23 @@
+{
+  "name": "viz-tools",
+  "description": "資料視覺化與圖解工具集:archify(架構圖/時序圖/資料流圖/狀態機,產出可探索的單檔 HTML + SVG,可匯出 PNG/SVG/WebM,也吃 Mermaid)、lieflat-charts(模板驅動的 HTML 圖表與整頁報告,Mono 灰階保底並依資料語義自動選色)。並以 marketplace 相依帶入 diagram-design。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424",
+    "url": "https://github.com/shooter2062424"
+  },
+  "homepage": "https://github.com/shooter2062424/ai-grocery",
+  "repository": "https://github.com/shooter2062424/ai-grocery",
+  "license": "MIT",
+  "dependencies": [
+    "diagram-design"
+  ],
+  "keywords": [
+    "diagram",
+    "architecture",
+    "charts",
+    "dataviz",
+    "mermaid",
+    "report"
+  ]
+}

@@ -69,6 +69,24 @@
       "name": "career-tools",
       "source": "./plugins/career-tools",
       "description": "職涯類工具集。目前含 interview-personality(面試的個人特質題:用 Trait → Behaviour → Evidence 三層公式,把 hardworking / team player 這類跟所有人都一樣的形容詞,換成讓面試官看得見「跟你工作是什麼體驗」的具體畫面;從事件回推特質而非先挑形容詞,並針對職位重排順序)。"
+    },
+    {
+      "name": "diagram-design",
+      "source": {
+        "source": "github",
+        "repo": "cathrynlavery/diagram-design"
+      },
+      "description": "viz-tools 相依。品牌化圖表製作:架構圖、流程圖、時序圖、狀態機、ER/資料模型、時間軸、泳道、象限、雷達、漏斗、樹狀、組織圖、Sankey、魚骨、Wardley map、使用者旅程等數十種版型,輸出 HTML/SVG/PNG;可從網站擷取品牌 token,也能重畫 .drawio 與 Mermaid。"
+    },
+    {
+      "name": "viz-tools",
+      "source": "./plugins/viz-tools",
+      "description": "資料視覺化與圖解工具集。含 archify(架構/時序/資料流/狀態機圖,產出可探索單檔 HTML+SVG,可匯出 PNG/SVG/WebM,也吃 Mermaid)、lieflat-charts(模板驅動的 HTML 圖表與 12 套整頁報告,Mono 保底並依資料語義自動選色;非商業授權)。並以相依帶入 diagram-design。"
+    },
+    {
+      "name": "content-tools",
+      "source": "./plugins/content-tools",
+      "description": "內容創作寫作工具集,四個 skill 串成一條產線:viral-hooks(開頭第一句/前兩秒鉤子)、storytelling(口說與故事型內容的留人結構)、dumbify(降低閱讀門檻與心智負擔)、anti-ai-writing(最後一道去 AI 味的濾網,以英文寫作為主)。"
     }
   ]
 }
