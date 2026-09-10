@@ -32,7 +32,7 @@ ai-grocery/
    │     ├─ storytelling/           # 口說與故事型內容的留人結構
    │     ├─ dumbify/                # 降低閱讀門檻與心智負擔
    │     └─ anti-ai-writing/        # 最後一道去 AI 味的濾網
-   ├─ knowledge-tools/              # 知識/學習類工具
+   ├─ knowledge-tools/              # 知識/學習類工具(rapid-learning、game-theory-skill)
    │  ├─ .claude-plugin/plugin.json
    │  └─ skills/rapid-learning/SKILL.md
    └─ investing-like-pro/           # 投資類工具
@@ -65,7 +65,7 @@ ai-grocery/
 | ↳ **viz-tools** | agent-essentials 相依(本 marketplace)。圖解與圖表,見下方獨立列。 |
 | ↳ **content-tools** | agent-essentials 相依(本 marketplace)。內容寫作產線,見下方獨立列。 |
 | ↳ **open-kimi-ppt** | agent-essentials 相依,來源 [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill)。以 PPTD 格式做簡報的建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
-| **knowledge-tools** | 知識與學習類工具。目前含 `rapid-learning` skill(NotebookLM 三提問快速學習法)。 |
+| **knowledge-tools** | 知識與學習類工具。含 `rapid-learning`(NotebookLM 三提問快速學習法)、`game-theory-skill`(博弈論結構化思維工具:12 個一手來源提煉的 6 個核心原理,判斷局勢、找策略、要不要先出手、對方會怎麼反應)。 |
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。目前含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。 |
@@ -106,6 +106,7 @@ vendored 時唯一的修改是在 `SKILL.md` frontmatter 的 `description` 後�
 | `storytelling` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT | `content-tools` | 鉤子賺到前兩秒,敘事賺到後面每一秒。六個技巧撐住口說 / 故事型內容的中段。 |
 | `dumbify` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT | `content-tools` | 人不是因為內容太淺而離開,是因為**跟上太費力**。降到約八年級閱讀水準,簡單的語言不是簡單的想法。 |
 | `anti-ai-writing` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT | `content-tools` | 目標不是「不要像 AI」—— 追著否定跑只會得到一片米色。目標是聽起來像一個真的想過這件事、而且有話要說的**具體的人**。 |
+| `game-theory-skill` | peterfei | [peterfei/forge-skill-game-theory-skill](https://github.com/peterfei/forge-skill-game-theory-skill) | MIT(上游未附獨立 LICENSE 檔) | `knowledge-tools` | 博弈論(賽局理論)結構化思維工具。基於 12 個一手來源(佔比 60%)提煉出 6 個核心原理與完整操作協議,把「這是不是博弈」「誰在跟誰博弈」「要不要先出手」變成可以照著走的判斷步驟。 |
 | `humanizer-zh-tw` | kevintsai1202(上游 op7418/humanizer-zh、blader/humanizer) | [kevintsai1202/Humanizer-zh-TW](https://github.com/kevintsai1202/Humanizer-zh-TW) | 見上游 repo | `agent-essentials` | 繁中版的去 AI 味:誇大象徵、宣傳語言、破折號過度、三段式法則、否定式排比,一條條抓出來改掉。 |
 | `html-artifacts` | dogum | [dogum/html-artifacts](https://github.com/dogum/html-artifacts) | 見上游 repo | `agent-essentials` | 判斷「這件事該用版面講」而不是硬塞 markdown,然後產出自帶樣式的單檔 HTML。 |
 
