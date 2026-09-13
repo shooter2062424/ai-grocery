@@ -58,12 +58,13 @@ ai-grocery/
 
 | Plugin | 內容 |
 |---|---|
-| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告四個相依 plugin(下方四列),**安裝時自動一起裝**。 |
+| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告七個相依 plugin(下方七列),**安裝時自動一起裝**。 |
 | ↳ **caveman** | agent-essentials 相依,來源 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)。穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變(靠 SessionStart hook,裝完要重開 session)。 |
 | ↳ **mattpocock-skills** | agent-essentials 相依,來源 [mattpocock/skills](https://github.com/mattpocock/skills)。工程工作流 skills:grilling、TDD、code review、domain modeling、writing-for-agents 等。 |
 | ↳ **taste-skill** | agent-essentials 相依,來源 [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)。前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
 | ↳ **viz-tools** | agent-essentials 相依(本 marketplace)。圖解與圖表,見下方獨立列。 |
 | ↳ **content-tools** | agent-essentials 相依(本 marketplace)。內容寫作產線,見下方獨立列。 |
+| ↳ **knowledge-tools** | agent-essentials 相依(本 marketplace)。學習方法與思維框架,見下方獨立列。 |
 | ↳ **open-kimi-ppt** | agent-essentials 相依,來源 [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill)。以 PPTD 格式做簡報的建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
 | **knowledge-tools** | 知識與學習類工具。含 `rapid-learning`(NotebookLM 三提問快速學習法)、`game-theory-skill`(博弈論結構化思維工具:12 個一手來源提煉的 6 個核心原理,判斷局勢、找策略、要不要先出手、對方會怎麼反應)。 |
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
@@ -189,12 +190,13 @@ claude plugin details <name>  # 看某個 plugin 帶進來哪些元件、吃多�
 
 ### agent-essentials 的相依
 
-`agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告四個相依,
+`agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告七個相依,
 安裝時 Claude Code 會自動把它們一起裝好、一起啟用。
 
 ```json
 // plugins/agent-essentials/.claude-plugin/plugin.json
-"dependencies": ["caveman", "mattpocock-skills", "taste-skill", "open-kimi-ppt"]
+"dependencies": ["caveman", "mattpocock-skills", "taste-skill", "open-kimi-ppt",
+                 "viz-tools", "content-tools", "knowledge-tools"]
 ```
 
 所以使用者只要一行:
@@ -205,9 +207,10 @@ claude plugin install agent-essentials@ai-grocery
 
 兩個前提都已經滿足,不用額外設定:
 
-- **同 marketplace**:`dependencies` 的名字預設在宣告者所屬的 marketplace 解析,而這四個都已列在本 marketplace 的
-  `plugins` 陣列(各自 `source` 指向原 GitHub repo),所以不需要 `allowCrossMarketplaceDependenciesOn`。
-- **不綁版本**:四個都用裸字串宣告(跟著上游最新版走),因此不需要上游打 `{name}--v{version}` git tag。
+- **同 marketplace**:`dependencies` 的名字預設在宣告者所屬的 marketplace 解析,而這七個都已列在本 marketplace 的
+  `plugins` 陣列(外部的 `source` 指向原 GitHub repo,本地的指向 `./plugins/<name>`),所以不需要 `allowCrossMarketplaceDependenciesOn`。
+  `viz-tools` 自己又宣告了 `diagram-design`,會一起被拉進來。
+- **不綁版本**:七個都用裸字串宣告(跟著上游最新版走),因此不需要上游打 `{name}--v{version}` git tag。
   哪天要把某個相依鎖在測過的版本,再改成 `{ "name": "caveman", "version": "~1.2.0" }`,那時上游才必須有對應 tag。
 
 裝完 `caveman` 靠 SessionStart hook 生效,要**重開一個 session**。

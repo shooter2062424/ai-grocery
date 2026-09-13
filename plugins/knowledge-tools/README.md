@@ -25,3 +25,5 @@ vendored 時唯一的修改是在 `SKILL.md` frontmatter 的 `description` 結�
 claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用:claude plugin marketplace update ai-grocery
 claude plugin install knowledge-tools@ai-grocery
 ```
+
+裝 `agent-essentials` 的話這個 plugin 會被當相依一起帶進來,不用重複安裝。

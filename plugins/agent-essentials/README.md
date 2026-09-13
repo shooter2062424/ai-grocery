@@ -18,9 +18,9 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 
 ## 相依 plugin(自動一起安裝)
 
-以下六個已寫在本 plugin `plugin.json` 的 `dependencies` 裡,
+以下七個已寫在本 plugin `plugin.json` 的 `dependencies` 裡,
 安裝 agent-essentials 時 Claude Code 會自動把它們一起裝好、一起啟用。
-前四個是獨立維護的外部 plugin,後兩個是本 marketplace 的姊妹 plugin:
+前四個是獨立維護的外部 plugin,後三個是本 marketplace 的姊妹 plugin:
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
@@ -30,8 +30,9 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 | `open-kimi-ppt` | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | 以 PPTD 格式做簡報:建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
 | `viz-tools` | 本 marketplace([README](../viz-tools/README.md)) | 圖解與圖表:`archify`(架構/時序/資料流/狀態機圖 → 可探索單檔 HTML)、`lieflat-charts`(圖表與整頁報告),並再帶入外部的 `diagram-design`。 |
 | `content-tools` | 本 marketplace([README](../content-tools/README.md)) | 內容寫作產線:`viral-hooks`(開頭)→`storytelling`(內文)→`dumbify`(好懂)→`anti-ai-writing`(去 AI 味)。 |
+| `knowledge-tools` | 本 marketplace([README](../knowledge-tools/README.md)) | 學習方法與思維框架:`rapid-learning`(NotebookLM 三提問快速學習法)、`game-theory-skill`(博弈論結構化思維工具)。 |
 
-六個都以裸字串宣告(跟著上游最新版走),且都在同一個 marketplace,所以不需要 git tag 或跨 marketplace 允許清單。
+七個都以裸字串宣告(跟著上游最新版走),且都在同一個 marketplace,所以不需要 git tag 或跨 marketplace 允許清單。
 
 `viz-tools` 自己也宣告了一個相依 `diagram-design`([cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)),所以會一起被拉進來。
 
