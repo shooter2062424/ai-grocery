@@ -115,6 +115,18 @@ vendored 時唯一的修改是在 `SKILL.md` frontmatter 的 `description` 後�
 
 > ⚠️ **`lieflat-charts` 例外:PolyForm Noncommercial 只允許非商業用途。** 拿它產出的圖表或報告做客戶交付、對外銷售或營利產品前,請先向原作者取得授權;公開分發其產出時請署名。同 plugin 的 `archify` 是 MIT,沒有這個限制。
 
+### 想用但不收錄(授權不允許)
+
+有些東西很好用,但上游授權不允許再散布,所以**不 vendored、不進 marketplace**,只在這裡放連結與官方安裝方式。
+自己裝是完全合法的 —— 不能做的是由這個 repo 代為散布。
+
+| 來源 | 原作者 | 是什麼 | 為什麼不收錄 | 自己怎麼裝 |
+|---|---|---|---|---|
+| [transitions.dev](https://transitions.dev/) · [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) | Jakub Antalik | 32 個可直接貼上的 CSS transition(modal 開關、dropdown、number pop-in、icon swap、skeleton、shimmer、accordion、toast、like button、streaming text…),每個都 namespaced 在 `t-*` 並附 `prefers-reduced-motion` guard。另有 `transitions-polish` 依 duration / distance / scale / blur / easing 五個維度校準既有動態。 | 上游 [Terms & License](https://transitions.dev/terms.html) 明文禁止再散布:**"you can't repackage, resell, or publish the collection (or a substantial part of it) as a competing transitions library, template pack, or component kit"**。MIT 只蓋 Refine 工具與 CLI,**transitions 本身不適用 MIT**。此外它是商業產品(Pro 訂閱)。fork 到自己帳號也不構成再散布授權。 | `npx skills add Jakubantalik/transitions.dev`(免費版);Pro 用 `npx transitions-dev login` |
+
+> 裝進**自己的專案**、用在無限個人與商業專案、自由修改、隨產品出貨 —— 這些上游都明確允許。
+> 被禁的只有「把這套集合本身重新打包散布」,而那正是 marketplace 收錄會做的事。
+
 > 所有外部內容的著作權屬於各自作者,依其原授權條款使用。這裡只做整合與中文化說明。
 
 ## 安裝方式

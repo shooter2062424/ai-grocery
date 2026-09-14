@@ -88,7 +88,15 @@ docs/research/                    # 研究/知識整理輸出（非 plugin 內�
    - MIT / Apache-2.0 / BSD 之類的寬鬆授權 → 直接 vendored，附上 LICENSE。
    - **非商業授權**（PolyForm Noncommercial 等）→ 可以 vendored，但必須在**該 plugin 的 README
      與根目錄 README 兩處**用 `⚠️` 明確標出「僅限非商業用途」，並附上原 LICENSE 全文。
-   - 授權不明或明確禁止再散布 → **不要 vendored**，改成在 README 只放連結，並告訴使用者原因。
+   - 授權不明或明確禁止再散布 → **不要 vendored**，改成在根目錄 README 的
+     「想用但不收錄(授權不允許)」表格放連結、原因與官方安裝方式，並告訴使用者為什麼。
+   - **沒有 LICENSE 檔不等於可以收。** 授權可能寫在別的地方，收之前至少看過：
+     repo 根目錄 `LICENSE`、`package.json` 的 `license` 欄位、README 的 License 段落，
+     以及**產品網站的 Terms / License 頁**(商業產品常把真正的條款放在那裡，
+     repo 裡的 MIT 可能只蓋 CLI 或工具，不蓋內容本身)。
+     看到 "may not redistribute"、"repackage"、"resell"、"as a competing … kit" 這類字眼就是禁止，
+     不管 repo 有沒有掛 MIT。
+   - **fork 到自己帳號不構成再散布授權。** 判斷依據是上游條款，不是 repo 掛在誰名下。
 7. **控制體積**：跑測試用的 `test/`、`package-lock.json`、純截圖的 `docs/assets/` 這類執行時用不到的東西不要收，
    並在 plugin README 註明「哪些沒收、要看請去上游」。
 
