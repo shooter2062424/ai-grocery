@@ -46,6 +46,12 @@ docs/research/                    # 研究/知識整理輸出（非 plugin 內�
 
 分不出來時，以「對方 repo 有沒有 plugin manifest」為準。有 manifest 就外部參照，沒有就 vendored。
 
+**例外(很重要)：沒有 manifest 也可以外部參照。** marketplace entry 加 `"strict": false`，
+由 entry 自己描述元件(`"skills": ["./skills/"]`、`"commands"`、`"agents"` …)，
+Claude Code 就會直接去上游 repo 抓，本 repo 一個檔案都不複製。
+**上游授權禁止再散布時，這是唯一正確的路線** —— 收錄的是指標，不是內容，所以不構成再散布。
+範例見 `marketplace.json` 的 `transitions-dev`。
+
 ### 路線 A：外部參照（對方是 plugin）
 
 不要把對方的檔案複製進來。改成在 `marketplace.json` 的 `plugins` 陣列加一筆 github 來源：
@@ -88,8 +94,12 @@ docs/research/                    # 研究/知識整理輸出（非 plugin 內�
    - MIT / Apache-2.0 / BSD 之類的寬鬆授權 → 直接 vendored，附上 LICENSE。
    - **非商業授權**（PolyForm Noncommercial 等）→ 可以 vendored，但必須在**該 plugin 的 README
      與根目錄 README 兩處**用 `⚠️` 明確標出「僅限非商業用途」，並附上原 LICENSE 全文。
-   - 授權不明或明確禁止再散布 → **不要 vendored**，改成在根目錄 README 的
-     「想用但不收錄(授權不允許)」表格放連結、原因與官方安裝方式，並告訴使用者為什麼。
+   - 明確禁止再散布 → **不要 vendored**。先試**路線 A 的 `"strict": false` 外部參照**
+     (指向上游 repo，不複製檔案，不構成再散布)；並在兩層 README 用 `⚠️` 寫清楚
+     「可以用在個人與商業專案，但不得重新打包散布」與付費項目。
+     指向**上游原 repo**，不要指向自己的 fork。
+   - 授權不明、或連外部參照都不合適 → 在根目錄 README 放連結、原因與官方安裝方式，
+     並告訴使用者為什麼。
    - **沒有 LICENSE 檔不等於可以收。** 授權可能寫在別的地方，收之前至少看過：
      repo 根目錄 `LICENSE`、`package.json` 的 `license` 欄位、README 的 License 段落，
      以及**產品網站的 Terms / License 頁**(商業產品常把真正的條款放在那裡，

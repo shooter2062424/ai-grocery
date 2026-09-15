@@ -87,6 +87,31 @@
       "name": "content-tools",
       "source": "./plugins/content-tools",
       "description": "內容創作寫作工具集,四個 skill 串成一條產線:viral-hooks(開頭第一句/前兩秒鉤子)、storytelling(口說與故事型內容的留人結構)、dumbify(降低閱讀門檻與心智負擔)、anti-ai-writing(最後一道去 AI 味的濾網,以英文寫作為主)。"
+    },
+    {
+      "name": "transitions-dev",
+      "source": {
+        "source": "github",
+        "repo": "Jakubantalik/transitions.dev"
+      },
+      "description": "web-design-tools 相依。32 個可直接貼上的 CSS transition(modal 開關、dropdown、number pop-in、icon swap、skeleton、shimmer、accordion、toast、like button、streaming text…),每個 namespaced 在 t-* 並附 prefers-reduced-motion guard;另含 transitions-polish 依 duration/distance/scale/blur/easing 五維校準既有動態。純外部參照:檔案不複製進本 repo,安裝時直接從上游抓。⚠️ 上游條款禁止再散布這套集合,可自由用在個人與商業專案但不得重新打包;Pro transitions 需另行付費登入。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Jakub Antalik"
+      },
+      "homepage": "https://transitions.dev/",
+      "repository": "https://github.com/Jakubantalik/transitions.dev",
+      "keywords": [
+        "css",
+        "transitions",
+        "animation",
+        "motion",
+        "frontend"
+      ],
+      "skills": [
+        "./skills/"
+      ],
+      "strict": false
     }
   ]
 }
