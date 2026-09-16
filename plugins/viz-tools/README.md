@@ -22,6 +22,8 @@
 
 ## 收錄來源與授權
 
+本 plugin 的 `plugin.json` 宣告 `"license": "MIT AND PolyForm-Noncommercial-1.0.0"` —— 本 repo 自己的部分是 MIT，vendored 的兩個 skill 維持原授權。完整清單見根目錄 [NOTICE.md](../../NOTICE.md)。
+
 | Skill | 原作者 | 原 repo | 授權 |
 |---|---|---|---|
 | `archify` | tt-a1i | [tt-a1i/archify](https://github.com/tt-a1i/archify) | MIT（見 `skills/archify/LICENSE`）。上游基於 Cocoon-AI/architecture-diagram-generator (MIT)。 |

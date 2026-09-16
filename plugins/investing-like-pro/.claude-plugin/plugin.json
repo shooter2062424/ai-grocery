@@ -18,5 +18,6 @@
     "risk-management",
     "expectancy",
     "position-sizing"
-  ]
+  ],
+  "license": "MIT"
 }

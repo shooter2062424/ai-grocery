@@ -26,7 +26,7 @@
 | `dumbify` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT |
 | `anti-ai-writing` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT |
 
-授權條款隨每個 skill 目錄附上（`skills/<name>/LICENSE`）。
+授權條款隨每個 skill 目錄附上（`skills/<name>/LICENSE`）。四個都是 MIT，所以本 plugin 宣告 `"license": "MIT"`。完整清單見根目錄 [NOTICE.md](../../NOTICE.md)。
 
 vendored 的原因：上游是一個 skills 集合，不是 Claude Code plugin（安裝方式是 `git clone` 後手動複製到 `~/.claude/skills`），
 沒有 `plugin.json` 可以被 marketplace 參照，所以複製進來並在此標註來源。

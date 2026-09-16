@@ -17,6 +17,8 @@
 
 vendored 的原因：上游只有 `SKILL.md`,沒有 plugin manifest,不是 Claude Code plugin 形式。
 
+完整授權清單見根目錄 [NOTICE.md](../../NOTICE.md)。
+
 vendored 時唯一的修改是在 `SKILL.md` frontmatter 的 `description` 結尾**附加**一行繁中觸發詞；原文(簡中)一字未動。
 
 ## 安裝

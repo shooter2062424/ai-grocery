@@ -19,5 +19,6 @@
   ],
   "dependencies": [
     "transitions-dev"
-  ]
+  ],
+  "license": "MIT"
 }

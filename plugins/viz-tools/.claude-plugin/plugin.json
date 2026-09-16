@@ -8,7 +8,7 @@
   },
   "homepage": "https://github.com/shooter2062424/ai-grocery",
   "repository": "https://github.com/shooter2062424/ai-grocery",
-  "license": "MIT",
+  "license": "MIT AND PolyForm-Noncommercial-1.0.0",
   "dependencies": [
     "diagram-design"
   ],

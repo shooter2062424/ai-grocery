@@ -8,6 +8,8 @@
 
 ```
 ai-grocery/
+├─ LICENSE                          # MIT(只蓋本 repo 自己的工作)
+├─ NOTICE.md                        # 授權清單:哪些是自製、哪些 vendored、哪些只是外部參照
 ├─ CLAUDE.md                        # 給 Claude 的維護指南(怎麼把別人的 repo 整合進來)
 ├─ .claude-plugin/
 │  └─ marketplace.json              # marketplace 清單(列出所有 plugin)
@@ -241,3 +243,20 @@ claude plugin install agent-essentials@ai-grocery
 
 實務上使用者只要把別人的 repo 連結或安裝指令貼進 session,Claude Code 讀到 `CLAUDE.md` 就會照那份流程
 把東西整合進來,並同步更新 `marketplace.json`、兩層 README 與這一頁的「收錄的別人精華」。
+
+## 授權
+
+本 repo 採 **[MIT](./LICENSE)** —— 隨便拿去用、改、散布，記得保留著作權聲明就好。
+
+但 MIT **只蓋自己寫的部分**:marketplace 定義、plugin manifest、文件，以及在這裡原創的 skill 與 agent。
+vendored 進來的第三方 skill **維持原作者的授權**,不因為這裡掛 MIT 而被重新授權;
+外部參照的 plugin 檔案根本不在這個 repo 裡,授權完全由上游決定。
+
+逐一對照哪個元件屬於哪一種,看 **[NOTICE.md](./NOTICE.md)**。
+
+兩個要特別注意的:
+
+- ⚠️ `lieflat-charts`(在 `viz-tools` 內)是 **PolyForm Noncommercial 1.0.0**,**僅限非商業用途**。
+- ⚠️ `transitions-dev`(外部參照)允許用在個人與商業專案,但**禁止重新打包散布**這套集合。
+
+如果你是這裡任何一份作品的作者,覺得收錄方式或標註有問題,開 issue 說一聲,我會馬上修正或移除。

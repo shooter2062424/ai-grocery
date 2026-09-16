@@ -15,6 +15,8 @@ claude plugin install <plugin>@ai-grocery
 目錄結構：
 
 ```
+LICENSE                           # MIT，只蓋本 repo 自己的工作
+NOTICE.md                         # 授權清單：自製 / vendored / 外部參照，逐一列出
 .claude-plugin/marketplace.json   # marketplace 清單：列出所有 plugin（本地的 + 外部 GitHub 來源的）
 plugins/<plugin-name>/
   .claude-plugin/plugin.json      # 該 plugin 的 manifest
@@ -124,8 +126,17 @@ Claude Code 就會直接去上游 repo 抓，本 repo 一個檔案都不複製�
 | `career-tools` | 職涯、面試、履歷、職場溝通 |
 
 都不合就**新增一個 plugin**：建 `plugins/<name>/.claude-plugin/plugin.json`（照現有格式：
-`name` / `description` / `version` / `author` / `keywords`）、寫 `README.md`、
+`name` / `description` / `version` / `author` / `license` / `keywords`）、寫 `README.md`、
 並在 `marketplace.json` 的 `plugins` 加一筆 `"source": "./plugins/<name>"`。
+
+`license` 欄位一律要填，而且要反映**實際內容**，不是預設寫 MIT：
+
+- 全部是自製或寬鬆授權的 vendored 內容 → `"MIT"`
+- 混了非寬鬆授權的 vendored skill → 用 SPDX 複合式，例如
+  `"MIT AND PolyForm-Noncommercial-1.0.0"`（`viz-tools` 就是這樣）
+
+本 repo 整體是 MIT（根目錄 `LICENSE`），但那**只蓋自己寫的部分**；
+vendored 進來的第三方內容維持原授權，不因為根目錄掛 MIT 而被重新授權。
 
 ### 第 3 步：每次整合都要一起更新的東西
 
@@ -136,7 +147,9 @@ Claude Code 就會直接去上游 repo 抓，本 repo 一個檔案都不複製�
 3. `plugins/<plugin>/README.md` — 內容表格 + **收錄來源表格（原作者 / repo / 授權）**
 4. 根目錄 `README.md` — 「目前收錄的 plugin」表格、「安裝方式」的指令清單，以及
    **「收錄的別人精華」章節**（統一列出所有外部來源與原作者，這是給人看的致謝與追溯）
-5. 本檔案 `CLAUDE.md` — 只有在流程本身改變時才要動
+5. `NOTICE.md` — **vendored 或外部參照都要加一列**（路徑 / 原作者 / 原 repo / 授權）。
+   這是本 repo 的授權真相來源，漏了就等於沒標註。
+6. 本檔案 `CLAUDE.md` — 只有在流程本身改變時才要動
 
 ### 第 4 步：驗證
 
@@ -157,6 +170,8 @@ grep -L '^description:' plugins/*/skills/*/SKILL.md
 - [ ] 沒有把使用者的私人資料、API key、token 寫進任何檔案
 - [ ] 沒有把上游的 `.git/` 目錄複製進來
 - [ ] 非商業授權的內容已經在兩層 README 標出 `⚠️`
+- [ ] `NOTICE.md` 已經加上這次收錄的那一列
+- [ ] 該 plugin 的 `plugin.json` 有 `license` 欄位，且反映實際內容（混了非寬鬆授權就用 SPDX 複合式）
 
 ### 第 5 步：commit 與 push
 

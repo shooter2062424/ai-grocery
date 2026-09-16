@@ -13,5 +13,6 @@
     "中國信託",
     "pywin32",
     "broker-api"
-  ]
+  ],
+  "license": "MIT"
 }
