@@ -113,6 +113,15 @@
         "./skills/"
       ],
       "strict": false
+    },
+    {
+      "name": "pstack",
+      "source": {
+        "source": "git-subdir",
+        "url": "michael-denyer/pstack-claude",
+        "path": "plugins/pstack"
+      },
+      "description": "agent-essentials 相依。pstack 的 Claude Code 移植版(原作 Lauren Tan / poteto):「想跑得快,先挖得深」—— 63 個 skill(poteto-mode、principle-* 工程原則、tdd、deslop、unslop、babysit、fix-ci、interrogate、architect、arena…)加 agents 與 hooks,讓 agent 少寫但寫得更好、可放心平行化。純外部參照:檔案不複製進本 repo,從上游子目錄 plugins/pstack 直接抓。"
     }
   ]
 }

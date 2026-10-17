@@ -54,6 +54,10 @@ Claude Code 就會直接去上游 repo 抓，本 repo 一個檔案都不複製�
 **上游授權禁止再散布時，這是唯一正確的路線** —— 收錄的是指標，不是內容，所以不構成再散布。
 範例見 `marketplace.json` 的 `transitions-dev`。
 
+**plugin 在上游 repo 的子目錄**(上游自己是 marketplace，plugin 放 `plugins/<name>`)時，
+source 改用 `git-subdir`：`{ "source": "git-subdir", "url": "<owner>/<repo>", "path": "plugins/<name>" }`。
+範例見 `pstack`。`github` 來源只適用 plugin 在 repo 根目錄。
+
 ### 路線 A：外部參照（對方是 plugin）
 
 不要把對方的檔案複製進來。改成在 `marketplace.json` 的 `plugins` 陣列加一筆 github 來源：
