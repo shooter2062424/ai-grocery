@@ -1,6 +1,6 @@
 {
   "name": "web-design-tools",
-  "description": "前端/網頁設計類工具集。含 modern-web-design skill 與 awesome-design-md(84 份知名網站的 DESIGN.md 設計系統,指定品牌就照它的設計語言做 UI)(用 Next.js+Tailwind+shadcn/ui 做出有質感的現代網站,涵蓋:突破 AI 預設風格、捲動逐幀動畫管線、Awwwards 設計參考擷取與重建、依受眾拆設計策略),並以 marketplace 相依帶入 transitions-dev(32 個可直接貼上的 CSS transition 與 motion token 校準),以及 web-design-guidelines(Vercel 介面規範審查)與 playwright-cli(瀏覽器自動化,看實際渲染結果)。",
+  "description": "前端/網頁設計類工具集。含 modern-web-design skill(用 Next.js+Tailwind+shadcn/ui 做出有質感的現代網站,涵蓋:突破 AI 預設風格、捲動逐幀動畫管線、Awwwards 設計參考擷取與重建、依受眾拆設計策略)與 awesome-design-md skill(84 份知名網站的 DESIGN.md 設計系統,指定品牌就照它的設計語言做 UI),並以 marketplace 相依帶入 transitions-dev(32 個可直接貼上的 CSS transition 與 motion token 校準)、web-design-guidelines(Vercel 介面規範審查)與 playwright-cli(瀏覽器自動化,看實際渲染結果)。",
   "version": "0.4.0",
   "author": {
     "name": "shooter2062424"
