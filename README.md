@@ -73,6 +73,8 @@ ai-grocery/
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
 | **web-design-tools** | 前端/網頁設計類工具。含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。**相依**:`transitions-dev`。 |
+| ↳ **web-design-guidelines** | web-design-tools 相依,來源 [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(MIT)。Vercel 的 Web Interface Guidelines 審查 skill,逐條檢查 UI 程式碼的無障礙與 UX 規範。 |
+| ↳ **playwright-cli** | web-design-tools 相依,來源 [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli)(Apache-2.0)。讓 agent 操作瀏覽器、跑 Playwright 測試。需先 `npm install -g @playwright/cli@latest`。 |
 | ↳ **transitions-dev** | web-design-tools 相依,來源 [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev)。32 個可直接貼上的 CSS transition,每個 namespaced 在 `t-*` 並附 `prefers-reduced-motion` guard;另含 `transitions-polish` 做 motion token 校準。⚠️ 可自由用於個人與商業專案,但禁止重新打包散布;Pro transitions 需付費。 |
 | **career-tools** | 職涯類工具。目前含 `interview-personality` skill(面試的個人特質 / cultural fit 題:用 Trait → Behaviour → Evidence 三層公式,把 hardworking / team player 這種跟所有人都一樣的形容詞,換成讓面試官看得見「跟你工作是什麼體驗」的具體畫面;從事件回推特質,並針對職位重排順序)。 |
 | **viz-tools** | 資料視覺化與圖解。**Skills**:`archify`(架構圖/工作流程圖/時序圖/資料流圖/狀態機 → 可探索的單檔 HTML + inline SVG,深淺色主題、路徑動畫、可匯出 PNG/JPEG/WebP/SVG/WebM,也吃貼上的 Mermaid、也能讀 repo 照真實程式碼畫)、`lieflat-charts`(模板驅動的 HTML 圖表與 12 套中英文整頁報告,Mono 灰階保底並依資料語義自動選色)。**相依**:`diagram-design`。⚠️ `lieflat-charts` 為 **PolyForm Noncommercial** 授權,僅限非商業用途。 |
@@ -93,6 +95,8 @@ ai-grocery/
 | [mattpocock/skills](https://github.com/mattpocock/skills) | Matt Pocock | `mattpocock-skills` plugin,`agent-essentials` 相依 | 一整套工程工作流:`grilling`(逼問你的計畫直到站得住腳)、`tdd`(red-green-refactor)、`code-review`(標準面 + 規格面雙軸審查)、`domain-modeling`、`writing-for-agents`(怎麼寫 CLAUDE.md 跟 skill)、`diagnosing-bugs`。 |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx | `taste-skill` plugin,`agent-essentials` 相依 | 前端美感的解毒劑。把「一看就是 AI 做的」那種預設風格擋掉,提供 brutalist / minimalist / high-end / redesign / stitch 等明確設計方向,外加 image-to-code 與圖像生成的設計參考流程。 |
 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | Michael Denyer(Claude Code 移植);原作 Lauren Tan (poteto)、Cursor | `pstack` plugin,`agent-essentials` 相依 | 「想跑得快,先挖得深」:寫得少但品質更高、可放心平行化的 agent 工作流。`poteto-mode`、一整排 `principle-*`(攻擊前提、修根因、先建槓桿、讓操作冪等…)、`tdd`、`deslop` / `unslop`、`babysit`、`fix-ci`、`interrogate`、`architect`、`arena` 等 63 個 skill,外加 agents 與 hooks。插件在上游的 `plugins/pstack` 子目錄,用 `git-subdir` 參照。 |
+| [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Vercel | `web-design-guidelines` plugin(只取 `skills/web-design-guidelines`),`web-design-tools` 相依 | Web Interface Guidelines 審查:逐條檢查 UI 程式碼的無障礙與 UX,輸出簡潔的 `file:line` 清單;規則每次從上游即時抓最新版。 |
+| [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) | Microsoft | `playwright-cli` plugin,`web-design-tools` 相依 | 讓 agent 用 `playwright-cli` 指令自動化瀏覽器、跑 Playwright 測試,能實際看渲染結果。Apache-2.0。 |
 | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) · [transitions.dev](https://transitions.dev/) | Jakub Antalik | `transitions-dev` plugin,`web-design-tools` 相依 | 32 個可直接貼上的 CSS transition:modal 開關、dropdown、number pop-in、icon swap、success check、skeleton、shimmer、sliding tabs、accordion、toast、like button、streaming text、matrix loader…。每個都 namespaced 在 `t-*`、用語意化 CSS custom property,並附 `prefers-reduced-motion` guard —— 貼進任何專案都能用,不綁 framework、不帶 demo 專用 markup。另含 `transitions-polish`,依 duration / distance / scale / blur / easing 五個維度校準既有動態(open/close 不對稱、hover in/out、stagger、intent delay)。 |
 | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) | Cathryn Lavery | `diagram-design` plugin,`viz-tools` 相依 | 品牌化的圖表工廠。數十種版型(架構、流程、時序、狀態機、ER、時間軸、泳道、象限、雷達、漏斗、樹狀、組織圖、Sankey、魚骨、Wardley map、使用者旅程…)配上可從網站擷取的品牌 token,輸出 HTML / SVG / PNG,還能把既有的 .drawio 與 Mermaid 重畫成同一套視覺。 |
 | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | shooter2062424 | `open-kimi-ppt` plugin,`agent-essentials` 相依 | 用 PPTD 格式做簡報的建立 / 編輯 / 仿製 / 匯出,產出的是**可編輯的專案資料夾**加上內嵌字型的 `.pptx`,不是一次性的死檔。 |
@@ -143,7 +147,7 @@ claude plugin install agent-essentials@ai-grocery
 claude plugin install knowledge-tools@ai-grocery
 claude plugin install investing-like-pro@ai-grocery
 claude plugin install finance@ai-grocery
-claude plugin install web-design-tools@ai-grocery   # 會一併帶入 transitions-dev
+claude plugin install web-design-tools@ai-grocery   # 會一併帶入 transitions-dev、web-design-guidelines、playwright-cli
 claude plugin install career-tools@ai-grocery
 claude plugin install viz-tools@ai-grocery
 claude plugin install content-tools@ai-grocery

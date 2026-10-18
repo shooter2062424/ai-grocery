@@ -122,6 +122,57 @@
         "path": "plugins/pstack"
       },
       "description": "agent-essentials 相依。pstack 的 Claude Code 移植版(原作 Lauren Tan / poteto):「想跑得快,先挖得深」—— 63 個 skill(poteto-mode、principle-* 工程原則、tdd、deslop、unslop、babysit、fix-ci、interrogate、architect、arena…)加 agents 與 hooks,讓 agent 少寫但寫得更好、可放心平行化。純外部參照:檔案不複製進本 repo,從上游子目錄 plugins/pstack 直接抓。"
+    },
+    {
+      "name": "web-design-guidelines",
+      "source": {
+        "source": "github",
+        "repo": "vercel-labs/agent-skills"
+      },
+      "description": "web-design-tools 相依。Vercel 的 Web Interface Guidelines 審查 skill:丟檔案或 glob 給它,逐條檢查 UI 程式碼的無障礙、UX 與介面規範,輸出簡潔的 file:line 清單。每次審查都從上游即時抓最新規則。純外部參照:只取上游 skills/web-design-guidelines 一個 skill。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Vercel"
+      },
+      "homepage": "https://github.com/vercel-labs/agent-skills",
+      "repository": "https://github.com/vercel-labs/agent-skills",
+      "license": "MIT",
+      "keywords": [
+        "web-design",
+        "accessibility",
+        "ux",
+        "review",
+        "vercel"
+      ],
+      "skills": [
+        "./skills/web-design-guidelines"
+      ],
+      "strict": false
+    },
+    {
+      "name": "playwright-cli",
+      "source": {
+        "source": "github",
+        "repo": "microsoft/playwright-cli"
+      },
+      "description": "web-design-tools 相依。Microsoft 的 playwright-cli skill:讓 agent 用 playwright-cli 指令自動化瀏覽器、操作網頁、跑 Playwright 測試。需先 npm install -g @playwright/cli。純外部參照。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Microsoft"
+      },
+      "homepage": "https://github.com/microsoft/playwright-cli",
+      "repository": "https://github.com/microsoft/playwright-cli",
+      "license": "Apache-2.0",
+      "keywords": [
+        "playwright",
+        "browser",
+        "automation",
+        "testing"
+      ],
+      "skills": [
+        "./skills/"
+      ],
+      "strict": false
     }
   ]
 }
