@@ -7,6 +7,7 @@
 | 類型 | 名稱 | 用途 |
 |---|---|---|
 | skill | `modern-web-design` | 用 Next.js + Tailwind + shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取與重建、依受眾拆設計策略。含 ffmpeg 拆幀與 Playwright 擷取腳本。 |
+| skill | `awesome-design-md` | 84 份從知名網站(Stripe、Linear、Apple、Notion、Vercel、Airbnb、Tesla…)萃取的 `DESIGN.md` 設計系統文件:色彩、字級、圓角、間距、元件與 Do / Don't。指定品牌就照它的設計語言做 UI。`SKILL.md` 內有完整索引。 |
 | 相依 plugin | `transitions-dev`、`web-design-guidelines`、`playwright-cli` | 見下。 |
 
 ## 相依 plugin(自動一起安裝)
@@ -47,9 +48,14 @@ claude plugin marketplace add shooter2062424/ai-grocery   # 已加過改用:clau
 claude plugin install web-design-tools@ai-grocery         # transitions-dev 會一起裝進來
 ```
 
-## 另一個值得知道的:Awesome DESIGN.md(未收錄)
+## 收錄來源與授權(vendored)
 
-[VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md)(MIT)是 84 份知名網站的 `DESIGN.md` 設計系統分析(Apple、Airbnb、BMW…),
-用法是把其中一份複製到你的專案根目錄,跟 agent 說「照這個風格做頁面」。
-它只是 markdown 資料集,**沒有 skill 也沒有 plugin manifest**,沒有東西可以掛成相依,而且 3 MB 的品牌分析不適合複製進本 repo,所以只放連結。
-`taste-skill` 裡的 `stitch-design-taste` 可以產生同格式的 `DESIGN.md`。
+| Skill | 原作者 | 原 repo | 授權 |
+|---|---|---|---|
+| `awesome-design-md` | VoltAgent | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | MIT(`skills/awesome-design-md/LICENSE` 隨附) |
+
+上游只是 markdown 資料集,沒有 skill 也沒有 plugin manifest,所以複製進來。
+`SKILL.md` 是本 repo 為它寫的(上游沒有),內容是使用流程與品牌索引;索引裡的風格摘要取自上游 README 原文,`design-md/<slug>/DESIGN.md` 逐字未改。
+沒收的:每個品牌資料夾裡的 `README.md`(只有一行「已搬到 getdesign.md」的連結),要看預覽與下載請去 [getdesign.md](https://getdesign.md)。
+
+⚠️ 這些文件是從公開網站萃取的設計 token,上游聲明「不主張任何網站視覺識別的所有權」。借**設計語言**可以,不要把品牌 logo、商標或文案搬進你的產品。

@@ -35,6 +35,7 @@ Copyright (c) 2026 shooter2062424
 | `plugins/content-tools/skills/dumbify/` | Artem Novitckii | 同上 | MIT（`LICENSE` 隨附） |
 | `plugins/content-tools/skills/anti-ai-writing/` | Artem Novitckii | 同上 | MIT（`LICENSE` 隨附） |
 | `plugins/knowledge-tools/skills/game-theory-skill/` | peterfei | [peterfei/forge-skill-game-theory-skill](https://github.com/peterfei/forge-skill-game-theory-skill) | MIT（上游宣告於 `package.json` 與 README，未附獨立 LICENSE 檔） |
+| `plugins/web-design-tools/skills/awesome-design-md/` | VoltAgent | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | MIT（`LICENSE` 隨附；`SKILL.md` 與索引為本 repo 撰寫，`design-md/` 逐字未改） |
 | `plugins/agent-essentials/skills/humanizer-zh-tw/` | kevintsai1202 | [kevintsai1202/Humanizer-zh-TW](https://github.com/kevintsai1202/Humanizer-zh-TW) | 以上游 repo 為準（上游再上游：op7418/humanizer-zh、blader/humanizer） |
 | `plugins/agent-essentials/skills/html-artifacts/` | dogum | [dogum/html-artifacts](https://github.com/dogum/html-artifacts) | 以上游 repo 為準 |
 
@@ -52,7 +53,7 @@ Copyright (c) 2026 shooter2062424
 只有一處：在 `SKILL.md` frontmatter 的 `description` **結尾附加**一行繁中觸發詞，
 讓中文提問也能觸發。正文、術語、程式碼一字未動。
 
-為控制 repo 體積，部分執行時用不到的檔案未收錄（`archify` 的 `test/` 與
+為控制 repo 體積，部分執行時用不到的檔案未收錄（`awesome-design-md` 各品牌資料夾的 `README.md`、`archify` 的 `test/` 與
 `package-lock.json`、`lieflat-charts` 的 `docs/`）。要看完整內容請到上游 repo。
 
 ## 三、外部參照 — 不在本 repo 內

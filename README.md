@@ -72,7 +72,7 @@ ai-grocery/
 | **knowledge-tools** | 知識與學習類工具。含 `rapid-learning`(NotebookLM 三提問快速學習法)、`game-theory-skill`(博弈論結構化思維工具:12 個一手來源提煉的 6 個核心原理,判斷局勢、找策略、要不要先出手、對方會怎麼反應)。 |
 | **investing-like-pro** | 投資類工具。**Agents**:`gooaye`(用股癌數百集 podcast 萃取的「投資思維框架」評斷一支股票好不好)、`google-nexus`(用 Google Nexus 五代理人框架做未來 N 日走勢預測+可解釋推理)、`valuation-bands`(用 EPS×本益比歷史分位把股價判成 特價/便宜/合理/昂貴/瘋狂 五檔)。**Skill**:`trading-math`(用期望值/系統設計/變異數/風險四大交易數學概念評斷一套交易系統會不會賺、能不能活久,反推部位大小、破產風險、復原數學,含 Python 計算腳本)。**教育用途,非投資建議。** |
 | **finance** | 金融/交易類工具。含 `ctbc-securities-api`(用 Python+pywin32 操作中國信託證券交易 API:登入/下單/查詢/回報,含 headless client 與回傳解析腳本)。**涉及真實下單與真錢,務必先用測試環境;非投資建議。** |
-| **web-design-tools** | 前端/網頁設計類工具。含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)。**相依**:`transitions-dev`。 |
+| **web-design-tools** | 前端/網頁設計類工具。含 `modern-web-design` skill(Next.js+Tailwind+shadcn/ui 做現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取、依受眾拆設計策略;含 ffmpeg 拆幀與 Playwright 擷取腳本)、`awesome-design-md`(84 份知名網站的 DESIGN.md 設計系統)。**相依**:`transitions-dev`、`web-design-guidelines`、`playwright-cli`。 |
 | ↳ **web-design-guidelines** | web-design-tools 相依,來源 [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(MIT)。Vercel 的 Web Interface Guidelines 審查 skill,逐條檢查 UI 程式碼的無障礙與 UX 規範。 |
 | ↳ **playwright-cli** | web-design-tools 相依,來源 [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli)(Apache-2.0)。讓 agent 操作瀏覽器、跑 Playwright 測試。需先 `npm install -g @playwright/cli@latest`。 |
 | ↳ **transitions-dev** | web-design-tools 相依,來源 [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev)。32 個可直接貼上的 CSS transition,每個 namespaced 在 `t-*` 並附 `prefers-reduced-motion` guard;另含 `transitions-polish` 做 motion token 校準。⚠️ 可自由用於個人與商業專案,但禁止重新打包散布;Pro transitions 需付費。 |
@@ -125,6 +125,7 @@ vendored 時唯一的修改是在 `SKILL.md` frontmatter 的 `description` 後�
 | `dumbify` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT | `content-tools` | 人不是因為內容太淺而離開,是因為**跟上太費力**。降到約八年級閱讀水準,簡單的語言不是簡單的想法。 |
 | `anti-ai-writing` | Artem Novitckii | [artemnovitckii/content-skills](https://github.com/artemnovitckii/content-skills) | MIT | `content-tools` | 目標不是「不要像 AI」—— 追著否定跑只會得到一片米色。目標是聽起來像一個真的想過這件事、而且有話要說的**具體的人**。 |
 | `game-theory-skill` | peterfei | [peterfei/forge-skill-game-theory-skill](https://github.com/peterfei/forge-skill-game-theory-skill) | MIT(上游未附獨立 LICENSE 檔) | `knowledge-tools` | 博弈論(賽局理論)結構化思維工具。基於 12 個一手來源(佔比 60%)提煉出 6 個核心原理與完整操作協議,把「這是不是博弈」「誰在跟誰博弈」「要不要先出手」變成可以照著走的判斷步驟。 |
+| `awesome-design-md` | VoltAgent | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | MIT | `web-design-tools` | 84 份知名網站的 `DESIGN.md`(色彩、字級、間距、元件、Do / Don't)。「做成像 Stripe / Linear 那樣」不用再憑感覺 —— 讓 agent 讀那份設計系統文件,產出的 UI 跟著同一套 token。 |
 | `humanizer-zh-tw` | kevintsai1202(上游 op7418/humanizer-zh、blader/humanizer) | [kevintsai1202/Humanizer-zh-TW](https://github.com/kevintsai1202/Humanizer-zh-TW) | 見上游 repo | `agent-essentials` | 繁中版的去 AI 味:誇大象徵、宣傳語言、破折號過度、三段式法則、否定式排比,一條條抓出來改掉。 |
 | `html-artifacts` | dogum | [dogum/html-artifacts](https://github.com/dogum/html-artifacts) | 見上游 repo | `agent-essentials` | 判斷「這件事該用版面講」而不是硬塞 markdown,然後產出自帶樣式的單檔 HTML。 |
 
