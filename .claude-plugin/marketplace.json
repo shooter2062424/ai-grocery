@@ -28,7 +28,7 @@
         "source": "github",
         "repo": "mattpocock/skills"
       },
-      "description": "agent-essentials 相依。Matt Pocock 的工程工作流 skills:grilling、TDD、code review、domain modeling、writing-for-agents 等。"
+      "description": "agent-essentials 相依。Matt Pocock 的工程工作流與生產力 skills(v1.3.1,27 個):grilling / grill-me / grill-with-docs、to-spec → to-tickets → implement-spec 的規格到實作流程、tdd、code-review、triage、diagnosing-bugs、domain-modeling、codebase-design、improve-codebase-architecture、pr、retro、handoff、teach、writing-for-agents 等。"
     },
     {
       "name": "taste-skill",

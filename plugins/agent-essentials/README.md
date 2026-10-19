@@ -25,7 +25,7 @@ output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,
 | Plugin | 來源 | 用途 |
 |---|---|---|
 | `caveman` | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | 穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變。 |
-| `mattpocock-skills` | [mattpocock/skills](https://github.com/mattpocock/skills) | 工程工作流:grilling、TDD、code review、domain modeling、writing-for-agents。 |
+| `mattpocock-skills` | [mattpocock/skills](https://github.com/mattpocock/skills) | 工程工作流與生產力(上游 v1.3.1,27 個 skill):grilling、to-spec / to-tickets / implement-spec、TDD、code review、triage、domain modeling、pr、retro、handoff、writing-for-agents 等。 |
 | `taste-skill` | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | 前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
 | `open-kimi-ppt` | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) | 以 PPTD 格式做簡報:建立/編輯/仿製/匯出,產出可編輯專案 + 內嵌字型的 .pptx。 |
 | `pstack` | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(原作 [Lauren Tan / poteto](https://github.com/cursor/plugins/tree/main/pstack),MIT) | 「想跑得快,先挖得深」。63 個 skill(`poteto-mode`、`principle-*` 工程原則、`tdd`、`deslop`、`unslop`、`babysit`、`fix-ci`、`interrogate`、`architect`、`arena`…)加 agents 與 hooks。插件在上游 repo 的 `plugins/pstack` 子目錄,用 `git-subdir` 來源參照。 |
