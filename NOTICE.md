@@ -53,8 +53,8 @@ Copyright (c) 2026 shooter2062424
 只有一處：在 `SKILL.md` frontmatter 的 `description` **結尾附加**一行繁中觸發詞，
 讓中文提問也能觸發。正文、術語、程式碼一字未動。
 
-為控制 repo 體積，部分執行時用不到的檔案未收錄（`awesome-design-md` 各品牌資料夾的 `README.md`、`archify` 的 `test/` 與
-`package-lock.json`、`lieflat-charts` 的 `docs/`）。要看完整內容請到上游 repo。
+為控制 repo 體積，部分執行時用不到的檔案未收錄（`awesome-design-md` 各品牌資料夾的 `README.md`、`archify` 的 `test/`、
+`package-lock.json` 與 `examples/` 預先渲染的 `*.html`、`lieflat-charts` 的 `docs/`）。要看完整內容請到上游 repo。
 
 ## 三、外部參照 — 不在本 repo 內
 

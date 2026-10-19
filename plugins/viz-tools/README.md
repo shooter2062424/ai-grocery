@@ -39,10 +39,12 @@ vendored 的原因：兩者上游都不是 Claude Code plugin 形式（安裝方
 沒有 `plugin.json` 可以被 marketplace 直接參照，所以複製進來並在此標註來源。
 `diagram-design` 上游本身就是 marketplace，因此走外部參照，永遠跟著上游最新版。
 
+`archify` 目前收錄的是上游 v3.2。上游更新很勤，要更新就重新同步 `skills/archify/`。
+
 vendored 時做的唯一修改：在 `SKILL.md` frontmatter 的 `description` 後面**附加**繁中觸發詞，
 讓中文提問也叫得動這些 skill。原本的英文/簡中描述與正文一字未動。
 
-為了控制 repo 體積，`archify` 的 `test/` 與 `package-lock.json`、`lieflat-charts` 的 `docs/`（19MB 截圖）未收錄，
+為了控制 repo 體積，`archify` 的 `test/`、`package-lock.json` 與 `examples/` 裡預先渲染好的 `*.html`（約 12 MB，只是 JSON 範例的輸出）、`lieflat-charts` 的 `docs/`（19MB 截圖）未收錄，
 不影響 skill 執行。需要那些內容請到上游 repo 看。
 
 ## 安裝
