@@ -60,10 +60,11 @@ ai-grocery/
 
 | Plugin | 內容 |
 |---|---|
-| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告八個相依 plugin(下方八列),**安裝時自動一起裝**。 |
+| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告九個相依 plugin(下方九列),**安裝時自動一起裝**。 |
 | ↳ **caveman** | agent-essentials 相依,來源 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)。穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變(靠 SessionStart hook,裝完要重開 session)。 |
 | ↳ **mattpocock-skills** | agent-essentials 相依,來源 [mattpocock/skills](https://github.com/mattpocock/skills)。工程工作流與生產力 skills(v1.3.1,27 個):grilling / grill-me / grill-with-docs、to-spec → to-tickets → implement-spec 的規格到實作流程、tdd、code-review、triage、diagnosing-bugs、domain-modeling、codebase-design、improve-codebase-architecture、pr、retro、handoff、teach、writing-for-agents 等。 |
 | ↳ **taste-skill** | agent-essentials 相依,來源 [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)。前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |
+| ↳ **asd-ste100** | agent-essentials 相依,來源 [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)(MIT)。把有歧義的英文改寫成 ASD-STE100 簡化技術英文,給 agent 讀的 tool description、錯誤訊息、指令不會被誤讀。 |
 | ↳ **pstack** | agent-essentials 相依,來源 [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(原作 Lauren Tan / poteto)。63 個工程原則與 agent 工作流 skill,見下方外部參照表。 |
 | ↳ **viz-tools** | agent-essentials 相依(本 marketplace)。圖解與圖表,見下方獨立列。 |
 | ↳ **content-tools** | agent-essentials 相依(本 marketplace)。內容寫作產線,見下方獨立列。 |
@@ -94,6 +95,7 @@ ai-grocery/
 | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman) | JuliusBrussee | `caveman` plugin,`agent-essentials` 相依 | 穴居人講話模式。砍掉冠詞、贅字、客套與鋪陳,只留技術內容,實測省約 65% 輸出 token 而準確度不變。分 lite / full / ultra 與文言文變體,靠 SessionStart hook 全程生效。 |
 | [mattpocock/skills](https://github.com/mattpocock/skills) | Matt Pocock | `mattpocock-skills` plugin,`agent-essentials` 相依 | 一整套工程工作流與生產力 skill(上游 v1.3.1,27 個)。`grilling` / `grill-me` / `grill-with-docs`(逼問你的計畫直到站得住腳)、`to-spec` → `to-tickets` → `implement-spec`(從規格到工單到實作)、`tdd`(red-green-refactor)、`code-review`(標準面 + 規格面雙軸審查)、`triage`、`diagnosing-bugs`、`domain-modeling`、`codebase-design` / `improve-codebase-architecture`、`pr`、`retro`、`handoff`、`teach`、`writing-for-agents`(怎麼寫 CLAUDE.md 跟 skill)等。外部參照,永遠跟上游最新版。 |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx | `taste-skill` plugin,`agent-essentials` 相依 | 前端美感的解毒劑。把「一看就是 AI 做的」那種預設風格擋掉,提供 brutalist / minimalist / high-end / redesign / stitch 等明確設計方向,外加 image-to-code 與圖像生成的設計參考流程。 |
+| [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) | danyuchn(Dustin Yuchen Teng) | `asd-ste100` plugin,`agent-essentials` 相依 | ASD-STE100(航太業為防止技師誤讀維修指令而訂的受控英文)借來給「沒有人類可以消歧義」的讀者用:agent 或下游系統要解析的 tool description、錯誤訊息、agent 間指令、system prompt、狀態回報。一詞一義、短句、主動語態、祈使句;附 `ste-lint.py` 對結構規則做機械檢查。 |
 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | Michael Denyer(Claude Code 移植);原作 Lauren Tan (poteto)、Cursor | `pstack` plugin,`agent-essentials` 相依 | 「想跑得快,先挖得深」:寫得少但品質更高、可放心平行化的 agent 工作流。`poteto-mode`、一整排 `principle-*`(攻擊前提、修根因、先建槓桿、讓操作冪等…)、`tdd`、`deslop` / `unslop`、`babysit`、`fix-ci`、`interrogate`、`architect`、`arena` 等 63 個 skill,外加 agents 與 hooks。插件在上游的 `plugins/pstack` 子目錄,用 `git-subdir` 參照。 |
 | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills) | Vercel | `web-design-guidelines` plugin(只取 `skills/web-design-guidelines`),`web-design-tools` 相依 | Web Interface Guidelines 審查:逐條檢查 UI 程式碼的無障礙與 UX,輸出簡潔的 `file:line` 清單;規則每次從上游即時抓最新版。 |
 | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli) | Microsoft | `playwright-cli` plugin,`web-design-tools` 相依 | 讓 agent 用 `playwright-cli` 指令自動化瀏覽器、跑 Playwright 測試,能實際看渲染結果。Apache-2.0。 |
@@ -208,13 +210,13 @@ claude plugin details <name>  # 看某個 plugin 帶進來哪些元件、吃多�
 
 ### agent-essentials 的相依
 
-`agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告八個相依,
+`agent-essentials` 是一個 **bundle plugin**:它在 `plugin.json` 的 `dependencies` 宣告九個相依,
 安裝時 Claude Code 會自動把它們一起裝好、一起啟用。
 
 ```json
 // plugins/agent-essentials/.claude-plugin/plugin.json
 "dependencies": ["caveman", "mattpocock-skills", "taste-skill", "open-kimi-ppt",
-                 "viz-tools", "content-tools", "knowledge-tools", "pstack"]
+                 "viz-tools", "content-tools", "knowledge-tools", "pstack", "asd-ste100"]
 ```
 
 所以使用者只要一行:
@@ -225,10 +227,10 @@ claude plugin install agent-essentials@ai-grocery
 
 兩個前提都已經滿足,不用額外設定:
 
-- **同 marketplace**:`dependencies` 的名字預設在宣告者所屬的 marketplace 解析,而這八個都已列在本 marketplace 的
+- **同 marketplace**:`dependencies` 的名字預設在宣告者所屬的 marketplace 解析,而這九個都已列在本 marketplace 的
   `plugins` 陣列(外部的 `source` 指向原 GitHub repo,本地的指向 `./plugins/<name>`),所以不需要 `allowCrossMarketplaceDependenciesOn`。
   `viz-tools` 自己又宣告了 `diagram-design`,會一起被拉進來。
-- **不綁版本**:八個都用裸字串宣告(跟著上游最新版走),因此不需要上游打 `{name}--v{version}` git tag。
+- **不綁版本**:九個都用裸字串宣告(跟著上游最新版走),因此不需要上游打 `{name}--v{version}` git tag。
   哪天要把某個相依鎖在測過的版本,再改成 `{ "name": "caveman", "version": "~1.2.0" }`,那時上游才必須有對應 tag。
 
 裝完 `caveman` 靠 SessionStart hook 生效,要**重開一個 session**。

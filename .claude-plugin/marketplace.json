@@ -173,6 +173,14 @@
         "./skills/"
       ],
       "strict": false
+    },
+    {
+      "name": "asd-ste100",
+      "source": {
+        "source": "github",
+        "repo": "danyuchn/asd-ste100-skill"
+      },
+      "description": "agent-essentials 相依。把有歧義的英文改寫成 ASD-STE100 簡化技術英文(航太業用來防止誤讀的受控語言):給 agent 或下游系統讀的 tool description、錯誤訊息、agent 之間的指令、system prompt、狀態回報。附 ste-lint.py 結構規則 linter。純外部參照。"
     }
   ]
 }

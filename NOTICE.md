@@ -68,6 +68,7 @@ Copyright (c) 2026 shooter2062424
 | `taste-skill` | Leonxlnx | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) |
 | `open-kimi-ppt` | shooter2062424 | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) |
 | `diagram-design` | Cathryn Lavery | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) |
+| `asd-ste100` | danyuchn（Dustin Yuchen Teng） | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)，授權 MIT |
 | `pstack` | Michael Denyer(移植);原作 Lauren Tan (poteto)、Cursor | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(子目錄 `plugins/pstack`),授權 MIT,上游 `NOTICE.md` 保留各部分原始著作權 |
 | `web-design-guidelines` | Vercel | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(只取 `skills/web-design-guidelines`),授權 MIT |
 | `playwright-cli` | Microsoft | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli),授權 Apache-2.0 |
