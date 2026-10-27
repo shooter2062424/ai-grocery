@@ -35,6 +35,7 @@ Copyright (c) 2026 shooter2062424
 | `plugins/content-tools/skills/dumbify/` | Artem Novitckii | 同上 | MIT（`LICENSE` 隨附） |
 | `plugins/content-tools/skills/anti-ai-writing/` | Artem Novitckii | 同上 | MIT（`LICENSE` 隨附） |
 | `plugins/knowledge-tools/skills/game-theory-skill/` | peterfei | [peterfei/forge-skill-game-theory-skill](https://github.com/peterfei/forge-skill-game-theory-skill) | MIT（上游宣告於 `package.json` 與 README，未附獨立 LICENSE 檔） |
+| `plugins/web-design-tools/skills/web-design-guidelines/` | Vercel | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)（只取 `skills/web-design-guidelines/SKILL.md`） | MIT（上游 README 宣告，無獨立 LICENSE 檔） |
 | `plugins/web-design-tools/skills/awesome-design-md/` | VoltAgent | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | MIT（`LICENSE` 隨附；`SKILL.md` 與索引為本 repo 撰寫，`design-md/` 逐字未改） |
 | `plugins/agent-essentials/skills/humanizer-zh-tw/` | kevintsai1202 | [kevintsai1202/Humanizer-zh-TW](https://github.com/kevintsai1202/Humanizer-zh-TW) | 以上游 repo 為準（上游再上游：op7418/humanizer-zh、blader/humanizer） |
 | `plugins/agent-essentials/skills/html-artifacts/` | dogum | [dogum/html-artifacts](https://github.com/dogum/html-artifacts) | 以上游 repo 為準 |
@@ -70,7 +71,6 @@ Copyright (c) 2026 shooter2062424
 | `diagram-design` | Cathryn Lavery | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) |
 | `asd-ste100` | danyuchn（Dustin Yuchen Teng） | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)，授權 MIT |
 | `pstack` | Michael Denyer(移植);原作 Lauren Tan (poteto)、Cursor | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(子目錄 `plugins/pstack`),授權 MIT,上游 `NOTICE.md` 保留各部分原始著作權 |
-| `web-design-guidelines` | Vercel | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(只取 `skills/web-design-guidelines`),授權 MIT |
 | `playwright-cli` | Microsoft | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli),授權 Apache-2.0 |
 | `transitions-dev` | Jakub Antalik | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) |
 

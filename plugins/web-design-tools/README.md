@@ -8,13 +8,13 @@
 |---|---|---|
 | skill | `modern-web-design` | 用 Next.js + Tailwind + shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取與重建、依受眾拆設計策略。含 ffmpeg 拆幀與 Playwright 擷取腳本。 |
 | skill | `awesome-design-md` | 84 份從知名網站(Stripe、Linear、Apple、Notion、Vercel、Airbnb、Tesla…)萃取的 `DESIGN.md` 設計系統文件:色彩、字級、圓角、間距、元件與 Do / Don't。指定品牌就照它的設計語言做 UI。`SKILL.md` 內有完整索引。 |
-| 相依 plugin | `transitions-dev`、`web-design-guidelines`、`playwright-cli` | 見下。 |
+| skill | `web-design-guidelines` | Vercel 的 Web Interface Guidelines 審查:丟檔案或 glob,逐條檢查 UI 程式碼的無障礙與 UX 規範,輸出簡潔 `file:line` 清單。每次審查從上游即時抓最新規則,所以需要連網。 |
+| 相依 plugin | `transitions-dev`、`playwright-cli` | 見下。 |
 
 ## 相依 plugin(自動一起安裝)
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
-| `web-design-guidelines` | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(MIT) | Vercel 的 Web Interface Guidelines 審查:丟檔案或 glob,逐條檢查 UI 程式碼的無障礙與 UX 規範,輸出簡潔 `file:line` 清單。每次審查從上游即時抓最新規則,所以需要連網。只取上游 `skills/web-design-guidelines` 這一個 skill。 |
 | `playwright-cli` | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli)(Apache-2.0) | 讓 agent 用 `playwright-cli` 指令操作瀏覽器、自動化網頁、跑 Playwright 測試,可用來實際看渲染結果。**需先** `npm install -g @playwright/cli@latest`。 |
 | `transitions-dev` | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) | 32 個可直接貼上的 CSS transition:modal 開關、dropdown、number pop-in、icon swap、success check、skeleton、shimmer、sliding tabs、tooltip、accordion、toast、like button、checkbox、toggle、streaming text、matrix loader、banner stacking…。每個都 namespaced 在 `t-*`、用語意化 CSS custom property,並附 `prefers-reduced-motion` guard,不綁 framework、不帶 demo 專用 markup。另含 `transitions-polish`,依 duration / distance / scale / blur / easing 五個維度校準既有動態(open/close 不對稱、hover in/out、stagger、intent delay)。 |
 
@@ -52,6 +52,7 @@ claude plugin install web-design-tools@ai-grocery         # transitions-dev 會�
 
 | Skill | 原作者 | 原 repo | 授權 |
 |---|---|---|---|
+| `web-design-guidelines` | Vercel | [vercel-labs/agent-skills](https://github.com/vercel-labs/agent-skills)(只取 `skills/web-design-guidelines/SKILL.md`) | MIT(上游 README 宣告,無獨立 LICENSE 檔) |
 | `awesome-design-md` | VoltAgent | [VoltAgent/awesome-design-md](https://github.com/VoltAgent/awesome-design-md) | MIT(`skills/awesome-design-md/LICENSE` 隨附) |
 
 上游只是 markdown 資料集,沒有 skill 也沒有 plugin manifest,所以複製進來。
@@ -59,3 +60,5 @@ claude plugin install web-design-tools@ai-grocery         # transitions-dev 會�
 沒收的:每個品牌資料夾裡的 `README.md`(只有一行「已搬到 getdesign.md」的連結),要看預覽與下載請去 [getdesign.md](https://getdesign.md)。
 
 ⚠️ 這些文件是從公開網站萃取的設計 token,上游聲明「不主張任何網站視覺識別的所有權」。借**設計語言**可以,不要把品牌 logo、商標或文案搬進你的產品。
+
+`web-design-guidelines` 不用外部參照的原因:上游 repo 有 10 個 skill 且沒有 plugin manifest,實測用 `strict: false` 指向單一 skill 目錄,Claude Code 仍會把整個 `skills/` 拉進來(9 個 skill,多帶 deploy-to-vercel、react-best-practices 等),所以只複製這一個 39 行的 SKILL.md。

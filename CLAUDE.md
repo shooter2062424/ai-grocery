@@ -54,6 +54,10 @@ Claude Code 就會直接去上游 repo 抓，本 repo 一個檔案都不複製�
 **上游授權禁止再散布時，這是唯一正確的路線** —— 收錄的是指標，不是內容，所以不構成再散布。
 範例見 `marketplace.json` 的 `transitions-dev`。
 
+**限制(實測)**：`strict: false` 搭配 `skills` 指向單一 skill 目錄**無效** —— Claude Code 仍會把上游整個 `skills/` 目錄都載進來。
+上游 repo 有多個 skill、而使用者只要其中一個時，不要用外部參照，改走路線 B vendored 那一個 SKILL.md(授權允許的前提下)。
+上游 `skills/` 底下**只有**使用者要的 skill 時，外部參照才合適(例如 `playwright-cli`、`transitions-dev`)。
+
 **plugin 在上游 repo 的子目錄**(上游自己是 marketplace，plugin 放 `plugins/<name>`)時，
 source 改用 `git-subdir`：`{ "source": "git-subdir", "url": "<owner>/<repo>", "path": "plugins/<name>" }`。
 範例見 `pstack`。`github` 來源只適用 plugin 在 repo 根目錄。
