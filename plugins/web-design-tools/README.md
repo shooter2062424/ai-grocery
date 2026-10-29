@@ -9,13 +9,14 @@
 | skill | `modern-web-design` | 用 Next.js + Tailwind + shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取與重建、依受眾拆設計策略。含 ffmpeg 拆幀與 Playwright 擷取腳本。 |
 | skill | `awesome-design-md` | 84 份從知名網站(Stripe、Linear、Apple、Notion、Vercel、Airbnb、Tesla…)萃取的 `DESIGN.md` 設計系統文件:色彩、字級、圓角、間距、元件與 Do / Don't。指定品牌就照它的設計語言做 UI。`SKILL.md` 內有完整索引。 |
 | skill | `web-design-guidelines` | Vercel 的 Web Interface Guidelines 審查:丟檔案或 glob,逐條檢查 UI 程式碼的無障礙與 UX 規範,輸出簡潔 `file:line` 清單。每次審查從上游即時抓最新規則,所以需要連網。 |
-| 相依 plugin | `transitions-dev`、`playwright-cli` | 見下。 |
+| 相依 plugin | `transitions-dev`、`playwright-cli`、`ai-design-skills` | 見下。 |
 
 ## 相依 plugin(自動一起安裝)
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
 | `playwright-cli` | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli)(Apache-2.0) | 讓 agent 用 `playwright-cli` 指令操作瀏覽器、自動化網頁、跑 Playwright 測試,可用來實際看渲染結果。**需先** `npm install -g @playwright/cli@latest`。 |
+| `ai-design-skills` | [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills)(MIT) | Elaya 的設計 skill 合集,目前含 `landing-page-design`:高轉換 landing page 的完整系統:問診、頁面結構、版型選擇、轉換文案、SEO,加上字型、間距、圓角、背景、hero、icon、動態的嚴格視覺規則(一個 offer、一個受眾、一個主要行動)。外部參照,上游新增的 skill 會自動跟進。 |
 | `transitions-dev` | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) | 32 個可直接貼上的 CSS transition:modal 開關、dropdown、number pop-in、icon swap、success check、skeleton、shimmer、sliding tabs、tooltip、accordion、toast、like button、checkbox、toggle、streaming text、matrix loader、banner stacking…。每個都 namespaced 在 `t-*`、用語意化 CSS custom property,並附 `prefers-reduced-motion` guard,不綁 framework、不帶 demo 專用 markup。另含 `transitions-polish`,依 duration / distance / scale / blur / easing 五個維度校準既有動態(open/close 不對稱、hover in/out、stagger、intent delay)。 |
 
 `modern-web-design` 管**整體設計策略與版面**,`transitions-dev` 管**單一元件怎麼動**。兩個搭著用。

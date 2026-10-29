@@ -154,6 +154,32 @@
         "repo": "danyuchn/asd-ste100-skill"
       },
       "description": "agent-essentials 相依。把有歧義的英文改寫成 ASD-STE100 簡化技術英文(航太業用來防止誤讀的受控語言):給 agent 或下游系統讀的 tool description、錯誤訊息、agent 之間的指令、system prompt、狀態回報。附 ste-lint.py 結構規則 linter。純外部參照。"
+    },
+    {
+      "name": "ai-design-skills",
+      "source": {
+        "source": "github",
+        "repo": "elayadesign/ai-design-skills"
+      },
+      "description": "web-design-tools 相依。Elaya 的設計 skill 合集。目前含 landing-page-design:高轉換 landing page 的完整系統 —— 問診、頁面結構、版型選擇、轉換文案、SEO,加上字型、間距、圓角、背景、hero、icon、動態的嚴格視覺規則(一個 offer、一個受眾、一個主要行動)。純外部參照,上游新增的 skill 會自動跟進。",
+      "version": "1.0.0",
+      "author": {
+        "name": "Elaya"
+      },
+      "homepage": "https://github.com/elayadesign/ai-design-skills",
+      "repository": "https://github.com/elayadesign/ai-design-skills",
+      "license": "MIT",
+      "keywords": [
+        "landing-page",
+        "conversion",
+        "copywriting",
+        "seo",
+        "design"
+      ],
+      "skills": [
+        "./skills/"
+      ],
+      "strict": false
     }
   ]
 }

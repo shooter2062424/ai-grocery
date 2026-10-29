@@ -71,6 +71,7 @@ Copyright (c) 2026 shooter2062424
 | `diagram-design` | Cathryn Lavery | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) |
 | `asd-ste100` | danyuchn（Dustin Yuchen Teng） | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)，授權 MIT |
 | `pstack` | Michael Denyer(移植);原作 Lauren Tan (poteto)、Cursor | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(子目錄 `plugins/pstack`),授權 MIT,上游 `NOTICE.md` 保留各部分原始著作權 |
+| `ai-design-skills` | Elaya | [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills)，授權 MIT（其 `landing-page-design` 部分內容改編自 Leonxlnx/taste-skill，MIT） |
 | `playwright-cli` | Microsoft | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli),授權 Apache-2.0 |
 | `transitions-dev` | Jakub Antalik | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) |
 
