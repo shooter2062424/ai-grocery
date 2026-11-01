@@ -1,0 +1,18 @@
+{
+  "name": "spec-code-flow",
+  "description": "Spec ⇄ Code 雙向工作流:把需求規格、程式、測試用追溯標註綁成可查詢的知識庫,規格或程式任何一邊變動時能偵測漂移、算影響、守住護欄、誠實升級給人決定。含 init / change / sync / audit 四個子 skill 與零依賴的 specflow.py 工具。",
+  "version": "0.1.0",
+  "author": {
+    "name": "shooter2062424"
+  },
+  "keywords": [
+    "spec-driven",
+    "spec-to-code",
+    "code-to-spec",
+    "traceability",
+    "drift",
+    "knowledge-base",
+    "workflow"
+  ],
+  "license": "MIT"
+}

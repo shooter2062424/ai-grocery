@@ -51,6 +51,11 @@
       "description": "知識與學習類工具集。目前含 rapid-learning(NotebookLM 三提問快速學習法)skill。"
     },
     {
+      "name": "spec-code-flow",
+      "source": "./plugins/spec-code-flow",
+      "description": "Spec ⇄ Code 雙向工作流:用追溯標註把需求、程式、測試綁成可查詢的知識庫,偵測漂移、算影響、守護欄、誠實升級給人決定。含 init/change/sync/audit 四個子 skill 與零依賴 specflow.py。"
+    },
+    {
       "name": "investing-like-pro",
       "source": "./plugins/investing-like-pro",
       "description": "投資類工具集(agents)。含 gooaye(股癌投資思維框架評斷一支股票好不好)、google-nexus(Google Nexus 五代理人時序預測框架做未來 N 日走勢預測)、valuation-bands(用 EPS×本益比歷史分位把股價判成特價/便宜/合理/昂貴/瘋狂五檔)。教育用途,非投資建議。"
