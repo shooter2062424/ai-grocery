@@ -27,7 +27,7 @@ description: |
 - `frames <ID> <秒>... --out DIR`:下載 480p 影片並截圖,再用 Read 看圖。
 
 ## 流程
-1. **取帶時間逐字稿**:官方字幕優先(`fetch`);429 時直接 Whisper。引擎建議:一般中文內容用 SenseVoice-Small(FunASR,CPU 約 12 倍即時;需隔離 numpy<2,見備註),中英夾雜/英文用 faster-whisper `large-v3-turbo` int8 + `initial_prompt`(標題+說明欄+詞表);`small` 只當備援。
+1. **取帶時間逐字稿**:官方字幕優先(`fetch`,無官方字幕時自動改抓自動字幕);429 或無字幕時**一律呼叫 `python scripts/media/whisper_transcribe.py <影片ID或檔案> -o <輸出.txt> --prompt "<標題+說明欄+詞表>"`**(Knowledge 倉庫;固定 faster-whisper `large-v3-turbo` int8,輸出 `[m:ss]`,成敗看最後 `segments N`)。不要自己 inline 寫 `WhisperModel`,也不要換 `small`;SenseVoice-Small 只作純中文口播的備選實驗(未納入腳本)。
 2. **整理初稿**(依 Knowledge 倉庫 CLAUDE.md 寫作規範)。
 3. **看畫面,不只看字幕**:對專有名詞、數字、圖表、論文/repo 畫面出現處,用 `find` 取時間 → `frames` 截圖 → 讀圖。多數頻道(白白说大模型、Why QQ 等)有燒錄字幕與投影片,可直接讀到正確拼法(2026-11-07 實測:Chroma/Pinecone/Milvus、LangChain/Eino、FDE、vgpu 八項零件)。純口播頻道圖上無字,不算證據。
 4. **依 keyword 查一手資料與延伸**:從字幕/畫面抽出論文、技術、工具、人名、數字,查 arXiv、官方文件、GitHub、官方部落格;有 repo 就 `git clone --depth 1` 讀原始碼再刪除。**要讀內文,不要只看搜尋摘要**。影片常把不同條件的數字放在一起比、講舊版架構、把論文結論講反,逐項核對並標出。
