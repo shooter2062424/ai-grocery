@@ -16,6 +16,8 @@ Copyright (c) 2026 shooter2062424
   - `plugins/agent-essentials/output-styles/eli5.md`
   - `plugins/agent-essentials/commands/setup.md`
   - `plugins/agent-essentials/skills/eli5/`
+  - `plugins/agent-essentials/skills/python-style/`
+  - `plugins/agent-essentials/skills/commit-format/`
   - `plugins/knowledge-tools/skills/rapid-learning/`
   - `plugins/career-tools/skills/interview-personality/`
   - `plugins/finance/skills/ctbc-securities-api/`

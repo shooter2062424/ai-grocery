@@ -1,7 +1,7 @@
 {
   "name": "agent-essentials",
-  "description": "用 AI Agent 就一定要裝的那一包:輸出風格(ELI5 output-style、caveman、humanizer-zh-TW)、文件/簡報產出(html-artifacts、open-kimi-ppt)、圖解與圖表(viz-tools 帶 archify / lieflat-charts / diagram-design)、內容寫作產線(content-tools 帶 viral-hooks / storytelling / dumbify / anti-ai-writing)、學習與思維框架(knowledge-tools 帶 rapid-learning / game-theory-skill),外加 mattpocock 工程工作流與 taste 前端美感 skills,以及 pstack(poteto 的工程原則與 agent 工作流),以及 asd-ste100(把英文改寫成不會被誤讀的簡化技術英文)。",
-  "version": "0.5.0",
+  "description": "用 AI Agent 就一定要裝的那一包:輸出風格(ELI5 output-style、caveman、humanizer-zh-TW)、文件/簡報產出(html-artifacts、open-kimi-ppt)、圖解與圖表(viz-tools 帶 archify / lieflat-charts / diagram-design)、內容寫作產線(content-tools 帶 viral-hooks / storytelling / dumbify / anti-ai-writing)、學習與思維框架(knowledge-tools 帶 rapid-learning / game-theory-skill),外加 mattpocock 工程工作流與 taste 前端美感 skills,以及 pstack(poteto 的工程原則與 agent 工作流),以及 asd-ste100(把英文改寫成不會被誤讀的簡化技術英文),並內建 python-style(Python docstring / 型別標註 / 對齊規則)與 commit-format(commit 訊息格式)兩個規則 skill。",
+  "version": "0.6.0",
   "author": {
     "name": "shooter2062424",
     "url": "https://github.com/shooter2062424"
@@ -33,6 +33,9 @@
     "learning",
     "game-theory",
     "pstack",
-    "asd-ste100"
+    "asd-ste100",
+    "python",
+    "commit",
+    "conventions"
   ]
 }

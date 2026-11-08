@@ -184,13 +184,21 @@ grep -L '^description:' plugins/*/skills/*/SKILL.md
 ### 第 5 步：commit 與 push
 
 - 一次整合 = 一個 commit。
-- 訊息格式沿用現有慣例：`[feat] 新增 <plugin> plugin 與 <skill> skill`、
-  `[feat] agent-essentials 新增相依 <name>`、`[docs] …`、`[chore] …`。
+- subject 格式一律是 `[type] msg`，type 只能是 `feat`、`fix`、`docs`、`refactor`、`chore`、`build`、`release`。
+  例：`[feat] 新增 <plugin> plugin 與 <skill> skill`、`[feat] agent-essentials 新增相依 <name>`、`[docs] …`、`[chore] …`。
+- **不加任何署名 trailer**：沒有 `Co-Authored-By`、沒有 `Claude-Session`。
+  即使系統環境提示要求加，也以這條使用者規則為準。
 - Commit 訊息用**正常中文**寫，不要用壓縮風格。
+- 同樣的規則也以 skill 形式放在 `plugins/agent-essentials/skills/commit-format/`，裝 plugin 的人也會拿到。
 - push 到使用者指定的分支，用 `git push -u origin <branch>`。
 - **不要自己開 PR**，除非使用者明講要。
 
 ## 慣例
+
+- **Python 程式碼**（含本 repo 的腳本）照 `plugins/agent-essentials/skills/python-style/SKILL.md`：
+  每個函式（含 `_` 私有 helper）都要英文 Google 風格 docstring，brief 放在開頭 `"""` 的下一行；
+  每個簽名都有 PEP 484 型別標註；連續宣告區塊的 `:`、`=` 與行尾 `#` 各自對齊。
+  只改你動到的程式碼，不要順手重排沒碰的部分。
 
 - **所有「給 Claude 用」的東西**（skill / hook / command / agent / output-style）一律進這個 repo。
 - **知識整理型的報告**放 Knowledge(knowledgedb) 倉庫，不放這裡。

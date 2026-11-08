@@ -20,6 +20,8 @@ ai-grocery/
    │  ├─ commands/setup.md          # /agent-essentials:setup 一次補齊相依 plugin
    │  └─ skills/
    │     ├─ eli5/                   # 單次觸發版的 ELI5 解釋
+   │     ├─ python-style/           # Python:docstring / 型別標註 / 宣告區塊對齊
+   │     ├─ commit-format/          # commit 訊息:[type] msg、無署名 trailer
    │     ├─ humanizer-zh-tw/        # 去除文字的 AI 生成痕跡(繁中)
    │     └─ html-artifacts/         # 該用版面說清楚的內容 → 單檔 HTML
    ├─ viz-tools/                    # 圖解與圖表(vendored:archify、lieflat-charts;相依:diagram-design)
@@ -60,7 +62,7 @@ ai-grocery/
 
 | Plugin | 內容 |
 |---|---|
-| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告九個相依 plugin(下方九列),**安裝時自動一起裝**。 |
+| **agent-essentials** | 「用 AI Agent 就一定要裝的那一包」。**Output style**:`eli5`(整個 session 都用解釋給指定對象聽的方式回答)。**Skills**:`eli5`(單次觸發版)、`python-style`(Python docstring、型別標註、宣告對齊規則)、`commit-format`(`[type] msg` commit 格式、無署名 trailer)、`humanizer-zh-tw`(去除文字的 AI 生成痕跡)、`html-artifacts`(該用版面/圖表說清楚的內容改產出單檔 HTML)。**Command**:`/agent-essentials:setup`(相依沒生效時排查用)。以 `plugin.json` 的 `dependencies` 宣告九個相依 plugin(下方九列),**安裝時自動一起裝**。 |
 | ↳ **caveman** | agent-essentials 相依,來源 [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman)。穴居人講話模式,實測砍約 65% 輸出 token,技術準確度不變(靠 SessionStart hook,裝完要重開 session)。 |
 | ↳ **mattpocock-skills** | agent-essentials 相依,來源 [mattpocock/skills](https://github.com/mattpocock/skills)。工程工作流與生產力 skills(v1.3.1,27 個):grilling / grill-me / grill-with-docs、to-spec → to-tickets → implement-spec 的規格到實作流程、tdd、code-review、triage、diagnosing-bugs、domain-modeling、codebase-design、improve-codebase-architecture、pr、retro、handoff、teach、writing-for-agents 等。 |
 | ↳ **taste-skill** | agent-essentials 相依,來源 [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill)。前端設計美感:brutalist / minimalist / soft / redesign / stitch 與 image-to-code。 |

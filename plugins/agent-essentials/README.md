@@ -12,6 +12,8 @@ Claude Code 預設會做事,但輸出往往是一整面的 markdown 流水帳。
 | output-style | `eli5` | 全程用「解釋給指定對象聽」的方式回答:先白話結論與類比,再依對象深度補細節。`/output-style eli5` 啟用。 |
 | skill | `eli5` | 同樣的解釋框架,但只在單次請求觸發(說「ELI5」「解釋給我媽聽」「dumb it down」時)。 |
 | skill | `humanizer-zh-tw` | 去除文字裡的 AI 生成痕跡(誇大象徵、宣傳語言、破折號過度、三段式法則、否定式排比…),繁中版。 |
+| skill | `python-style` | 寫、改、審 Python 時套用:每個函式(含 `_` 私有 helper)都要英文 Google 風格 docstring,brief 放在開頭 `"""` 的**下一行**;每個簽名都有 PEP 484 型別標註(內建泛型、`X \| None`、`from __future__ import annotations`);連續宣告區塊(常數、Enum、dataclass 欄位)的 `:`、`=` 與行尾 `#` 註解各自對齊成一欄。 |
+| skill | `commit-format` | 每次 commit 前套用:subject 必須是 `[type] msg`,type 只能是 `feat` / `fix` / `docs` / `refactor` / `chore` / `build` / `release`;**不加**任何署名 trailer(沒有 `Co-Authored-By`、沒有 `Claude-Session`)。 |
 | skill | `html-artifacts` | 該用版面/顏色/圖表/互動說清楚的內容,產出自帶樣式的單檔 HTML,而不是 markdown。 |
 
 output-style 與 skill 版的 `eli5` 差別:**風格是整個 session 都套用,skill 是單次觸發**。想全程講白話就切風格;偶爾一句「這段 ELI5 一下」就靠 skill。
@@ -92,3 +94,8 @@ claude plugin list --json | jq -r '.[].id | split("@")[0]' | sort -u | xargs -n1
 `skills/humanizer-zh-tw` 取自 [kevintsai1202/Humanizer-zh-TW](https://github.com/kevintsai1202/Humanizer-zh-TW)(其上游為 op7418/humanizer-zh、blader/humanizer)。
 `skills/html-artifacts` 取自 [dogum/html-artifacts](https://github.com/dogum/html-artifacts)。
 以上三者原專案皆為 MIT,內嵌於此僅為讓一次安裝就能用;上游更新需手動同步。
+
+## 規則 skill 的限制
+
+`python-style` 與 `commit-format` 是 skill:Claude 判斷到寫 Python 或要 commit 時才會載入,不是每個 session 都常駐。
+Plugin 沒辦法替使用者放常駐的 `CLAUDE.md`。要強制每次都遵守,請把同樣幾行也寫進你專案自己的 `CLAUDE.md`。
