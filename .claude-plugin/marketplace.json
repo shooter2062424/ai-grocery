@@ -187,14 +187,6 @@
       "strict": false
     },
     {
-      "name": "figma",
-      "source": {
-        "source": "github",
-        "repo": "figma/mcp-server-guide"
-      },
-      "description": "web-design-tools 相依。Figma 官方 plugin:Figma MCP server 加 15 個 skill(figma-use、figma-use-motion 用手動 keyframe 幫 Figma 設計做動態、figma-implement-motion、figma-design-to-code、figma-generate-design、figma-generate-library、figma-code-connect 等)。需要 Figma 帳號登入授權。純外部參照。"
-    },
-    {
       "name": "design",
       "source": {
         "source": "git-subdir",
