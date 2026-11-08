@@ -185,6 +185,23 @@
         "./skills/"
       ],
       "strict": false
+    },
+    {
+      "name": "figma",
+      "source": {
+        "source": "github",
+        "repo": "figma/mcp-server-guide"
+      },
+      "description": "web-design-tools 相依。Figma 官方 plugin:Figma MCP server 加 15 個 skill(figma-use、figma-use-motion 用手動 keyframe 幫 Figma 設計做動態、figma-implement-motion、figma-design-to-code、figma-generate-design、figma-generate-library、figma-code-connect 等)。需要 Figma 帳號登入授權。純外部參照。"
+    },
+    {
+      "name": "design",
+      "source": {
+        "source": "git-subdir",
+        "url": "anthropics/knowledge-work-plugins",
+        "path": "design"
+      },
+      "description": "web-design-tools 相依。Anthropic 的 Design plugin(knowledge-work-plugins):design-critique(可用性、層級、一致性回饋)、design-handoff(元件規格表:版面、token 等)、design-system、ux-copy、accessibility-review、user-research、research-synthesis 共 7 個 skill。附 Slack / Figma / Linear / Asana 等 MCP 連接器設定,需各自授權。純外部參照(Apache-2.0)。"
     }
   ]
 }

@@ -9,13 +9,15 @@
 | skill | `modern-web-design` | 用 Next.js + Tailwind + shadcn/ui 做出有質感的現代網站:突破 AI 預設風格、捲動逐幀動畫管線、設計參考擷取與重建、依受眾拆設計策略。含 ffmpeg 拆幀與 Playwright 擷取腳本。 |
 | skill | `awesome-design-md` | 84 份從知名網站(Stripe、Linear、Apple、Notion、Vercel、Airbnb、Tesla…)萃取的 `DESIGN.md` 設計系統文件:色彩、字級、圓角、間距、元件與 Do / Don't。指定品牌就照它的設計語言做 UI。`SKILL.md` 內有完整索引。 |
 | skill | `web-design-guidelines` | Vercel 的 Web Interface Guidelines 審查:丟檔案或 glob,逐條檢查 UI 程式碼的無障礙與 UX 規範,輸出簡潔 `file:line` 清單。每次審查從上游即時抓最新規則,所以需要連網。 |
-| 相依 plugin | `transitions-dev`、`playwright-cli`、`ai-design-skills` | 見下。 |
+| 相依 plugin | `transitions-dev`、`playwright-cli`、`ai-design-skills`、`figma`、`design` | 見下。 |
 
 ## 相依 plugin(自動一起安裝)
 
 | Plugin | 來源 | 用途 |
 |---|---|---|
 | `playwright-cli` | [microsoft/playwright-cli](https://github.com/microsoft/playwright-cli)(Apache-2.0) | 讓 agent 用 `playwright-cli` 指令操作瀏覽器、自動化網頁、跑 Playwright 測試,可用來實際看渲染結果。**需先** `npm install -g @playwright/cli@latest`。 |
+| `figma` | [figma/mcp-server-guide](https://github.com/figma/mcp-server-guide) | Figma 官方 plugin:Figma MCP server 加 16 個 skill —— `figma-use-motion`(用手動 keyframe 幫 Figma 設計做動態)、`figma-use`、`figma-implement-motion`、`figma-design-to-code`、`figma-generate-design`、`figma-generate-library`、`figma-code-connect` 等。需要 Figma 帳號登入授權。 |
+| `design` | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)(子目錄 `design`,Apache-2.0) | Anthropic 的 Design plugin:`design-critique`(可用性、層級、一致性回饋)、`design-handoff`(元件規格表:版面、token 等),另有 `design-system`、`ux-copy`、`accessibility-review`、`user-research`、`research-synthesis`,共 7 個 skill。 |
 | `ai-design-skills` | [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills)(MIT) | Elaya 的設計 skill 合集,目前含 `landing-page-design`:高轉換 landing page 的完整系統:問診、頁面結構、版型選擇、轉換文案、SEO,加上字型、間距、圓角、背景、hero、icon、動態的嚴格視覺規則(一個 offer、一個受眾、一個主要行動)。外部參照,上游新增的 skill 會自動跟進。 |
 | `transitions-dev` | [Jakubantalik/transitions.dev](https://github.com/Jakubantalik/transitions.dev) | 32 個可直接貼上的 CSS transition:modal 開關、dropdown、number pop-in、icon swap、success check、skeleton、shimmer、sliding tabs、tooltip、accordion、toast、like button、checkbox、toggle、streaming text、matrix loader、banner stacking…。每個都 namespaced 在 `t-*`、用語意化 CSS custom property,並附 `prefers-reduced-motion` guard,不綁 framework、不帶 demo 專用 markup。另含 `transitions-polish`,依 duration / distance / scale / blur / easing 五個維度校準既有動態(open/close 不對稱、hover in/out、stagger、intent delay)。 |
 
@@ -63,3 +65,8 @@ claude plugin install web-design-tools@ai-grocery         # transitions-dev 會�
 ⚠️ 這些文件是從公開網站萃取的設計 token,上游聲明「不主張任何網站視覺識別的所有權」。借**設計語言**可以,不要把品牌 logo、商標或文案搬進你的產品。
 
 `web-design-guidelines` 不用外部參照的原因:上游 repo 有 10 個 skill 且沒有 plugin manifest,實測用 `strict: false` 指向單一 skill 目錄,Claude Code 仍會把整個 `skills/` 拉進來(9 個 skill,多帶 deploy-to-vercel、react-best-practices 等),所以只複製這一個 39 行的 SKILL.md。
+
+## 關於 figma 與 design 的連接器
+
+⚠️ `design` 帶 9 個 MCP 連接器設定(Slack、Figma、Linear、Asana、Atlassian、Notion、Intercom、Google Calendar、Gmail),各自要授權才會連線;`figma` 帶 Figma MCP server,需 Figma 帳號登入。
+不想要的連接器可以在 `/mcp` 裡停用,不影響 skill 載入。這兩個都是外部參照,檔案不在本 repo 內。
