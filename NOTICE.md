@@ -72,6 +72,7 @@ Copyright (c) 2026 shooter2062424
 | `open-kimi-ppt` | shooter2062424 | [shooter2062424/open-kimi-ppt-skill](https://github.com/shooter2062424/open-kimi-ppt-skill) |
 | `diagram-design` | Cathryn Lavery | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design) |
 | `asd-ste100` | danyuchn（Dustin Yuchen Teng） | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill)，授權 MIT |
+| `flightdeck` | Omri Arnon | [flightdeckhq/flightdeck](https://github.com/flightdeckhq/flightdeck)（子目錄 `plugin`，釘在 v0.8.0），授權 Apache-2.0 |
 | `prismantis` | Nahum Litvin | [NahumLitvin/prismantis](https://github.com/NahumLitvin/prismantis)（子目錄 `plugin`，釘在 v0.46.0），授權 MIT，內含第三方色票等見上游 `plugin/THIRD_PARTY_NOTICES.md` |
 | `pstack` | Michael Denyer(移植);原作 Lauren Tan (poteto)、Cursor | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude)(子目錄 `plugins/pstack`),授權 MIT,上游 `NOTICE.md` 保留各部分原始著作權 |
 | `design` | Anthropic | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)（子目錄 `design`），授權 Apache-2.0 |

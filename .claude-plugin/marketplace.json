@@ -219,6 +219,30 @@
         "tables",
         "colors"
       ]
+    },
+    {
+      "name": "flightdeck",
+      "source": {
+        "source": "git-subdir",
+        "url": "flightdeckhq/flightdeck",
+        "path": "plugin",
+        "ref": "v0.8.0"
+      },
+      "description": "Agent 可觀測性(獨立選裝,不在任何 bundle 內)。把這個 Claude Code session 的每次 LLM 呼叫、工具使用與 MCP 事件即時送到你自架的 Flightdeck 儀表板,可選擇開啟 token 預算與從儀表板停止 session。⚠️ 需要先自己架起 Flightdeck(Docker、Go、Node);沒設定時預設送往 localhost:4000。事件會送到你設定的伺服器,請只指向你信任的位置。釘在 v0.8.0。",
+      "version": "0.8.0",
+      "author": {
+        "name": "Omri Arnon"
+      },
+      "homepage": "https://github.com/flightdeckhq/flightdeck",
+      "repository": "https://github.com/flightdeckhq/flightdeck",
+      "license": "Apache-2.0",
+      "keywords": [
+        "observability",
+        "monitoring",
+        "agents",
+        "telemetry",
+        "dashboard"
+      ]
     }
   ]
 }
