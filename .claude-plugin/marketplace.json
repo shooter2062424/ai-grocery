@@ -243,6 +243,31 @@
         "telemetry",
         "dashboard"
       ]
+    },
+    {
+      "name": "obsidian",
+      "source": {
+        "source": "git-subdir",
+        "url": "obsidianmd/obsidian-skills",
+        "path": "plugins/obsidian"
+      },
+      "description": "Obsidian 官方 skills(獨立選裝,不在任何 bundle 內):Obsidian Markdown、Bases、JSON Canvas、Obsidian CLI、Headless(Sync/Publish)、Defuddle 網頁抽取、Knap。跟上游最新版走(上游沒有 git tag 可釘)。",
+      "version": "1.2.0",
+      "author": {
+        "name": "Obsidian",
+        "url": "https://obsidian.md/"
+      },
+      "homepage": "https://obsidian.md/",
+      "repository": "https://github.com/obsidianmd/obsidian-skills",
+      "license": "MIT",
+      "keywords": [
+        "obsidian",
+        "markdown",
+        "bases",
+        "canvas",
+        "pkm",
+        "notes"
+      ]
     }
   ]
 }

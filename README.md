@@ -86,6 +86,7 @@ ai-grocery/
 | **content-tools** | 內容創作寫作產線,四個 skill 各守一段:`viral-hooks`(開頭第一句 / 影片前兩秒 / 電子報標題 —— 同時要有主題清晰與精準好奇)、`storytelling`(口說與故事型內容,把「停下來」變成「看完」)、`dumbify`(降到約八年級閱讀水準,簡單的語言而非簡單的想法)、`anti-ai-writing`(最後一道濾網,目標是聽起來像一個具體的人而不是「不像 AI」)。以英文寫作為主;繁中請用 agent-essentials 的 `humanizer-zh-tw`。 |
 | **prismantis** | 終端機顯示 mod,**獨立選裝**(不在任何 bundle 內)。重畫 Claude Code 的回覆:17 套彩色主題、表格、程式碼高亮與複製鈕、流程圖/時序圖/長條圖與折線圖、文字圖形、LaTeX。只改外觀,不改行為。需 Claude Code 2.1.287 以上,裝完 `/reload`。外部參照(`git-subdir`,釘在 v0.46.0),MIT。 |
 | **flightdeck** | Agent 可觀測性,**獨立選裝**(不在任何 bundle 內)。把這個 Claude Code session 的每次 LLM 呼叫、工具使用與 MCP 事件即時送到你**自架**的 Flightdeck 儀表板;可選開 token 預算與從儀表板停止 session。⚠️ 要先自己架起 Flightdeck(Docker、Go、Node),沒設定時預設送往 `localhost:4000`;事件會送到你設定的伺服器,只指向你信任的位置。外部參照(`git-subdir`,釘在 v0.8.0),Apache-2.0。 |
+| **obsidian** | Obsidian 官方 skills,**獨立選裝**(不在任何 bundle 內):Obsidian Markdown(wikilink、callout、properties)、Bases、JSON Canvas、Obsidian CLI、Headless(Sync/Publish)、Defuddle 網頁轉乾淨 Markdown、Knap。外部參照(`git-subdir`,跟上游最新版走),MIT。 |
 
 ## 收錄的別人精華
 
@@ -102,6 +103,7 @@ ai-grocery/
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx | `taste-skill` plugin,`agent-essentials` 相依 | 前端美感的解毒劑。把「一看就是 AI 做的」那種預設風格擋掉,提供 brutalist / minimalist / high-end / redesign / stitch 等明確設計方向,外加 image-to-code 與圖像生成的設計參考流程。 |
 | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) | danyuchn(Dustin Yuchen Teng) | `asd-ste100` plugin,`agent-essentials` 相依 | ASD-STE100(航太業為防止技師誤讀維修指令而訂的受控英文)借來給「沒有人類可以消歧義」的讀者用:agent 或下游系統要解析的 tool description、錯誤訊息、agent 間指令、system prompt、狀態回報。一詞一義、短句、主動語態、祈使句;附 `ste-lint.py` 對結構規則做機械檢查。 |
 | [flightdeckhq/flightdeck](https://github.com/flightdeckhq/flightdeck) | Omri Arnon | `flightdeck` plugin(獨立選裝,`git-subdir` 指向 `plugin/` 子目錄,釘在 v0.8.0) | 自架的 agent 可觀測與控制平面:每次 LLM 呼叫、工具使用與 MCP 事件即時串流到儀表板,有逐 agent 時間軸與全艦隊即時動態。plugin 本身只有 hook 加一個說明用 skill(8 種 hook 事件、共 23 個 hook);真正的服務要自己架。為什麼沒掛進 `agent-essentials`:它會把整個 session 的事件往外送,必須由使用者自己決定要不要裝、送去哪。為什麼釘版本:上游 marketplace 也釘 v0.8.0。Apache-2.0。 |
+| [obsidianmd/obsidian-skills](https://github.com/obsidianmd/obsidian-skills) | Obsidian(Steph Ango / kepano 等) | `obsidian` plugin(獨立選裝,`git-subdir` 指向 `plugins/obsidian` 子目錄) | Obsidian 官方的 agent skills,共 7 個:obsidian-markdown、obsidian-bases、json-canvas、obsidian-cli、obsidian-headless、defuddle、knap。為什麼沒掛進 `agent-essentials`:只有用 Obsidian 的人才需要。為什麼沒釘版本:上游沒有 git tag,跟最新版走。MIT。 |
 | [NahumLitvin/prismantis](https://github.com/NahumLitvin/prismantis) | Nahum Litvin | `prismantis` plugin(獨立選裝,`git-subdir` 指向 `plugin/` 子目錄,釘在 v0.46.0) | 讓 Claude Code 的輸出在終端機裡好看:表格有彩色表頭與對齊、程式碼有語言標頭與複製鈕與語法高亮、能畫流程圖與圖表、17 套主題用 `/prismantis theme <name>` 即時切換。是 Claude Code 的「mod」(TypeScript hook),不是 skill。為什麼沒掛進 `agent-essentials`:它會改變所有人的終端機渲染,不該被相依強制帶入。為什麼釘版本:它直接重畫輸出,main 分支可能比釋出版本新。MIT。 |
 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | Michael Denyer(Claude Code 移植);原作 Lauren Tan (poteto)、Cursor | `pstack` plugin,`agent-essentials` 相依 | 「想跑得快,先挖得深」:寫得少但品質更高、可放心平行化的 agent 工作流。`poteto-mode`、一整排 `principle-*`(攻擊前提、修根因、先建槓桿、讓操作冪等…)、`tdd`、`deslop` / `unslop`、`babysit`、`fix-ci`、`interrogate`、`architect`、`arena` 等 63 個 skill,外加 agents 與 hooks。插件在上游的 `plugins/pstack` 子目錄,用 `git-subdir` 參照。 |
 | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)(`design` 子目錄) | Anthropic | `design` plugin(`git-subdir`),`web-design-tools` 相依 | 給 UX/UI 設計師的 7 個 skill:`design-critique`(可用性、層級、一致性回饋)、`design-handoff`(元件規格表:版面、token…)、`design-system`、`ux-copy`、`accessibility-review`、`user-research`、`research-synthesis`。⚠️ 附 9 個 MCP 連接器設定(Slack、Gmail、Notion 等),各自授權才連線。Apache-2.0。 |
@@ -165,6 +167,7 @@ claude plugin install viz-tools@ai-grocery
 claude plugin install content-tools@ai-grocery
 claude plugin install prismantis@ai-grocery        # 終端機顯示 mod,選裝,不在 bundle 內
 claude plugin install flightdeck@ai-grocery         # 需先自架 Flightdeck 伺服器,選裝
+claude plugin install obsidian@ai-grocery           # Obsidian 官方 skills,選裝
 
 # 3. 確認裝好了
 claude plugin list
