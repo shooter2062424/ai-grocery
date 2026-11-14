@@ -84,6 +84,7 @@ ai-grocery/
 | **viz-tools** | 資料視覺化與圖解。**Skills**:`archify`(架構圖/工作流程圖/時序圖/資料流圖/狀態機 → 可探索的單檔 HTML + inline SVG,深淺色主題、路徑動畫、可匯出 PNG/JPEG/WebP/SVG/WebM,也吃貼上的 Mermaid、也能讀 repo 照真實程式碼畫)、`lieflat-charts`(模板驅動的 HTML 圖表與 12 套中英文整頁報告,Mono 灰階保底並依資料語義自動選色)。**相依**:`diagram-design`。⚠️ `lieflat-charts` 為 **PolyForm Noncommercial** 授權,僅限非商業用途。 |
 | ↳ **diagram-design** | viz-tools 相依,來源 [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design)。品牌化圖表:架構、流程、時序、狀態機、ER/資料模型、時間軸、泳道、象限、雷達、漏斗、樹狀、組織圖、Sankey、魚骨、Wardley map、使用者旅程等數十種版型,輸出 HTML/SVG/PNG,可從網站擷取品牌 token、重畫 .drawio 與 Mermaid。 |
 | **content-tools** | 內容創作寫作產線,四個 skill 各守一段:`viral-hooks`(開頭第一句 / 影片前兩秒 / 電子報標題 —— 同時要有主題清晰與精準好奇)、`storytelling`(口說與故事型內容,把「停下來」變成「看完」)、`dumbify`(降到約八年級閱讀水準,簡單的語言而非簡單的想法)、`anti-ai-writing`(最後一道濾網,目標是聽起來像一個具體的人而不是「不像 AI」)。以英文寫作為主;繁中請用 agent-essentials 的 `humanizer-zh-tw`。 |
+| **prismantis** | 終端機顯示 mod,**獨立選裝**(不在任何 bundle 內)。重畫 Claude Code 的回覆:17 套彩色主題、表格、程式碼高亮與複製鈕、流程圖/時序圖/長條圖與折線圖、文字圖形、LaTeX。只改外觀,不改行為。需 Claude Code 2.1.287 以上,裝完 `/reload`。外部參照(`git-subdir`,釘在 v0.46.0),MIT。 |
 
 ## 收錄的別人精華
 
@@ -99,6 +100,7 @@ ai-grocery/
 | [mattpocock/skills](https://github.com/mattpocock/skills) | Matt Pocock | `mattpocock-skills` plugin,`agent-essentials` 相依 | 一整套工程工作流與生產力 skill(上游 v1.3.1,27 個)。`grilling` / `grill-me` / `grill-with-docs`(逼問你的計畫直到站得住腳)、`to-spec` → `to-tickets` → `implement-spec`(從規格到工單到實作)、`tdd`(red-green-refactor)、`code-review`(標準面 + 規格面雙軸審查)、`triage`、`diagnosing-bugs`、`domain-modeling`、`codebase-design` / `improve-codebase-architecture`、`pr`、`retro`、`handoff`、`teach`、`writing-for-agents`(怎麼寫 CLAUDE.md 跟 skill)等。外部參照,永遠跟上游最新版。 |
 | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill) | Leonxlnx | `taste-skill` plugin,`agent-essentials` 相依 | 前端美感的解毒劑。把「一看就是 AI 做的」那種預設風格擋掉,提供 brutalist / minimalist / high-end / redesign / stitch 等明確設計方向,外加 image-to-code 與圖像生成的設計參考流程。 |
 | [danyuchn/asd-ste100-skill](https://github.com/danyuchn/asd-ste100-skill) | danyuchn(Dustin Yuchen Teng) | `asd-ste100` plugin,`agent-essentials` 相依 | ASD-STE100(航太業為防止技師誤讀維修指令而訂的受控英文)借來給「沒有人類可以消歧義」的讀者用:agent 或下游系統要解析的 tool description、錯誤訊息、agent 間指令、system prompt、狀態回報。一詞一義、短句、主動語態、祈使句;附 `ste-lint.py` 對結構規則做機械檢查。 |
+| [NahumLitvin/prismantis](https://github.com/NahumLitvin/prismantis) | Nahum Litvin | `prismantis` plugin(獨立選裝,`git-subdir` 指向 `plugin/` 子目錄,釘在 v0.46.0) | 讓 Claude Code 的輸出在終端機裡好看:表格有彩色表頭與對齊、程式碼有語言標頭與複製鈕與語法高亮、能畫流程圖與圖表、17 套主題用 `/prismantis theme <name>` 即時切換。是 Claude Code 的「mod」(TypeScript hook),不是 skill。為什麼沒掛進 `agent-essentials`:它會改變所有人的終端機渲染,不該被相依強制帶入。為什麼釘版本:它直接重畫輸出,main 分支可能比釋出版本新。MIT。 |
 | [michael-denyer/pstack-claude](https://github.com/michael-denyer/pstack-claude) | Michael Denyer(Claude Code 移植);原作 Lauren Tan (poteto)、Cursor | `pstack` plugin,`agent-essentials` 相依 | 「想跑得快,先挖得深」:寫得少但品質更高、可放心平行化的 agent 工作流。`poteto-mode`、一整排 `principle-*`(攻擊前提、修根因、先建槓桿、讓操作冪等…)、`tdd`、`deslop` / `unslop`、`babysit`、`fix-ci`、`interrogate`、`architect`、`arena` 等 63 個 skill,外加 agents 與 hooks。插件在上游的 `plugins/pstack` 子目錄,用 `git-subdir` 參照。 |
 | [anthropics/knowledge-work-plugins](https://github.com/anthropics/knowledge-work-plugins)(`design` 子目錄) | Anthropic | `design` plugin(`git-subdir`),`web-design-tools` 相依 | 給 UX/UI 設計師的 7 個 skill:`design-critique`(可用性、層級、一致性回饋)、`design-handoff`(元件規格表:版面、token…)、`design-system`、`ux-copy`、`accessibility-review`、`user-research`、`research-synthesis`。⚠️ 附 9 個 MCP 連接器設定(Slack、Gmail、Notion 等),各自授權才連線。Apache-2.0。 |
 | [elayadesign/ai-design-skills](https://github.com/elayadesign/ai-design-skills) | Elaya | `ai-design-skills` plugin,`web-design-tools` 相依 | 目前一個 skill:`landing-page-design`。Part A 決定頁面說什麼與結構(一個 offer → 一個受眾 → 一個主要行動:問診、版型、轉換文案、SEO),Part B 是不可妥協的視覺系統(字型、間距、圓角、背景、hero、icon、動態)。先 A 後 B。部分內容與動態點子改編自 Leonxlnx/taste-skill。MIT。 |
@@ -159,6 +161,7 @@ claude plugin install web-design-tools@ai-grocery   # 會一併帶入 transition
 claude plugin install career-tools@ai-grocery
 claude plugin install viz-tools@ai-grocery
 claude plugin install content-tools@ai-grocery
+claude plugin install prismantis@ai-grocery        # 終端機顯示 mod,選裝,不在 bundle 內
 
 # 3. 確認裝好了
 claude plugin list

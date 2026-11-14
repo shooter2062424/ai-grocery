@@ -194,6 +194,31 @@
         "path": "design"
       },
       "description": "web-design-tools 相依。Anthropic 的 Design plugin(knowledge-work-plugins):design-critique(可用性、層級、一致性回饋)、design-handoff(元件規格表:版面、token 等)、design-system、ux-copy、accessibility-review、user-research、research-synthesis 共 7 個 skill。附 Slack / Figma / Linear / Asana 等 MCP 連接器設定,需各自授權。純外部參照(Apache-2.0)。"
+    },
+    {
+      "name": "prismantis",
+      "source": {
+        "source": "git-subdir",
+        "url": "NahumLitvin/prismantis",
+        "path": "plugin",
+        "ref": "v0.46.0"
+      },
+      "description": "終端機顯示 mod(獨立選裝,不在任何 bundle 內)。重畫 Claude Code 的回覆:彩色主題(17 套)、表格、程式碼高亮與複製鈕、流程圖/時序圖/長條圖與折線圖、文字圖形、LaTeX。需要 Claude Code 2.1.287 以上,裝完 /reload 生效。只改外觀,不改行為。釘在 v0.46.0。",
+      "version": "0.46.0",
+      "author": {
+        "name": "Nahum Litvin"
+      },
+      "homepage": "https://github.com/NahumLitvin/prismantis",
+      "repository": "https://github.com/NahumLitvin/prismantis",
+      "license": "MIT",
+      "keywords": [
+        "mod",
+        "theme",
+        "terminal",
+        "markdown",
+        "tables",
+        "colors"
+      ]
     }
   ]
 }
